@@ -359,7 +359,7 @@ class _RoomSelectionWidgetState extends State<RoomSelectionWidget>
                                     ],
                                   ),
                                   SizedBox(height: 1.5.h),
-                                  Container(
+                                  SizedBox(
                                     width: double.infinity,
                                     child: Text(
                                       roomName,
@@ -378,7 +378,7 @@ class _RoomSelectionWidgetState extends State<RoomSelectionWidget>
                                     ),
                                   ),
                                   SizedBox(height: 0.5.h),
-                                  Container(
+                                  SizedBox(
                                     width: double.infinity,
                                     child: Text(
                                       room['area'] as String,

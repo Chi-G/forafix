@@ -128,9 +128,9 @@ class _PopularServiceCardState extends State<PopularServiceCard>
                                     SizedBox(height: 0.5.h),
                                     Row(
                                       children: [
-                                        CustomIconWidget(
+                                        const CustomIconWidget(
                                           iconName: 'star',
-                                          color: const Color(0xFFFBBF24),
+                                          color: Color(0xFFFBBF24),
                                           size: ServiceCardDesign.smallIconSize,
                                         ),
                                         SizedBox(width: 1.w),

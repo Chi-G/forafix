@@ -578,7 +578,7 @@ class _SettingsProfileState extends State<SettingsProfile>
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
-        title: Text('Edit Profile'),
+        title: const Text('Edit Profile'),
         content: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
@@ -600,14 +600,14 @@ class _SettingsProfileState extends State<SettingsProfile>
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context),
-            child: Text('Cancel'),
+            child: const Text('Cancel'),
           ),
           ElevatedButton(
             onPressed: () {
               Navigator.pop(context);
               _showSuccessSnackBar('Profile updated successfully');
             },
-            child: Text('Save'),
+            child: const Text('Save'),
           ),
         ],
       ),
@@ -618,7 +618,7 @@ class _SettingsProfileState extends State<SettingsProfile>
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
-        title: Text('Update Phone Number'),
+        title: const Text('Update Phone Number'),
         content: TextField(
           decoration: InputDecoration(
             labelText: 'Phone Number',
@@ -630,14 +630,14 @@ class _SettingsProfileState extends State<SettingsProfile>
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context),
-            child: Text('Cancel'),
+            child: const Text('Cancel'),
           ),
           ElevatedButton(
             onPressed: () {
               Navigator.pop(context);
               _showSuccessSnackBar('Phone number updated');
             },
-            child: Text('Update'),
+            child: const Text('Update'),
           ),
         ],
       ),
@@ -648,7 +648,7 @@ class _SettingsProfileState extends State<SettingsProfile>
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
-        title: Text('Account Information'),
+        title: const Text('Account Information'),
         content: Column(
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -661,13 +661,13 @@ class _SettingsProfileState extends State<SettingsProfile>
             SizedBox(height: 1.h),
             Text('Member Since: ${_userData["joinDate"]}'),
             SizedBox(height: 1.h),
-            Text('Account Status: Active'),
+            const Text('Account Status: Active'),
           ],
         ),
         actions: [
           ElevatedButton(
             onPressed: () => Navigator.pop(context),
-            child: Text('Close'),
+            child: const Text('Close'),
           ),
         ],
       ),
@@ -732,11 +732,11 @@ class _SettingsProfileState extends State<SettingsProfile>
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
-        title: Text('Add Payment Method'),
+        title: const Text('Add Payment Method'),
         content: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            TextField(
+            const TextField(
               decoration: InputDecoration(
                 labelText: 'Card Number',
                 hintText: '1234 5678 9012 3456',
@@ -746,7 +746,7 @@ class _SettingsProfileState extends State<SettingsProfile>
             SizedBox(height: 2.h),
             Row(
               children: [
-                Expanded(
+                const Expanded(
                   child: TextField(
                     decoration: InputDecoration(
                       labelText: 'MM/YY',
@@ -755,7 +755,7 @@ class _SettingsProfileState extends State<SettingsProfile>
                   ),
                 ),
                 SizedBox(width: 3.w),
-                Expanded(
+                const Expanded(
                   child: TextField(
                     decoration: InputDecoration(
                       labelText: 'CVV',
@@ -771,14 +771,14 @@ class _SettingsProfileState extends State<SettingsProfile>
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context),
-            child: Text('Cancel'),
+            child: const Text('Cancel'),
           ),
           ElevatedButton(
             onPressed: () {
               Navigator.pop(context);
               _showSuccessSnackBar('Payment method added successfully');
             },
-            child: Text('Add Card'),
+            child: const Text('Add Card'),
           ),
         ],
       ),
@@ -844,18 +844,18 @@ class _SettingsProfileState extends State<SettingsProfile>
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
-        title: Text('Add New Address'),
+        title: const Text('Add New Address'),
         content: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            TextField(
+            const TextField(
               decoration: InputDecoration(
                 labelText: 'Address Title',
                 hintText: 'Home, Office, etc.',
               ),
             ),
             SizedBox(height: 2.h),
-            TextField(
+            const TextField(
               decoration: InputDecoration(
                 labelText: 'Street Address',
                 hintText: '123 Main Street',
@@ -864,7 +864,7 @@ class _SettingsProfileState extends State<SettingsProfile>
             SizedBox(height: 2.h),
             Row(
               children: [
-                Expanded(
+                const Expanded(
                   child: TextField(
                     decoration: InputDecoration(
                       labelText: 'City',
@@ -873,7 +873,7 @@ class _SettingsProfileState extends State<SettingsProfile>
                   ),
                 ),
                 SizedBox(width: 3.w),
-                Expanded(
+                const Expanded(
                   child: TextField(
                     decoration: InputDecoration(
                       labelText: 'ZIP Code',
@@ -888,14 +888,14 @@ class _SettingsProfileState extends State<SettingsProfile>
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context),
-            child: Text('Cancel'),
+            child: const Text('Cancel'),
           ),
           ElevatedButton(
             onPressed: () {
               Navigator.pop(context);
               _showSuccessSnackBar('Address added successfully');
             },
-            child: Text('Add Address'),
+            child: const Text('Add Address'),
           ),
         ],
       ),
@@ -915,7 +915,7 @@ class _SettingsProfileState extends State<SettingsProfile>
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
-        title: Text('Select Language'),
+        title: const Text('Select Language'),
         content: Column(
           mainAxisSize: MainAxisSize.min,
           children: languages.map((language) {
@@ -934,7 +934,7 @@ class _SettingsProfileState extends State<SettingsProfile>
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context),
-            child: Text('Cancel'),
+            child: const Text('Cancel'),
           ),
         ],
       ),
@@ -953,7 +953,7 @@ class _SettingsProfileState extends State<SettingsProfile>
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
-        title: Text('Select Currency'),
+        title: const Text('Select Currency'),
         content: Column(
           mainAxisSize: MainAxisSize.min,
           children: currencies.map((currency) {
@@ -972,7 +972,7 @@ class _SettingsProfileState extends State<SettingsProfile>
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context),
-            child: Text('Cancel'),
+            child: const Text('Cancel'),
           ),
         ],
       ),
@@ -991,7 +991,7 @@ class _SettingsProfileState extends State<SettingsProfile>
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
-        title: Text('Session Timeout'),
+        title: const Text('Session Timeout'),
         content: Column(
           mainAxisSize: MainAxisSize.min,
           children: timeouts.map((timeout) {
@@ -1010,7 +1010,7 @@ class _SettingsProfileState extends State<SettingsProfile>
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context),
-            child: Text('Cancel'),
+            child: const Text('Cancel'),
           ),
         ],
       ),
@@ -1021,25 +1021,25 @@ class _SettingsProfileState extends State<SettingsProfile>
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
-        title: Text('Change Password'),
+        title: const Text('Change Password'),
         content: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            TextField(
+            const TextField(
               decoration: InputDecoration(
                 labelText: 'Current Password',
               ),
               obscureText: true,
             ),
             SizedBox(height: 2.h),
-            TextField(
+            const TextField(
               decoration: InputDecoration(
                 labelText: 'New Password',
               ),
               obscureText: true,
             ),
             SizedBox(height: 2.h),
-            TextField(
+            const TextField(
               decoration: InputDecoration(
                 labelText: 'Confirm New Password',
               ),
@@ -1050,14 +1050,14 @@ class _SettingsProfileState extends State<SettingsProfile>
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context),
-            child: Text('Cancel'),
+            child: const Text('Cancel'),
           ),
           ElevatedButton(
             onPressed: () {
               Navigator.pop(context);
               _showSuccessSnackBar('Password updated successfully');
             },
-            child: Text('Update Password'),
+            child: const Text('Update Password'),
           ),
         ],
       ),
@@ -1120,18 +1120,18 @@ class _SettingsProfileState extends State<SettingsProfile>
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
-        title: Text('Add Emergency Contact'),
+        title: const Text('Add Emergency Contact'),
         content: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            TextField(
+            const TextField(
               decoration: InputDecoration(
                 labelText: 'Full Name',
                 hintText: 'John Doe',
               ),
             ),
             SizedBox(height: 2.h),
-            TextField(
+            const TextField(
               decoration: InputDecoration(
                 labelText: 'Phone Number',
                 hintText: '+1 (555) 123-4567',
@@ -1139,7 +1139,7 @@ class _SettingsProfileState extends State<SettingsProfile>
               keyboardType: TextInputType.phone,
             ),
             SizedBox(height: 2.h),
-            TextField(
+            const TextField(
               decoration: InputDecoration(
                 labelText: 'Relationship',
                 hintText: 'Spouse, Parent, Friend, etc.',
@@ -1150,14 +1150,14 @@ class _SettingsProfileState extends State<SettingsProfile>
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context),
-            child: Text('Cancel'),
+            child: const Text('Cancel'),
           ),
           ElevatedButton(
             onPressed: () {
               Navigator.pop(context);
               _showSuccessSnackBar('Emergency contact added');
             },
-            child: Text('Add Contact'),
+            child: const Text('Add Contact'),
           ),
         ],
       ),
@@ -1239,7 +1239,7 @@ class _SettingsProfileState extends State<SettingsProfile>
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
-        title: Text('Contact Support'),
+        title: const Text('Contact Support'),
         content: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
@@ -1249,8 +1249,8 @@ class _SettingsProfileState extends State<SettingsProfile>
                 size: 6.w,
                 color: Theme.of(context).colorScheme.primary,
               ),
-              title: Text('Call Support'),
-              subtitle: Text('+1 (800) 123-4567'),
+              title: const Text('Call Support'),
+              subtitle: const Text('+1 (800) 123-4567'),
               onTap: () {
                 Navigator.pop(context);
                 _showSuccessSnackBar('Opening phone dialer');
@@ -1262,8 +1262,8 @@ class _SettingsProfileState extends State<SettingsProfile>
                 size: 6.w,
                 color: Theme.of(context).colorScheme.primary,
               ),
-              title: Text('Email Support'),
-              subtitle: Text('support@servicepro.com'),
+              title: const Text('Email Support'),
+              subtitle: const Text('support@servicepro.com'),
               onTap: () {
                 Navigator.pop(context);
                 _showSuccessSnackBar('Opening email client');
@@ -1275,8 +1275,8 @@ class _SettingsProfileState extends State<SettingsProfile>
                 size: 6.w,
                 color: Theme.of(context).colorScheme.primary,
               ),
-              title: Text('Live Chat'),
-              subtitle: Text('Available 24/7'),
+              title: const Text('Live Chat'),
+              subtitle: const Text('Available 24/7'),
               onTap: () {
                 Navigator.pop(context);
                 _showSuccessSnackBar('Starting live chat');
@@ -1287,7 +1287,7 @@ class _SettingsProfileState extends State<SettingsProfile>
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context),
-            child: Text('Close'),
+            child: const Text('Close'),
           ),
         ],
       ),
@@ -1298,18 +1298,18 @@ class _SettingsProfileState extends State<SettingsProfile>
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
-        title: Text('Report an Issue'),
+        title: const Text('Report an Issue'),
         content: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            TextField(
+            const TextField(
               decoration: InputDecoration(
                 labelText: 'Issue Title',
                 hintText: 'Brief description of the problem',
               ),
             ),
             SizedBox(height: 2.h),
-            TextField(
+            const TextField(
               decoration: InputDecoration(
                 labelText: 'Description',
                 hintText: 'Please provide details about the issue',
@@ -1321,14 +1321,14 @@ class _SettingsProfileState extends State<SettingsProfile>
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context),
-            child: Text('Cancel'),
+            child: const Text('Cancel'),
           ),
           ElevatedButton(
             onPressed: () {
               Navigator.pop(context);
               _showSuccessSnackBar('Issue reported successfully');
             },
-            child: Text('Submit Report'),
+            child: const Text('Submit Report'),
           ),
         ],
       ),
@@ -1339,7 +1339,7 @@ class _SettingsProfileState extends State<SettingsProfile>
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
-        title: Text('Delete Account'),
+        title: const Text('Delete Account'),
         content: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
@@ -1348,7 +1348,7 @@ class _SettingsProfileState extends State<SettingsProfile>
               style: Theme.of(context).textTheme.bodyMedium,
             ),
             SizedBox(height: 2.h),
-            TextField(
+            const TextField(
               decoration: InputDecoration(
                 labelText: 'Type "DELETE" to confirm',
                 hintText: 'DELETE',
@@ -1359,7 +1359,7 @@ class _SettingsProfileState extends State<SettingsProfile>
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context),
-            child: Text('Cancel'),
+            child: const Text('Cancel'),
           ),
           ElevatedButton(
             onPressed: () {
@@ -1369,7 +1369,7 @@ class _SettingsProfileState extends State<SettingsProfile>
             style: ElevatedButton.styleFrom(
               backgroundColor: Theme.of(context).colorScheme.error,
             ),
-            child: Text('Delete Account'),
+            child: const Text('Delete Account'),
           ),
         ],
       ),

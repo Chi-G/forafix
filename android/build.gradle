@@ -1,3 +1,21 @@
+ext {
+    // Flutter plugin expects this property
+    compileSdkVersion = 35
+    minSdkVersion = 23
+    targetSdkVersion = 35
+    ndkVersion = "25.2.9519653" // You can adjust this if needed
+    versionCode = 1
+    versionName = "1.0"
+    flutter = [
+        compileSdkVersion: 35,
+        minSdkVersion: 23,
+        targetSdkVersion: 35,
+        ndkVersion: "25.2.9519653",
+        versionCode: 1,
+        versionName: "1.0"
+    ]
+}
+
 allprojects {
     repositories {
         google()

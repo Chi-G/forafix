@@ -164,7 +164,7 @@ class _ServiceRatingReviewState extends State<ServiceRatingReview>
                       color: AppTheme.lightTheme.colorScheme.secondary,
                       borderRadius: BorderRadius.circular(50),
                     ),
-                    child: CustomIconWidget(
+                    child: const CustomIconWidget(
                       iconName: 'check',
                       color: Colors.white,
                       size: 32,

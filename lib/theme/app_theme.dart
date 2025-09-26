@@ -16,7 +16,7 @@ class AppTheme {
       Color(0xFFF59E0B); // Electric yellow for electrical services
   static const Color backgroundLight = Color(0xFFFAFAFA); // Warm neutral
   static const Color surfaceLight = Color(0xFFFFFFFF); // Pure white
-  static const Color errorLight = Color(0xDC2626); // Clear red for error states
+  static const Color errorLight = Color(0x00dc2626); // Clear red for error states
   static const Color successLight =
       Color(0xFF059669); // Darker green for confirmations
   static const Color onPrimaryLight = Color(0xFFFFFFFF);

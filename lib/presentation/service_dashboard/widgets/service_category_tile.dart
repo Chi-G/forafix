@@ -204,9 +204,9 @@ class _ServiceCategoryTileState extends State<ServiceCategoryTile>
 
                                   // Rating information with consistent icon and text styling
                                   Row(children: [
-                                    CustomIconWidget(
+                                    const CustomIconWidget(
                                         iconName: 'star',
-                                        color: const Color(
+                                        color: Color(
                                             0xFFFBBF24), // Consistent star color across all cards
                                         size: ServiceCardDesign
                                             .secondaryIconSize),

@@ -1,9 +1,6 @@
-import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:sizer/sizer.dart';
 
 import '../../core/app_export.dart';
-import '../../theme/app_theme.dart';
 import './widgets/celebration_animation_widget.dart';
 import './widgets/navigation_button_widget.dart';
 import './widgets/page_indicator_widget.dart';

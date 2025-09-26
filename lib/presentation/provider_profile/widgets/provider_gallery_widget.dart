@@ -47,7 +47,7 @@ class ProviderGalleryWidget extends StatelessWidget {
             ),
           ),
           SizedBox(height: 2.h),
-          Container(
+          SizedBox(
             height: 20.h,
             child: ListView.separated(
               scrollDirection: Axis.horizontal,
@@ -178,7 +178,7 @@ class ProviderGalleryWidget extends StatelessWidget {
                 ),
                 child: IconButton(
                   onPressed: () => Navigator.pop(context),
-                  icon: CustomIconWidget(
+                  icon: const CustomIconWidget(
                     iconName: 'close',
                     color: Colors.white,
                     size: 24,

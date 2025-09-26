@@ -278,20 +278,20 @@ class _ServiceHistoryState extends State<ServiceHistory>
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
-        title: Text('Re-book Service'),
+        title: const Text('Re-book Service'),
         content: Text(
             'Would you like to book "${service['serviceName']}" again with the same details?'),
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context),
-            child: Text('Cancel'),
+            child: const Text('Cancel'),
           ),
           ElevatedButton(
             onPressed: () {
               Navigator.pop(context);
               Navigator.pushNamed(context, '/service-booking-flow');
             },
-            child: Text('Re-book'),
+            child: const Text('Re-book'),
           ),
         ],
       ),
@@ -320,7 +320,7 @@ class _ServiceHistoryState extends State<ServiceHistory>
                 color: Theme.of(context).colorScheme.primary,
                 size: 6.w,
               ),
-              title: Text('Call Provider'),
+              title: const Text('Call Provider'),
               onTap: () {
                 Navigator.pop(context);
                 // Handle phone call
@@ -332,7 +332,7 @@ class _ServiceHistoryState extends State<ServiceHistory>
                 color: Theme.of(context).colorScheme.primary,
                 size: 6.w,
               ),
-              title: Text('Send Message'),
+              title: const Text('Send Message'),
               onTap: () {
                 Navigator.pop(context);
                 // Handle messaging
@@ -350,7 +350,7 @@ class _ServiceHistoryState extends State<ServiceHistory>
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
-        title: Text('Service Receipt'),
+        title: const Text('Service Receipt'),
         content: Column(
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -364,14 +364,14 @@ class _ServiceHistoryState extends State<ServiceHistory>
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context),
-            child: Text('Close'),
+            child: const Text('Close'),
           ),
           ElevatedButton(
             onPressed: () {
               Navigator.pop(context);
               // Handle receipt download/share
             },
-            child: Text('Download'),
+            child: const Text('Download'),
           ),
         ],
       ),

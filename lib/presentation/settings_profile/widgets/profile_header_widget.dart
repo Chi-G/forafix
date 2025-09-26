@@ -25,7 +25,7 @@ class ProfileHeaderWidget extends StatelessWidget {
     return Container(
       width: double.infinity,
       padding: EdgeInsets.all(4.w),
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         color: Colors.transparent,
       ),
       child: SafeArea(

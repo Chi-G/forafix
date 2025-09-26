@@ -45,7 +45,7 @@ class _ProviderAvailabilityWidgetState
           SizedBox(height: 2.h),
 
           // Date selector
-          Container(
+          SizedBox(
             height: 10.h,
             child: ListView.separated(
               scrollDirection: Axis.horizontal,

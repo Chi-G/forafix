@@ -1,8 +1,5 @@
-import 'package:flutter/material.dart';
-import 'package:sizer/sizer.dart';
 
 import '../../../core/app_export.dart';
-import '../../../widgets/custom_icon_widget.dart';
 
 class ProviderHeaderWidget extends StatelessWidget {
   final Map<String, dynamic> providerData;

@@ -107,8 +107,9 @@ class _PhotoUploadWidgetState extends State<PhotoUploadWidget>
   }
 
   Future<void> _capturePhoto() async {
-    if (_cameraController == null || !_cameraController!.value.isInitialized)
+    if (_cameraController == null || !_cameraController!.value.isInitialized) {
       return;
+    }
 
     try {
       final XFile photo = await _cameraController!.takePicture();
@@ -366,7 +367,7 @@ class _PhotoUploadWidgetState extends State<PhotoUploadWidget>
                                   color: Colors.black.withOpacity(0.5),
                                   borderRadius: BorderRadius.circular(20),
                                 ),
-                                child: CustomIconWidget(
+                                child: const CustomIconWidget(
                                   iconName: 'close',
                                   color: Colors.white,
                                   size: 24,

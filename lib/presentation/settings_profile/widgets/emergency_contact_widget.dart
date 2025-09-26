@@ -107,7 +107,7 @@ class EmergencyContactWidget extends StatelessWidget {
                       color: colorScheme.onSurface,
                     ),
                     SizedBox(width: 2.w),
-                    Text('Edit'),
+                    const Text('Edit'),
                   ],
                 ),
               ),

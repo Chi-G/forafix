@@ -231,13 +231,13 @@ class _ProviderReviewsWidgetState extends State<ProviderReviewsWidget> {
       mainAxisSize: MainAxisSize.min,
       children: List.generate(5, (index) {
         if (index < rating.floor()) {
-          return CustomIconWidget(
+          return const CustomIconWidget(
             iconName: 'star',
             color: Colors.amber,
             size: 14,
           );
         } else if (index < rating) {
-          return CustomIconWidget(
+          return const CustomIconWidget(
             iconName: 'star_half',
             color: Colors.amber,
             size: 14,

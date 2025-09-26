@@ -1,7 +1,6 @@
 import 'package:flutter/services.dart';
 
 import '../../core/app_export.dart';
-import '../../widgets/custom_icon_widget.dart';
 import './widgets/auth_input_field.dart';
 import './widgets/auth_toggle_button.dart';
 import './widgets/biometric_prompt.dart';

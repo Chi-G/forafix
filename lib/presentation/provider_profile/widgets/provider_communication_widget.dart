@@ -151,7 +151,7 @@ class ProviderCommunicationWidget extends StatelessWidget {
               ),
               child: Row(
                 children: [
-                  CustomIconWidget(
+                  const CustomIconWidget(
                     iconName: 'emergency',
                     color: Colors.red,
                     size: 20,

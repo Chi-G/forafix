@@ -118,7 +118,7 @@ class _ProviderBookingWidgetState extends State<ProviderBookingWidget> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      CustomIconWidget(
+                      const CustomIconWidget(
                         iconName: 'calendar_today',
                         color: Colors.white,
                         size: 20,

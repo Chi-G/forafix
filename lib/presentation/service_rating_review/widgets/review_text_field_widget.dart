@@ -117,7 +117,7 @@ class _ReviewTextFieldWidgetState extends State<ReviewTextFieldWidget>
               return GestureDetector(
                 onTap: () {
                   if (_controller.text.isEmpty) {
-                    _controller.text = prompt + ' ';
+                    _controller.text = '$prompt ';
                     _controller.selection = TextSelection.fromPosition(
                       TextPosition(offset: _controller.text.length),
                     );

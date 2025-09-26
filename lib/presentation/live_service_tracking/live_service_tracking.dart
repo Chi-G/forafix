@@ -1,7 +1,6 @@
 import 'package:flutter/services.dart';
 
 import '../../core/app_export.dart';
-import '../../widgets/custom_icon_widget.dart';
 import './widgets/photo_upload_section_widget.dart';
 import './widgets/provider_location_map_widget.dart';
 import './widgets/provider_profile_card_widget.dart';

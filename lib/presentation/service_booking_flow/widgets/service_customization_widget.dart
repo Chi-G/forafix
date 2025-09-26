@@ -1,8 +1,5 @@
-import 'package:flutter/material.dart';
-import 'package:sizer/sizer.dart';
 
 import '../../../core/app_export.dart';
-import '../../../widgets/custom_icon_widget.dart';
 
 class ServiceCustomizationWidget extends StatefulWidget {
   final List<String> selectedAddOns;

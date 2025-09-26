@@ -314,7 +314,7 @@ class _ProviderProfileState extends State<ProviderProfile> {
                       Navigator.pushNamed(context, '/service-booking-flow'),
                   backgroundColor: colorScheme.primary,
                   foregroundColor: Colors.white,
-                  icon: CustomIconWidget(
+                  icon: const CustomIconWidget(
                     iconName: 'calendar_today',
                     color: Colors.white,
                     size: 20,

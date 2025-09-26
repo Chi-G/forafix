@@ -87,7 +87,7 @@ class _ServiceBookingFlowState extends State<ServiceBookingFlow>
     return Scaffold(
       backgroundColor: colorScheme.surface,
       appBar: AppBar(
-        title: Text('Book Service'),
+        title: const Text('Book Service'),
         backgroundColor: colorScheme.surface,
         elevation: 0,
         leading: IconButton(

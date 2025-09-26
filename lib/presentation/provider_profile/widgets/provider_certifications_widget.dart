@@ -32,7 +32,7 @@ class ProviderCertificationsWidget extends StatelessWidget {
             ),
           ),
           SizedBox(height: 2.h),
-          Container(
+          SizedBox(
             height: 12.h,
             child: ListView.separated(
               scrollDirection: Axis.horizontal,
@@ -110,7 +110,7 @@ class ProviderCertificationsWidget extends StatelessWidget {
                     color: colorScheme.secondary,
                     borderRadius: BorderRadius.circular(10),
                   ),
-                  child: CustomIconWidget(
+                  child: const CustomIconWidget(
                     iconName: 'check',
                     color: Colors.white,
                     size: 12,

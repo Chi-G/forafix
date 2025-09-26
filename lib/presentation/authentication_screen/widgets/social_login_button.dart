@@ -1,7 +1,6 @@
 import 'package:google_fonts/google_fonts.dart';
 
 import '../../../core/app_export.dart';
-import '../../../widgets/custom_icon_widget.dart';
 
 class SocialLoginButton extends StatefulWidget {
   final String provider;
