@@ -1,0 +1,11 @@
+buildscript {
+    ext.kotlin_version = '...'
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:X.Y.Z' // This is your AGP version
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
