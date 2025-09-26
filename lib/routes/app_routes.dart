@@ -1,52 +1,39 @@
 import 'package:flutter/material.dart';
+import '../presentation/service_dashboard/service_dashboard.dart';
+import '../presentation/live_service_tracking/live_service_tracking.dart';
+import '../presentation/splash_screen/splash_screen.dart';
+import '../presentation/service_rating_review/service_rating_review.dart';
+import '../presentation/provider_profile/provider_profile.dart';
+import '../presentation/onboarding_tutorial/onboarding_tutorial.dart';
+import '../presentation/service_history/service_history.dart';
+import '../presentation/service_booking_flow/service_booking_flow.dart';
+import '../presentation/settings_profile/settings_profile.dart';
 
 class AppRoutes {
   // Route constants
   static const String initial = '/';
-  static const String splash = '/splash';
+  static const String serviceDashboard = '/service-dashboard';
+  static const String liveServiceTracking = '/live-service-tracking';
+  static const String splash = '/splash-screen';
+  static const String serviceRatingReview = '/service-rating-review';
+  static const String providerProfile = '/provider-profile';
+  static const String onboardingTutorial = '/onboarding-tutorial';
+  static const String serviceHistory = '/service-history';
+  static const String serviceBookingFlow = '/service-booking-flow';
+  static const String settingsProfile = '/settings-profile';
 
   // Routes map
-  static Map<String, WidgetBuilder> get routes {
-    return {
-      initial: (context) => const SplashScreen(),
-      splash: (context) => const SplashScreen(),
-    };
-  }
-}
-
-// Temporary SplashScreen widget until you create the actual screen
-class SplashScreen extends StatelessWidget {
-  const SplashScreen({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Theme.of(context).colorScheme.primary,
-      body: const Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            FlutterLogo(size: 100),
-            SizedBox(height: 20),
-            Text(
-              'ForaFix',
-              style: TextStyle(
-                fontSize: 32,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
-              ),
-            ),
-            SizedBox(height: 10),
-            Text(
-              'Service Pro',
-              style: TextStyle(
-                fontSize: 16,
-                color: Colors.white70,
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
+  static Map<String, WidgetBuilder> routes = {
+    initial: (context) => const SplashScreen(),
+    serviceDashboard: (context) => const ServiceDashboard(),
+    liveServiceTracking: (context) => const LiveServiceTracking(),
+    splash: (context) => const SplashScreen(),
+    serviceRatingReview: (context) => const ServiceRatingReview(),
+    providerProfile: (context) => const ProviderProfile(),
+    onboardingTutorial: (context) => const OnboardingTutorial(),
+    serviceHistory: (context) => const ServiceHistory(),
+    serviceBookingFlow: (context) => const ServiceBookingFlow(),
+    settingsProfile: (context) => const SettingsProfile(),
+    // TODO: Add your other routes here
+  };
 }
