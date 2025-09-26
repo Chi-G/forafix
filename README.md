@@ -1,4 +1,4 @@
-# Flutter
+# ForaFix
 
 A modern Flutter-based mobile application utilizing the latest mobile development technologies and tools for building responsive cross-platform applications.
 
@@ -10,7 +10,6 @@ A modern Flutter-based mobile application utilizing the latest mobile developmen
 - Android SDK / Xcode (for iOS development)
 
 ## 🛠️ Installation
-
 
 1. Install dependencies:
 ```bash
