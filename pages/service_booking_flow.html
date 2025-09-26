@@ -1,0 +1,1018 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book Service - ForaFix | Premium Home Services in Abuja</title>
+    <meta name="description" content="Book professional home services in Abuja with ForaFix. Easy scheduling, verified agents, and transparent pricing." />
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="icon" type="image/x-icon" href="../public/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fforafix2891back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.8"></script>
+</head>
+<body class="bg-background text-text-primary">
+    <!-- Sticky Header -->
+    <header class="sticky top-0 z-50 bg-background/95 backdrop-blur-sm border-b border-slate-700/20">
+        <nav class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <div class="flex items-center space-x-2">
+                    <div class="w-30 h-10 bg-primary rounded-lg flex items-center justify-center">
+                        <img src="../public/logo.png" alt="ForaFix Logo" class="w-30 h-10 object-contain rounded-lg" />
+                    </div>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="public_landing_page.html" class="text-text-secondary hover:text-accent transition-colors">Home</a>
+                    <a href="service_booking_flow.html" class="text-text-primary hover:text-accent transition-colors">Services</a>
+                    <a href="user_dashboard.html" class="text-text-secondary hover:text-accent transition-colors">Dashboard</a>
+                    <a href="agent_dashboard.html" class="text-text-secondary hover:text-accent transition-colors">Become Agent</a>
+                    <a href="real_time_service_tracking.html" class="text-text-secondary hover:text-accent transition-colors">Track Service</a>
+                </div>
+
+                <!-- CTA Button & Mobile Menu -->
+                <div class="flex items-center space-x-4">
+                    <a href="user_dashboard.html" class="btn-outline hidden sm:inline-flex">My Account</a>
+                    
+                    <!-- Mobile Menu Button -->
+                    <button id="mobile-menu-btn" class="md:hidden p-2 text-text-primary hover:text-accent transition-colors">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="md:hidden hidden mt-4 pb-4 border-t border-slate-700/20">
+                <div class="flex flex-col space-y-4 pt-4">
+                    <a href="public_landing_page.html" class="text-text-secondary hover:text-accent transition-colors">Home</a>
+                    <a href="service_booking_flow.html" class="text-text-primary hover:text-accent transition-colors">Services</a>
+                    <a href="user_dashboard.html" class="text-text-secondary hover:text-accent transition-colors">Dashboard</a>
+                    <a href="agent_dashboard.html" class="text-text-secondary hover:text-accent transition-colors">Become Agent</a>
+                    <a href="real_time_service_tracking.html" class="text-text-secondary hover:text-accent transition-colors">Track Service</a>
+                    <a href="user_dashboard.html" class="btn-outline w-full text-center mt-4">My Account</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="min-h-screen">
+        <!-- Progress Indicator -->
+        <section class="bg-surface py-4 border-b border-slate-700/20">
+            <div class="container mx-auto px-4">
+                <div class="flex items-center justify-between max-w-4xl mx-auto">
+                    <div class="flex items-center space-x-4">
+                        <div class="flex items-center space-x-2">
+                            <div id="step-1-indicator" class="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center text-sm font-medium">1</div>
+                            <span class="text-sm font-medium text-text-primary hidden sm:inline">Date & Time</span>
+                        </div>
+                        <div class="w-8 h-0.5 bg-slate-600"></div>
+                        <div class="flex items-center space-x-2">
+                            <div id="step-2-indicator" class="w-8 h-8 bg-slate-600 text-text-secondary rounded-full flex items-center justify-center text-sm font-medium">2</div>
+                            <span class="text-sm font-medium text-text-secondary hidden sm:inline">Address</span>
+                        </div>
+                        <div class="w-8 h-0.5 bg-slate-600"></div>
+                        <div class="flex items-center space-x-2">
+                            <div id="step-3-indicator" class="w-8 h-8 bg-slate-600 text-text-secondary rounded-full flex items-center justify-center text-sm font-medium">3</div>
+                            <span class="text-sm font-medium text-text-secondary hidden sm:inline">Review</span>
+                        </div>
+                        <div class="w-8 h-0.5 bg-slate-600"></div>
+                        <div class="flex items-center space-x-2">
+                            <div id="step-4-indicator" class="w-8 h-8 bg-slate-600 text-text-secondary rounded-full flex items-center justify-center text-sm font-medium">4</div>
+                            <span class="text-sm font-medium text-text-secondary hidden sm:inline">Payment</span>
+                        </div>
+                    </div>
+                    <div class="text-sm text-text-secondary">
+                        Step <span id="current-step">1</span> of 4
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Booking Flow Container -->
+        <div class="container mx-auto px-4 py-8">
+            <div class="max-w-6xl mx-auto">
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <!-- Main Form Area -->
+                    <div class="lg:col-span-2">
+                        
+                        <!-- Step 1: Date & Time Selection -->
+                        <div id="step-1" class="booking-step">
+                            <div class="card">
+                                <div class="mb-6">
+                                    <h2 class="text-2xl font-bold mb-2">Select Date & Time</h2>
+                                    <p class="text-text-secondary">Choose your preferred date and time slot for the service</p>
+                                </div>
+
+                                <!-- Service Selection -->
+                                <div class="mb-8">
+                                    <label class="form-label">Service Type</label>
+                                    <select id="service-type" class="form-input">
+                                        <option value>Select a service</option>
+                                        <option value="cleaning">House Cleaning - From ₦5,000</option>
+                                        <option value="repairs">Home Repairs - From ₦3,500</option>
+                                        <option value="delivery">Delivery Services - From ₦1,500</option>
+                                        <option value="wellness">Wellness Services - From ₦8,000</option>
+                                        <option value="gardening">Gardening - From ₦4,000</option>
+                                        <option value="petcare">Pet Care - From ₦2,500</option>
+                                        <option value="laundry">Laundry Services - From ₦2,000</option>
+                                        <option value="security">Security Services - From ₦15,000</option>
+                                    </select>
+                                </div>
+
+                                <!-- Calendar Widget -->
+                                <div class="mb-8">
+                                    <label class="form-label">Select Date</label>
+                                    <div class="bg-surface-800 rounded-lg p-4">
+                                        <div class="flex items-center justify-between mb-4">
+                                            <button id="prev-month" class="p-2 hover:bg-slate-700 rounded-lg transition-colors">
+                                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                                                </svg>
+                                            </button>
+                                            <h3 id="calendar-month" class="text-lg font-semibold">September 2025</h3>
+                                            <button id="next-month" class="p-2 hover:bg-slate-700 rounded-lg transition-colors">
+                                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                        <div class="grid grid-cols-7 gap-1 mb-2">
+                                            <div class="text-center text-sm text-text-secondary py-2">Sun</div>
+                                            <div class="text-center text-sm text-text-secondary py-2">Mon</div>
+                                            <div class="text-center text-sm text-text-secondary py-2">Tue</div>
+                                            <div class="text-center text-sm text-text-secondary py-2">Wed</div>
+                                            <div class="text-center text-sm text-text-secondary py-2">Thu</div>
+                                            <div class="text-center text-sm text-text-secondary py-2">Fri</div>
+                                            <div class="text-center text-sm text-text-secondary py-2">Sat</div>
+                                        </div>
+                                        <div id="calendar-days" class="grid grid-cols-7 gap-1">
+                                            <!-- Calendar days will be generated by JavaScript -->
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Time Slots -->
+                                <div class="mb-8">
+                                    <label class="form-label">Select Time Slot</label>
+                                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                                        <div class="space-y-2">
+                                            <h4 class="text-sm font-medium text-text-secondary">Morning</h4>
+                                            <div class="space-y-2">
+                                                <button class="time-slot w-full p-3 text-left border border-slate-600 rounded-lg hover:border-primary hover:bg-primary/10 transition-all" data-time="08:00">
+                                                    <div class="font-medium">8:00 AM</div>
+                                                    <div class="text-sm text-success">Available</div>
+                                                </button>
+                                                <button class="time-slot w-full p-3 text-left border border-slate-600 rounded-lg hover:border-primary hover:bg-primary/10 transition-all" data-time="10:00">
+                                                    <div class="font-medium">10:00 AM</div>
+                                                    <div class="text-sm text-success">Available</div>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="space-y-2">
+                                            <h4 class="text-sm font-medium text-text-secondary">Afternoon</h4>
+                                            <div class="space-y-2">
+                                                <button class="time-slot w-full p-3 text-left border border-slate-600 rounded-lg hover:border-primary hover:bg-primary/10 transition-all" data-time="14:00">
+                                                    <div class="font-medium">2:00 PM</div>
+                                                    <div class="text-sm text-success">Available</div>
+                                                </button>
+                                                <button class="time-slot w-full p-3 text-left border border-slate-600 rounded-lg opacity-50 cursor-not-allowed" data-time="16:00" disabled>
+                                                    <div class="font-medium">4:00 PM</div>
+                                                    <div class="text-sm text-error">Booked</div>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="space-y-2">
+                                            <h4 class="text-sm font-medium text-text-secondary">Evening</h4>
+                                            <div class="space-y-2">
+                                                <button class="time-slot w-full p-3 text-left border border-slate-600 rounded-lg hover:border-primary hover:bg-primary/10 transition-all" data-time="18:00">
+                                                    <div class="font-medium">6:00 PM</div>
+                                                    <div class="text-sm text-success">Available</div>
+                                                </button>
+                                                <button class="time-slot w-full p-3 text-left border border-slate-600 rounded-lg hover:border-primary hover:bg-primary/10 transition-all" data-time="20:00">
+                                                    <div class="font-medium">8:00 PM</div>
+                                                    <div class="text-sm text-success">Available</div>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Step Navigation -->
+                                <div class="flex justify-between">
+                                    <a href="public_landing_page.html" class="btn-outline">Back to Services</a>
+                                    <button id="step-1-continue" class="btn-primary" disabled>Continue</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 2: Address & Details -->
+                        <div id="step-2" class="booking-step hidden">
+                            <div class="card">
+                                <div class="mb-6">
+                                    <h2 class="text-2xl font-bold mb-2">Service Address</h2>
+                                    <p class="text-text-secondary">Provide the address where the service will be performed</p>
+                                </div>
+
+                                <div class="space-y-6">
+                                    <!-- Address Form -->
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                        <div>
+                                            <label class="form-label">Area/District</label>
+                                            <select id="area-select" class="form-input">
+                                                <option value>Select area in Abuja</option>
+                                                <option value="maitama">Maitama</option>
+                                                <option value="wuse">Wuse I & II</option>
+                                                <option value="garki">Garki I & II</option>
+                                                <option value="asokoro">Asokoro</option>
+                                                <option value="guzape">Guzape</option>
+                                                <option value="jahi">Jahi</option>
+                                                <option value="utako">Utako</option>
+                                                <option value="kubwa">Kubwa</option>
+                                                <option value="karu">Karu</option>
+                                                <option value="lugbe">Lugbe</option>
+                                            </select>
+                                        </div>
+                                        <div>
+                                            <label class="form-label">Street Address</label>
+                                            <input type="text" id="street-address" class="form-input" placeholder="Enter street address" />
+                                        </div>
+                                    </div>
+
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                        <div>
+                                            <label class="form-label">House/Apartment Number</label>
+                                            <input type="text" id="house-number" class="form-input" placeholder="e.g., House 15, Flat 3B" />
+                                        </div>
+                                        <div>
+                                            <label class="form-label">Landmark (Optional)</label>
+                                            <input type="text" id="landmark" class="form-input" placeholder="e.g., Near Shoprite" />
+                                        </div>
+                                    </div>
+
+                                    <!-- Contact Information -->
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                        <div>
+                                            <label class="form-label">Contact Name</label>
+                                            <input type="text" id="contact-name" class="form-input" placeholder="Full name" value="Adebayo Ogundimu" />
+                                        </div>
+                                        <div>
+                                            <label class="form-label">Phone Number</label>
+                                            <input type="tel" id="contact-phone" class="form-input" placeholder="+234 xxx xxx xxxx" value="+234 803 123 4567" />
+                                        </div>
+                                    </div>
+
+                                    <!-- Special Instructions -->
+                                    <div>
+                                        <label class="form-label">Special Instructions (Optional)</label>
+                                        <textarea id="special-instructions" class="form-input h-24 resize-none" placeholder="Any specific requirements or instructions for the service provider..."></textarea>
+                                    </div>
+
+                                    <!-- Contact Preferences -->
+                                    <div>
+                                        <label class="form-label">Preferred Contact Method</label>
+                                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                                            <label class="flex items-center space-x-3 p-3 border border-slate-600 rounded-lg cursor-pointer hover:border-primary transition-colors">
+                                                <input type="radio" name="contact-method" value="phone" class="text-primary focus:ring-primary" />
+                                                <div>
+                                                    <div class="font-medium">Phone Call</div>
+                                                    <div class="text-sm text-text-secondary">Direct call</div>
+                                                </div>
+                                            </label>
+                                            <label class="flex items-center space-x-3 p-3 border border-slate-600 rounded-lg cursor-pointer hover:border-primary transition-colors">
+                                                <input type="radio" name="contact-method" value="whatsapp" class="text-primary focus:ring-primary" checked />
+                                                <div>
+                                                    <div class="font-medium">WhatsApp</div>
+                                                    <div class="text-sm text-text-secondary">Messaging</div>
+                                                </div>
+                                            </label>
+                                            <label class="flex items-center space-x-3 p-3 border border-slate-600 rounded-lg cursor-pointer hover:border-primary transition-colors">
+                                                <input type="radio" name="contact-method" value="sms" class="text-primary focus:ring-primary" />
+                                                <div>
+                                                    <div class="font-medium">SMS</div>
+                                                    <div class="text-sm text-text-secondary">Text message</div>
+                                                </div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Step Navigation -->
+                                <div class="flex justify-between mt-8">
+                                    <button id="step-2-back" class="btn-outline">Back</button>
+                                    <button id="step-2-continue" class="btn-primary" disabled>Continue</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 3: Review & Summary -->
+                        <div id="step-3" class="booking-step hidden">
+                            <div class="card">
+                                <div class="mb-6">
+                                    <h2 class="text-2xl font-bold mb-2">Review Booking</h2>
+                                    <p class="text-text-secondary">Please review your booking details before proceeding to payment</p>
+                                </div>
+
+                                <!-- Booking Summary -->
+                                <div class="space-y-6">
+                                    <!-- Service Details -->
+                                    <div class="bg-surface-800 rounded-lg p-6">
+                                        <h3 class="text-lg font-semibold mb-4">Service Details</h3>
+                                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                            <div>
+                                                <div class="text-sm text-text-secondary">Service Type</div>
+                                                <div id="review-service" class="font-medium">House Cleaning</div>
+                                            </div>
+                                            <div>
+                                                <div class="text-sm text-text-secondary">Date & Time</div>
+                                                <div id="review-datetime" class="font-medium">September 15, 2025 at 10:00 AM</div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Address Details -->
+                                    <div class="bg-surface-800 rounded-lg p-6">
+                                        <h3 class="text-lg font-semibold mb-4">Service Address</h3>
+                                        <div id="review-address" class="space-y-2">
+                                            <div class="font-medium">House 15, Flat 3B</div>
+                                            <div class="text-text-secondary">123 Ademola Adetokunbo Crescent</div>
+                                            <div class="text-text-secondary">Wuse II, Abuja</div>
+                                            <div class="text-text-secondary">Near Shoprite</div>
+                                        </div>
+                                        <div class="mt-4 pt-4 border-t border-slate-600">
+                                            <div class="text-sm text-text-secondary">Contact: Adebayo Ogundimu (+234 803 123 4567)</div>
+                                            <div class="text-sm text-text-secondary">Preferred Contact: WhatsApp</div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Agent Assignment -->
+                                    <div class="bg-surface-800 rounded-lg p-6">
+                                        <h3 class="text-lg font-semibold mb-4">Assigned Agent</h3>
+                                        <div class="flex items-center space-x-4">
+                                            <img src="https://images.pixabay.com/photos/2016/11/21/12/42/beard-1845166_1280.jpg" alt="Agent Profile" class="w-16 h-16 rounded-full object-cover" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                                            <div class="flex-1">
+                                                <div class="font-semibold">Emeka Okafor</div>
+                                                <div class="text-sm text-text-secondary">Professional Cleaner</div>
+                                                <div class="flex items-center space-x-2 mt-1">
+                                                    <div class="flex">
+                                                        <svg class="w-4 h-4 text-accent" fill="currentColor" viewBox="0 0 24 24">
+                                                            <path d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z"/>
+                                                        </svg>
+                                                        <svg class="w-4 h-4 text-accent" fill="currentColor" viewBox="0 0 24 24">
+                                                            <path d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z"/>
+                                                        </svg>
+                                                        <svg class="w-4 h-4 text-accent" fill="currentColor" viewBox="0 0 24 24">
+                                                            <path d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z"/>
+                                                        </svg>
+                                                        <svg class="w-4 h-4 text-accent" fill="currentColor" viewBox="0 0 24 24">
+                                                            <path d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z"/>
+                                                        </svg>
+                                                        <svg class="w-4 h-4 text-accent" fill="currentColor" viewBox="0 0 24 24">
+                                                            <path d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z"/>
+                                                        </svg>
+                                                    </div>
+                                                    <span class="text-sm text-text-secondary">4.9 (127 reviews)</span>
+                                                </div>
+                                            </div>
+                                            <div class="text-right">
+                                                <div class="w-3 h-3 bg-success rounded-full mb-1"></div>
+                                                <div class="text-xs text-success">Verified</div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Pricing Breakdown -->
+                                    <div class="bg-surface-800 rounded-lg p-6">
+                                        <h3 class="text-lg font-semibold mb-4">Pricing Breakdown</h3>
+                                        <div class="space-y-3">
+                                            <div class="flex justify-between">
+                                                <span>Service Fee</span>
+                                                <span>₦5,000.00</span>
+                                            </div>
+                                            <div class="flex justify-between">
+                                                <span>Platform Fee</span>
+                                                <span>₦500.00</span>
+                                            </div>
+                                            <div class="flex justify-between text-sm text-text-secondary">
+                                                <span>VAT (7.5%)</span>
+                                                <span>₦412.50</span>
+                                            </div>
+                                            <div class="border-t border-slate-600 pt-3">
+                                                <div class="flex justify-between text-lg font-semibold">
+                                                    <span>Total Amount</span>
+                                                    <span class="text-accent">₦5,912.50</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Step Navigation -->
+                                <div class="flex justify-between mt-8">
+                                    <button id="step-3-back" class="btn-outline">Back</button>
+                                    <button id="step-3-continue" class="btn-primary">Proceed to Payment</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 4: Payment -->
+                        <div id="step-4" class="booking-step hidden">
+                            <div class="card">
+                                <div class="mb-6">
+                                    <h2 class="text-2xl font-bold mb-2">Payment</h2>
+                                    <p class="text-text-secondary">Choose your preferred payment method to complete the booking</p>
+                                </div>
+
+                                <!-- Payment Methods -->
+                                <div class="space-y-6">
+                                    <!-- Payment Method Selection -->
+                                    <div>
+                                        <label class="form-label">Payment Method</label>
+                                        <div class="space-y-3">
+                                            <!-- Bank Transfer -->
+                                            <label class="flex items-center space-x-4 p-4 border border-slate-600 rounded-lg cursor-pointer hover:border-primary transition-colors">
+                                                <input type="radio" name="payment-method" value="bank-transfer" class="text-primary focus:ring-primary" checked />
+                                                <div class="flex items-center space-x-3 flex-1">
+                                                    <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
+                                                        <svg class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                                                            <path d="M5 6H23V18H5V6ZM7 8V16H21V8H7ZM1 4H3V20H1V4Z"/>
+                                                        </svg>
+                                                    </div>
+                                                    <div>
+                                                        <div class="font-medium">Bank Transfer</div>
+                                                        <div class="text-sm text-text-secondary">Direct transfer to our account</div>
+                                                    </div>
+                                                </div>
+                                                <div class="text-sm text-success">Recommended</div>
+                                            </label>
+
+                                            <!-- USSD -->
+                                            <label class="flex items-center space-x-4 p-4 border border-slate-600 rounded-lg cursor-pointer hover:border-primary transition-colors">
+                                                <input type="radio" name="payment-method" value="ussd" class="text-primary focus:ring-primary" />
+                                                <div class="flex items-center space-x-3 flex-1">
+                                                    <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
+                                                        <svg class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                                                            <path d="M6.62 10.79C8.06 13.62 10.38 15.94 13.21 17.38L15.41 15.18C15.68 14.91 16.08 14.82 16.43 14.94C17.55 15.31 18.76 15.51 20 15.51C20.55 15.51 21 15.96 21 16.51V20C21 20.55 20.55 21 20 21C10.61 21 3 13.39 3 4C3 3.45 3.45 3 4 3H7.5C8.05 3 8.5 3.45 8.5 4C8.5 5.25 8.7 6.45 9.07 7.57C9.18 7.92 9.1 8.31 8.82 8.59L6.62 10.79Z"/>
+                                                        </svg>
+                                                    </div>
+                                                    <div>
+                                                        <div class="font-medium">USSD Code</div>
+                                                        <div class="text-sm text-text-secondary">Pay with your mobile banking</div>
+                                                    </div>
+                                                </div>
+                                            </label>
+
+                                            <!-- Card Payment -->
+                                            <label class="flex items-center space-x-4 p-4 border border-slate-600 rounded-lg cursor-pointer hover:border-primary transition-colors">
+                                                <input type="radio" name="payment-method" value="card" class="text-primary focus:ring-primary" />
+                                                <div class="flex items-center space-x-3 flex-1">
+                                                    <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
+                                                        <svg class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                                                            <path d="M20 4H4C2.89 4 2 4.89 2 6V18C2 19.11 2.89 20 4 20H20C21.11 20 22 19.11 22 18V6C22 4.89 21.11 4 20 4ZM20 18H4V12H20V18ZM20 8H4V6H20V8Z"/>
+                                                        </svg>
+                                                    </div>
+                                                    <div>
+                                                        <div class="font-medium">Debit/Credit Card</div>
+                                                        <div class="text-sm text-text-secondary">Visa, Mastercard, Verve</div>
+                                                    </div>
+                                                </div>
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <!-- Payment Details -->
+                                    <div id="payment-details" class="bg-surface-800 rounded-lg p-6">
+                                        <!-- Bank Transfer Details -->
+                                        <div id="bank-transfer-details">
+                                            <h4 class="font-semibold mb-4">Bank Transfer Details</h4>
+                                            <div class="space-y-3">
+                                                <div class="flex justify-between">
+                                                    <span class="text-text-secondary">Bank Name:</span>
+                                                    <span class="font-medium">First Bank of Nigeria</span>
+                                                </div>
+                                                <div class="flex justify-between">
+                                                    <span class="text-text-secondary">Account Name:</span>
+                                                    <span class="font-medium">ForaFix Services Ltd</span>
+                                                </div>
+                                                <div class="flex justify-between">
+                                                    <span class="text-text-secondary">Account Number:</span>
+                                                    <span class="font-medium">2034567890</span>
+                                                </div>
+                                                <div class="flex justify-between">
+                                                    <span class="text-text-secondary">Amount:</span>
+                                                    <span class="font-bold text-accent">₦5,912.50</span>
+                                                </div>
+                                                <div class="flex justify-between">
+                                                    <span class="text-text-secondary">Reference:</span>
+                                                    <span class="font-medium">FF-240901-001</span>
+                                                </div>
+                                            </div>
+                                            <div class="mt-4 p-3 bg-warning/10 border border-warning/20 rounded-lg">
+                                                <p class="text-sm text-warning">Please use the reference number when making the transfer</p>
+                                            </div>
+                                        </div>
+
+                                        <!-- USSD Details -->
+                                        <div id="ussd-details" class="hidden">
+                                            <h4 class="font-semibold mb-4">USSD Payment</h4>
+                                            <div class="space-y-4">
+                                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                                    <div class="p-3 bg-surface rounded-lg">
+                                                        <div class="text-sm text-text-secondary">GTBank</div>
+                                                        <div class="font-mono text-lg">*737*50*Amount#</div>
+                                                    </div>
+                                                    <div class="p-3 bg-surface rounded-lg">
+                                                        <div class="text-sm text-text-secondary">First Bank</div>
+                                                        <div class="font-mono text-lg">*894*Amount#</div>
+                                                    </div>
+                                                    <div class="p-3 bg-surface rounded-lg">
+                                                        <div class="text-sm text-text-secondary">UBA</div>
+                                                        <div class="font-mono text-lg">*919*Amount#</div>
+                                                    </div>
+                                                    <div class="p-3 bg-surface rounded-lg">
+                                                        <div class="text-sm text-text-secondary">Access Bank</div>
+                                                        <div class="font-mono text-lg">*901*Amount#</div>
+                                                    </div>
+                                                </div>
+                                                <div class="p-3 bg-primary/10 border border-primary/20 rounded-lg">
+                                                    <p class="text-sm text-primary">Amount to pay: ₦5,912.50</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Card Details -->
+                                        <div id="card-details" class="hidden">
+                                            <h4 class="font-semibold mb-4">Card Information</h4>
+                                            <div class="space-y-4">
+                                                <div>
+                                                    <label class="form-label">Card Number</label>
+                                                    <input type="text" class="form-input" placeholder="1234 5678 9012 3456" maxlength="19" />
+                                                </div>
+                                                <div class="grid grid-cols-2 gap-4">
+                                                    <div>
+                                                        <label class="form-label">Expiry Date</label>
+                                                        <input type="text" class="form-input" placeholder="MM/YY" maxlength="5" />
+                                                    </div>
+                                                    <div>
+                                                        <label class="form-label">CVV</label>
+                                                        <input type="text" class="form-input" placeholder="123" maxlength="4" />
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <label class="form-label">Cardholder Name</label>
+                                                    <input type="text" class="form-input" placeholder="Name on card" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Security Notice -->
+                                    <div class="flex items-center space-x-3 p-4 bg-success/10 border border-success/20 rounded-lg">
+                                        <svg class="w-6 h-6 text-success flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M12 1L3 5V11C3 16.55 6.84 21.74 12 23C17.16 21.74 21 16.55 21 11V5L12 1ZM10 17L5 12L6.41 10.59L10 14.17L17.59 6.58L19 8L10 17Z"/>
+                                        </svg>
+                                        <div>
+                                            <div class="font-medium text-success">Secure Payment</div>
+                                            <div class="text-sm text-success">Your payment information is encrypted and secure</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Step Navigation -->
+                                <div class="flex justify-between mt-8">
+                                    <button id="step-4-back" class="btn-outline">Back</button>
+                                    <button id="complete-booking" class="btn-accent">
+                                        <span class="flex items-center space-x-2">
+                                            <span>Complete Booking</span>
+                                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+                                            </svg>
+                                        </span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Success Screen -->
+                        <div id="success-screen" class="booking-step hidden">
+                            <div class="card text-center">
+                                <div class="mb-6">
+                                    <div class="w-20 h-20 bg-success/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                                        <svg class="w-10 h-10 text-success" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M12 2C6.48 2 2 6.48 2 12S6.48 22 12 22 22 17.52 22 12 17.52 2 12 2ZM10 17L5 12L6.41 10.59L10 14.17L17.59 6.58L19 8L10 17Z"/>
+                                        </svg>
+                                    </div>
+                                    <h2 class="text-2xl font-bold mb-2">Booking Confirmed!</h2>
+                                    <p class="text-text-secondary">Your service has been successfully booked</p>
+                                </div>
+
+                                <!-- Booking Details -->
+                                <div class="bg-surface-800 rounded-lg p-6 mb-6 text-left">
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                                        <div>
+                                            <div class="text-sm text-text-secondary">Booking Reference</div>
+                                            <div class="font-mono text-lg font-bold text-accent">FF-240901-001</div>
+                                        </div>
+                                        <div>
+                                            <div class="text-sm text-text-secondary">Service Date</div>
+                                            <div class="font-medium">September 15, 2025 at 10:00 AM</div>
+                                        </div>
+                                    </div>
+                                    <div class="border-t border-slate-600 pt-4">
+                                        <div class="text-sm text-text-secondary mb-2">Your Agent</div>
+                                        <div class="flex items-center space-x-3">
+                                            <img src="https://images.pixabay.com/photos/2016/11/21/12/42/beard-1845166_1280.jpg" alt="Agent" class="w-10 h-10 rounded-full object-cover" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                                            <div>
+                                                <div class="font-medium">Emeka Okafor</div>
+                                                <div class="text-sm text-text-secondary">+234 901 234 5678</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Action Buttons -->
+                                <div class="space-y-4">
+                                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                        <a href="real_time_service_tracking.html" class="btn-primary">Track Service</a>
+                                        <a href="user_dashboard.html" class="btn-outline">View Dashboard</a>
+                                    </div>
+                                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                        <button class="btn-outline">Add to Calendar</button>
+                                        <button class="btn-outline">Download Invoice</button>
+                                    </div>
+                                </div>
+
+                                <!-- Emergency Contact -->
+                                <div class="mt-8 p-4 bg-error/10 border border-error/20 rounded-lg">
+                                    <div class="flex items-center space-x-2 mb-2">
+                                        <svg class="w-5 h-5 text-error" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M12 2C6.48 2 2 6.48 2 12S6.48 22 12 22 22 17.52 22 12 17.52 2 12 2ZM13 17H11V15H13V17ZM13 13H11V7H13V13Z"/>
+                                        </svg>
+                                        <span class="font-medium text-error">Emergency Contact</span>
+                                    </div>
+                                    <p class="text-sm text-error">If you need immediate assistance, call our 24/7 support: +234 (0) 800 FORAFIX</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sidebar Summary (Desktop) -->
+                    <div class="lg:col-span-1">
+                        <div class="sticky top-24">
+                            <div class="card">
+                                <h3 class="text-lg font-semibold mb-4">Booking Summary</h3>
+                                
+                                <!-- Service Info -->
+                                <div class="space-y-4">
+                                    <div id="sidebar-service" class="text-text-secondary">Select a service to continue</div>
+                                    
+                                    <div id="sidebar-datetime" class="hidden">
+                                        <div class="text-sm text-text-secondary">Date & Time</div>
+                                        <div class="font-medium">Not selected</div>
+                                    </div>
+                                    
+                                    <div id="sidebar-address" class="hidden">
+                                        <div class="text-sm text-text-secondary">Service Address</div>
+                                        <div class="font-medium">Not provided</div>
+                                    </div>
+                                    
+                                    <div id="sidebar-pricing" class="hidden border-t border-slate-600 pt-4">
+                                        <div class="space-y-2">
+                                            <div class="flex justify-between text-sm">
+                                                <span>Service Fee</span>
+                                                <span>₦5,000.00</span>
+                                            </div>
+                                            <div class="flex justify-between text-sm">
+                                                <span>Platform Fee</span>
+                                                <span>₦500.00</span>
+                                            </div>
+                                            <div class="flex justify-between text-sm text-text-secondary">
+                                                <span>VAT (7.5%)</span>
+                                                <span>₦412.50</span>
+                                            </div>
+                                            <div class="border-t border-slate-600 pt-2">
+                                                <div class="flex justify-between font-semibold">
+                                                    <span>Total</span>
+                                                    <span class="text-accent">₦5,912.50</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Help Section -->
+                                <div class="mt-6 pt-6 border-t border-slate-600">
+                                    <h4 class="font-medium mb-3">Need Help?</h4>
+                                    <div class="space-y-2 text-sm">
+                                        <a href="javascript:void(0)" class="flex items-center space-x-2 text-text-secondary hover:text-accent transition-colors">
+                                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                                <path d="M12 2C6.48 2 2 6.48 2 12S6.48 22 12 22 22 17.52 22 12 17.52 2 12 2ZM13 17H11V15H13V17ZM13 13H11V7H13V13Z"/>
+                                            </svg>
+                                            <span>Booking FAQ</span>
+                                        </a>
+                                        <a href="javascript:void(0)" class="flex items-center space-x-2 text-text-secondary hover:text-accent transition-colors">
+                                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                                <path d="M6.62 10.79C8.06 13.62 10.38 15.94 13.21 17.38L15.41 15.18C15.68 14.91 16.08 14.82 16.43 14.94C17.55 15.31 18.76 15.51 20 15.51C20.55 15.51 21 15.96 21 16.51V20C21 20.55 20.55 21 20 21C10.61 21 3 13.39 3 4C3 3.45 3.45 3 4 3H7.5C8.05 3 8.5 3.45 8.5 4C8.5 5.25 8.7 6.45 9.07 7.57C9.18 7.92 9.1 8.31 8.82 8.59L6.62 10.79Z"/>
+                                            </svg>
+                                            <span>Call Support</span>
+                                        </a>
+                                        <a href="javascript:void(0)" class="flex items-center space-x-2 text-text-secondary hover:text-accent transition-colors">
+                                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                                <path d="M20 4H4C2.89 4 2 4.89 2 6V18C2 19.11 2.89 20 4 20H20C21.11 20 22 19.11 22 18V6C22 4.89 21.11 4 20 4ZM20 8L12 13L4 8V6L12 11L20 6V8Z"/>
+                                            </svg>
+                                            <span>Email Us</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Loading Overlay -->
+    <div id="loading-overlay" class="fixed inset-0 bg-background/80 backdrop-blur-sm z-50 hidden">
+        <div class="flex items-center justify-center min-h-screen">
+            <div class="text-center">
+                <div class="w-16 h-16 border-4 border-primary/20 border-t-primary rounded-full animate-spin mx-auto mb-4"></div>
+                <div class="text-lg font-medium mb-2">Processing your booking...</div>
+                <div class="text-text-secondary">Please wait while we match you with the best agent</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Booking flow state
+        let currentStep = 1;
+        let bookingData = {
+            service: '',
+            date: '',
+            time: '',
+            address: {},
+            contact: {},
+            pricing: {}
+        };
+
+        // Step navigation functions
+        function showStep(stepNumber) {
+            // Hide all steps
+            document.querySelectorAll('.booking-step').forEach(step => {
+                step.classList.add('hidden');
+            });
+            
+            // Show current step
+            document.getElementById(`step-${stepNumber}`).classList.remove('hidden');
+            
+            // Update progress indicators
+            updateProgressIndicators(stepNumber);
+            
+            // Update current step display
+            document.getElementById('current-step').textContent = stepNumber;
+            
+            currentStep = stepNumber;
+        }
+
+        function updateProgressIndicators(activeStep) {
+            for (let i = 1; i <= 4; i++) {
+                const indicator = document.getElementById(`step-${i}-indicator`);
+                if (i <= activeStep) {
+                    indicator.classList.remove('bg-slate-600', 'text-text-secondary');
+                    indicator.classList.add('bg-primary', 'text-white');
+                } else {
+                    indicator.classList.remove('bg-primary', 'text-white');
+                    indicator.classList.add('bg-slate-600', 'text-text-secondary');
+                }
+            }
+        }
+
+        // Calendar functionality
+        function generateCalendar() {
+            const calendarDays = document.getElementById('calendar-days');
+            const currentDate = new Date();
+            const year = currentDate.getFullYear();
+            const month = currentDate.getMonth();
+            
+            // Clear existing days
+            calendarDays.innerHTML = '';
+            
+            // Get first day of month and number of days
+            const firstDay = new Date(year, month, 1).getDay();
+            const daysInMonth = new Date(year, month + 1, 0).getDate();
+            
+            // Add empty cells for days before month starts
+            for (let i = 0; i < firstDay; i++) {
+                const emptyDay = document.createElement('div');
+                calendarDays.appendChild(emptyDay);
+            }
+            
+            // Add days of the month
+            for (let day = 1; day <= daysInMonth; day++) {
+                const dayElement = document.createElement('button');
+                dayElement.className = 'calendar-day w-10 h-10 rounded-lg text-sm hover:bg-primary hover:text-white transition-colors';
+                dayElement.textContent = day;
+                dayElement.dataset.date = `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+                
+                // Disable past dates
+                const dayDate = new Date(year, month, day);
+                if (dayDate < currentDate) {
+                    dayElement.disabled = true;
+                    dayElement.classList.add('opacity-50', 'cursor-not-allowed');
+                } else {
+                    dayElement.addEventListener('click', selectDate);
+                }
+                
+                calendarDays.appendChild(dayElement);
+            }
+        }
+
+        function selectDate(event) {
+            // Remove previous selection
+            document.querySelectorAll('.calendar-day').forEach(day => {
+                day.classList.remove('bg-primary', 'text-white');
+            });
+            
+            // Add selection to clicked date
+            event.target.classList.add('bg-primary', 'text-white');
+            
+            // Store selected date
+            bookingData.date = event.target.dataset.date;
+            
+            // Update sidebar
+            updateSidebar();
+            
+            // Check if step can continue
+            checkStep1Completion();
+        }
+
+        // Time slot selection
+        document.querySelectorAll('.time-slot').forEach(slot => {
+            slot.addEventListener('click', function() {
+                if (this.disabled) return;
+                
+                // Remove previous selection
+                document.querySelectorAll('.time-slot').forEach(s => {
+                    s.classList.remove('border-primary', 'bg-primary/10');
+                });
+                
+                // Add selection
+                this.classList.add('border-primary', 'bg-primary/10');
+                
+                // Store selected time
+                bookingData.time = this.dataset.time;
+                
+                // Update sidebar
+                updateSidebar();
+                
+                // Check if step can continue
+                checkStep1Completion();
+            });
+        });
+
+        // Service type selection
+        document.getElementById('service-type').addEventListener('change', function() {
+            bookingData.service = this.value;
+            updateSidebar();
+            checkStep1Completion();
+        });
+
+        function checkStep1Completion() {
+            const continueBtn = document.getElementById('step-1-continue');
+            if (bookingData.service && bookingData.date && bookingData.time) {
+                continueBtn.disabled = false;
+                continueBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+            } else {
+                continueBtn.disabled = true;
+                continueBtn.classList.add('opacity-50', 'cursor-not-allowed');
+            }
+        }
+
+        function checkStep2Completion() {
+            const continueBtn = document.getElementById('step-2-continue');
+            const area = document.getElementById('area-select').value;
+            const street = document.getElementById('street-address').value;
+            const house = document.getElementById('house-number').value;
+            const name = document.getElementById('contact-name').value;
+            const phone = document.getElementById('contact-phone').value;
+            
+            if (area && street && house && name && phone) {
+                continueBtn.disabled = false;
+                continueBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+            } else {
+                continueBtn.disabled = true;
+                continueBtn.classList.add('opacity-50', 'cursor-not-allowed');
+            }
+        }
+
+        // Step 2 form validation
+        ['area-select', 'street-address', 'house-number', 'contact-name', 'contact-phone'].forEach(id => {
+            document.getElementById(id).addEventListener('input', checkStep2Completion);
+            document.getElementById(id).addEventListener('change', checkStep2Completion);
+        });
+
+        function updateSidebar() {
+            // Update service
+            if (bookingData.service) {
+                const serviceSelect = document.getElementById('service-type');
+                const selectedOption = serviceSelect.options[serviceSelect.selectedIndex];
+                document.getElementById('sidebar-service').textContent = selectedOption.text;
+                document.getElementById('sidebar-pricing').classList.remove('hidden');
+            }
+            
+            // Update date/time
+            if (bookingData.date && bookingData.time) {
+                const dateObj = new Date(bookingData.date);
+                const formattedDate = dateObj.toLocaleDateString('en-GB', { 
+                    weekday: 'long', 
+                    year: 'numeric', 
+                    month: 'long', 
+                    day: 'numeric' 
+                });
+                const formattedTime = bookingData.time;
+                document.getElementById('sidebar-datetime').classList.remove('hidden');
+                document.querySelector('#sidebar-datetime .font-medium').textContent = `${formattedDate} at ${formattedTime}`;
+            }
+        }
+
+        // Payment method switching
+        document.querySelectorAll('input[name="payment-method"]').forEach(radio => {
+            radio.addEventListener('change', function() {
+                // Hide all payment details
+                document.getElementById('bank-transfer-details').classList.add('hidden');
+                document.getElementById('ussd-details').classList.add('hidden');
+                document.getElementById('card-details').classList.add('hidden');
+                
+                // Show selected payment method details
+                if (this.value === 'bank-transfer') {
+                    document.getElementById('bank-transfer-details').classList.remove('hidden');
+                } else if (this.value === 'ussd') {
+                    document.getElementById('ussd-details').classList.remove('hidden');
+                } else if (this.value === 'card') {
+                    document.getElementById('card-details').classList.remove('hidden');
+                }
+            });
+        });
+
+        // Step navigation event listeners
+        document.getElementById('step-1-continue').addEventListener('click', () => showStep(2));
+        document.getElementById('step-2-back').addEventListener('click', () => showStep(1));
+        document.getElementById('step-2-continue').addEventListener('click', () => showStep(3));
+        document.getElementById('step-3-back').addEventListener('click', () => showStep(2));
+        document.getElementById('step-3-continue').addEventListener('click', () => showStep(4));
+        document.getElementById('step-4-back').addEventListener('click', () => showStep(3));
+
+        // Complete booking
+        document.getElementById('complete-booking').addEventListener('click', function() {
+            // Show loading overlay
+            document.getElementById('loading-overlay').classList.remove('hidden');
+            
+            // Simulate processing time
+            setTimeout(() => {
+                document.getElementById('loading-overlay').classList.add('hidden');
+                document.getElementById('step-4').classList.add('hidden');
+                document.getElementById('success-screen').classList.remove('hidden');
+                
+                // Update progress to show completion
+                document.getElementById('current-step').textContent = '✓';
+            }, 3000);
+        });
+
+        // Initialize calendar on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            generateCalendar();
+            checkStep1Completion();
+            checkStep2Completion();
+        });
+
+        // Card number formatting
+        document.querySelector('#card-details input[placeholder="1234 5678 9012 3456"]')?.addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\s/g, '').replace(/[^0-9]/gi, '');
+            let formattedValue = value.match(/.{1,4}/g)?.join(' ') || value;
+            e.target.value = formattedValue;
+        });
+
+        // Expiry date formatting
+        document.querySelector('#card-details input[placeholder="MM/YY"]')?.addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\D/g, '');
+            if (value.length >= 2) {
+                value = value.substring(0, 2) + '/' + value.substring(2, 4);
+            }
+            e.target.value = value;
+        });
+    </script>
+<script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
+</body>
+</html>

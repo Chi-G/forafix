@@ -1,0 +1,205 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Primary Colors - Heritage Trust Palette */
+  --color-primary: #1a5d1a; /* Deep forest green */
+  --color-primary-50: #f0f9f0; /* Very light green */
+  --color-primary-100: #dcf2dc; /* Light green */
+  --color-primary-200: #b9e5b9; /* Lighter green */
+  --color-primary-300: #96d896; /* Medium light green */
+  --color-primary-400: #73cb73; /* Medium green */
+  --color-primary-500: #2d7d2d; /* Secondary green */
+  --color-primary-600: #1a5d1a; /* Primary green */
+  --color-primary-700: #154d15; /* Darker green */
+  --color-primary-800: #103d10; /* Very dark green */
+  --color-primary-900: #0b2d0b; /* Darkest green */
+
+  /* Secondary Colors */
+  --color-secondary: #2d7d2d; /* Lighter green for secondary actions */
+  --color-secondary-50: #f0f9f0; /* Very light secondary */
+  --color-secondary-100: #dcf2dc; /* Light secondary */
+  --color-secondary-200: #b9e5b9; /* Lighter secondary */
+  --color-secondary-300: #96d896; /* Medium light secondary */
+  --color-secondary-400: #73cb73; /* Medium secondary */
+  --color-secondary-500: #2d7d2d; /* Base secondary */
+  --color-secondary-600: #266626; /* Darker secondary */
+  --color-secondary-700: #1f4f1f; /* Very dark secondary */
+  --color-secondary-800: #183918; /* Darkest secondary */
+  --color-secondary-900: #112211; /* Ultra dark secondary */
+
+  /* Accent Colors */
+  --color-accent: #ff6b35; /* Vibrant orange for CTAs */
+  --color-accent-50: #fff7f3; /* Very light orange */
+  --color-accent-100: #ffedd5; /* Light orange */
+  --color-accent-200: #fed7aa; /* Lighter orange */
+  --color-accent-300: #fdba74; /* Medium light orange */
+  --color-accent-400: #fb923c; /* Medium orange */
+  --color-accent-500: #ff6b35; /* Base accent */
+  --color-accent-600: #ea580c; /* Darker orange */
+  --color-accent-700: #c2410c; /* Very dark orange */
+  --color-accent-800: #9a3412; /* Darkest orange */
+  --color-accent-900: #7c2d12; /* Ultra dark orange */
+
+  /* Background Colors */
+  --color-background: #0f172a; /* Deep slate for dark mode */
+  --color-surface: #1e293b; /* Elevated surface color */
+  --color-surface-50: #f8fafc; /* Very light surface */
+  --color-surface-100: #f1f5f9; /* Light surface */
+  --color-surface-200: #e2e8f0; /* Lighter surface */
+  --color-surface-300: #cbd5e1; /* Medium light surface */
+  --color-surface-400: #94a3b8; /* Medium surface */
+  --color-surface-500: #64748b; /* Base surface */
+  --color-surface-600: #475569; /* Darker surface */
+  --color-surface-700: #334155; /* Very dark surface */
+  --color-surface-800: #1e293b; /* Darkest surface */
+  --color-surface-900: #0f172a; /* Ultra dark surface */
+
+  /* Text Colors */
+  --color-text-primary: #f8fafc; /* High contrast white */
+  --color-text-secondary: #94a3b8; /* Muted gray for supporting text */
+  --color-text-tertiary: #64748b; /* Even more muted gray */
+  --color-text-inverse: #0f172a; /* Dark text for light backgrounds */
+
+  /* Status Colors */
+  --color-success: #10b981; /* Emerald green for confirmations */
+  --color-success-50: #ecfdf5; /* Very light success */
+  --color-success-100: #d1fae5; /* Light success */
+  --color-success-200: #a7f3d0; /* Lighter success */
+  --color-success-300: #6ee7b7; /* Medium light success */
+  --color-success-400: #34d399; /* Medium success */
+  --color-success-500: #10b981; /* Base success */
+  --color-success-600: #059669; /* Darker success */
+  --color-success-700: #047857; /* Very dark success */
+  --color-success-800: #065f46; /* Darkest success */
+  --color-success-900: #064e3b; /* Ultra dark success */
+
+  --color-warning: #f59e0b; /* Amber for cautions */
+  --color-warning-50: #fffbeb; /* Very light warning */
+  --color-warning-100: #fef3c7; /* Light warning */
+  --color-warning-200: #fde68a; /* Lighter warning */
+  --color-warning-300: #fcd34d; /* Medium light warning */
+  --color-warning-400: #fbbf24; /* Medium warning */
+  --color-warning-500: #f59e0b; /* Base warning */
+  --color-warning-600: #d97706; /* Darker warning */
+  --color-warning-700: #b45309; /* Very dark warning */
+  --color-warning-800: #92400e; /* Darkest warning */
+  --color-warning-900: #78350f; /* Ultra dark warning */
+
+  --color-error: #ef4444; /* Clear red for errors */
+  --color-error-50: #fef2f2; /* Very light error */
+  --color-error-100: #fee2e2; /* Light error */
+  --color-error-200: #fecaca; /* Lighter error */
+  --color-error-300: #fca5a5; /* Medium light error */
+  --color-error-400: #f87171; /* Medium error */
+  --color-error-500: #ef4444; /* Base error */
+  --color-error-600: #dc2626; /* Darker error */
+  --color-error-700: #b91c1c; /* Very dark error */
+  --color-error-800: #991b1b; /* Darkest error */
+  --color-error-900: #7f1d1d; /* Ultra dark error */
+
+  /* Animation Variables */
+  --transition-fast: 200ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Base Styles */
+@layer base {
+  body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--color-background);
+    color: var(--color-text-primary);
+    line-height: 1.6;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    line-height: 1.2;
+  }
+
+  .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+/* Component Styles */
+@layer components {
+  .btn-primary {
+    @apply bg-primary hover:bg-primary-700 text-white font-medium py-2 px-4 rounded-lg transition-all duration-200 ease-out;
+  }
+
+  .btn-secondary {
+    @apply bg-secondary hover:bg-secondary-700 text-white font-medium py-2 px-4 rounded-lg transition-all duration-200 ease-out;
+  }
+
+  .btn-accent {
+    @apply bg-accent hover:bg-accent-600 text-white font-medium py-2 px-4 rounded-lg transition-all duration-200 ease-out;
+  }
+
+  .card {
+    @apply bg-surface rounded-lg shadow-md hover:shadow-lg transition-all duration-300 ease-out;
+  }
+
+  .card-elevated {
+    @apply bg-surface rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 ease-out;
+  }
+
+  .input-field {
+    @apply bg-surface border border-surface-300 text-text-primary rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200 ease-out;
+  }
+
+  .floating-action-btn {
+    @apply fixed bottom-6 right-6 bg-accent hover:bg-accent-600 text-white p-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 ease-out z-50;
+  }
+
+  .skeleton {
+    @apply animate-pulse bg-surface-600 rounded;
+  }
+
+  .progress-indicator {
+    @apply bg-surface-600 rounded-full overflow-hidden;
+  }
+
+  .progress-bar {
+    @apply bg-primary h-full transition-all duration-300 ease-out;
+  }
+}
+
+/* Utility Classes */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .transition-micro {
+    transition: all var(--transition-fast);
+  }
+
+  .transition-smooth {
+    transition: all var(--transition-normal);
+  }
+
+  .shadow-elevation-1 {
+    box-shadow: var(--shadow-sm);
+  }
+
+  .shadow-elevation-2 {
+    box-shadow: var(--shadow-md);
+  }
+
+  .shadow-elevation-3 {
+    box-shadow: var(--shadow-lg);
+  }
+
+  .shadow-elevation-4 {
+    box-shadow: var(--shadow-xl);
+  }
+}

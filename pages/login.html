@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - ForaFix Nigeria</title>
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fforafixse2770back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.8"></script>
+</head>
+<body class="bg-background text-text-primary min-h-screen">
+    <!-- Global Header Navigation -->
+    <header class="bg-surface border-b border-surface-600 sticky top-0 z-50 backdrop-blur-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <svg class="h-8 w-8 text-primary" viewBox="0 0 32 32" fill="currentColor">
+                        <path d="M16 2L3 9v14c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V9L16 2z"/>
+                        <path d="M14 16l-2-2-1.41 1.41L14 18.83l6-6L18.59 11.41 14 16z" fill="white"/>
+                    </svg>
+                    <span class="ml-2 text-xl font-bold text-primary">ForaFix</span>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="service_category_detail.html" class="text-text-secondary hover:text-accent transition-colors">Services</a>
+                    <a href="agent_registration.html" class="text-text-secondary hover:text-accent transition-colors">Become Agent</a>
+                    <a href="login.html" class="text-text-primary hover:text-accent transition-colors">Login</a>
+                    <a href="registration.html" class="bg-accent hover:bg-accent-600 text-white px-4 py-2 rounded-lg transition-colors">Sign Up</a>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden p-2" onclick="toggleMobileMenu()">
+                    <svg class="h-6 w-6 text-text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div id="mobileMenu" class="md:hidden hidden pb-4">
+                <div class="flex flex-col space-y-2">
+                    <a href="service_category_detail.html" class="text-text-secondary hover:text-accent py-2 transition-colors">Services</a>
+                    <a href="agent_registration.html" class="text-text-secondary hover:text-accent py-2 transition-colors">Become Agent</a>
+                    <a href="login.html" class="text-text-primary hover:text-accent py-2 transition-colors">Login</a>
+                    <a href="registration.html" class="bg-accent hover:bg-accent-600 text-white px-4 py-2 rounded-lg transition-colors text-center">Sign Up</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="min-h-screen flex">
+        <!-- Left Side - Login Form -->
+        <div class="flex-1 flex items-center justify-center px-4 sm:px-6 lg:px-8">
+            <div class="max-w-md w-full space-y-8">
+                <!-- Header -->
+                <div class="text-center">
+                    <div class="flex items-center justify-center mb-6">
+                        <svg class="h-12 w-12 text-primary" viewBox="0 0 32 32" fill="currentColor">
+                            <path d="M16 2L3 9v14c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V9L16 2z"/>
+                            <path d="M14 16l-2-2-1.41 1.41L14 18.83l6-6L18.59 11.41 14 16z" fill="white"/>
+                        </svg>
+                    </div>
+                    <h2 class="text-3xl font-bold text-text-primary mb-2">Welcome Back</h2>
+                    <p class="text-text-secondary">Sign in to your ForaFix account</p>
+                </div>
+
+                <!-- Role Selection Toggle -->
+                <div class="bg-surface rounded-lg p-1 flex">
+                    <button id="customerTab" onclick="switchRole('customer')" class="flex-1 py-2 px-4 text-sm font-medium rounded-md bg-accent text-white transition-colors">
+                        Customer
+                    </button>
+                    <button id="agentTab" onclick="switchRole('agent')" class="flex-1 py-2 px-4 text-sm font-medium rounded-md text-text-secondary hover:text-text-primary transition-colors">
+                        Agent
+                    </button>
+                </div>
+
+                <!-- Login Form -->
+                <form class="space-y-6" onsubmit="handleLogin(event)">
+                    <!-- Email/Phone Input -->
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-text-primary mb-2">
+                            Email or Phone Number
+                        </label>
+                        <input id="email" name="email" type="text" required class="w-full bg-surface-700 border border-surface-600 rounded-lg px-4 py-3 text-text-primary placeholder-text-tertiary focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-colors" placeholder="Enter email or +234 xxx xxx xxxx" />
+                        <p class="text-xs text-text-tertiary mt-1">Example: +234 803 123 4567</p>
+                    </div>
+
+                    <!-- Password Input -->
+                    <div>
+                        <label for="password" class="block text-sm font-medium text-text-primary mb-2">
+                            Password
+                        </label>
+                        <div class="relative">
+                            <input id="password" name="password" type="password" required class="w-full bg-surface-700 border border-surface-600 rounded-lg px-4 py-3 pr-12 text-text-primary placeholder-text-tertiary focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-colors" placeholder="Enter your password" />
+                            <button type="button" onclick="togglePassword()" class="absolute inset-y-0 right-0 pr-3 flex items-center">
+                                <svg id="eyeIcon" class="h-5 w-5 text-text-tertiary hover:text-text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Remember Me & Forgot Password -->
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center">
+                            <input id="remember-me" name="remember-me" type="checkbox" class="h-4 w-4 text-accent focus:ring-accent border-surface-600 rounded bg-surface-700" />
+                            <label for="remember-me" class="ml-2 block text-sm text-text-secondary">
+                                Remember me
+                            </label>
+                        </div>
+                        <div class="text-sm">
+                            <a href="javascript:void(0)" onclick="openForgotPasswordModal()" class="text-accent hover:text-accent-600 transition-colors">
+                                Forgot password?
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Login Button -->
+                    <button type="submit" class="w-full bg-accent hover:bg-accent-600 text-white font-medium py-3 px-4 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-background">
+                        Sign In
+                    </button>
+                </form>
+
+                <!-- Social Login -->
+                <div class="mt-6">
+                    <div class="relative">
+                        <div class="absolute inset-0 flex items-center">
+                            <div class="w-full border-t border-surface-600"></div>
+                        </div>
+                        <div class="relative flex justify-center text-sm">
+                            <span class="px-2 bg-background text-text-secondary">Or continue with</span>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 grid grid-cols-2 gap-3">
+                        <button onclick="socialLogin('google')" class="w-full inline-flex justify-center py-3 px-4 border border-surface-600 rounded-lg bg-surface hover:bg-surface-700 transition-colors">
+                            <svg class="h-5 w-5" viewBox="0 0 24 24">
+                                <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                                <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                                <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+                                <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+                            </svg>
+                            <span class="ml-2 text-text-primary">Google</span>
+                        </button>
+
+                        <button onclick="socialLogin('facebook')" class="w-full inline-flex justify-center py-3 px-4 border border-surface-600 rounded-lg bg-surface hover:bg-surface-700 transition-colors">
+                            <svg class="h-5 w-5 text-blue-600" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                            <span class="ml-2 text-text-primary">Facebook</span>
+                        </button></div>
+                    </div>
+                </div>
+
+                <!-- Trust Indicators -->
+                <div class="mt-8 text-center">
+                    <div class="flex items-center justify-center space-x-4 mb-4">
+                        <div class="flex items-center space-x-1">
+                            <svg class="h-4 w-4 text-success" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-xs text-text-secondary">SSL Secured</span>
+                        </div>
+                        <div class="flex items-center space-x-1">
+                            <svg class="h-4 w-4 text-success" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-xs text-text-secondary">Nigerian Registered</span>
+                        </div>
+                        <div class="flex items-center space-x-1">
+                            <svg class="h-4 w-4 text-success" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-xs text-text-secondary">Data Protected</span>
+                        </div>
+                    </div>
+                    <p class="text-xs text-text-tertiary">
+                        Your data is protected by Nigerian data protection laws
+                    </p>
+                </div>
+
+                <!-- Registration Link -->
+                <div class="text-center">
+                    <p class="text-text-secondary">
+                        Don't have an account? 
+                        <a href="registration.html" class="text-accent hover:text-accent-600 font-medium transition-colors">
+                            Sign up now
+                        </a>
+                    </p>
+                    <p class="text-xs text-text-tertiary mt-2">
+                        Join thousands of Nigerians using ForaFix
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Side - Trust Signals & Testimonials (Desktop Only) -->
+        <div class="hidden lg:flex lg:flex-1 bg-surface-800 items-center justify-center p-8">
+            <div class="max-w-md">
+                <!-- Hero Image -->
+                <div class="mb-8">
+                    <img src="https://images.pexels.com/photos/5691659/pexels-photo-5691659.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Nigerian family using ForaFix services" class="w-full h-64 object-cover rounded-lg" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                </div>
+
+                <!-- Testimonial -->
+                <div class="bg-surface rounded-lg p-6 mb-6">
+                    <div class="flex items-center mb-4">
+                        <img src="https://images.pixabay.com/photos/2016/11/21/12/42/beard-1845166_1280.jpg" alt="Customer testimonial" class="w-12 h-12 rounded-full object-cover mr-4" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                        <div>
+                            <h4 class="font-medium text-text-primary">Emeka Okafor</h4>
+                            <p class="text-sm text-text-secondary">Lagos, Nigeria</p>
+                        </div>
+                    </div>
+                    <p class="text-text-secondary italic">
+                        "ForaFix has made finding reliable home services so easy. The agents are professional and trustworthy. I've been using them for 6 months now!"
+                    </p>
+                    <div class="flex text-yellow-400 mt-3">
+                        <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                        </svg>
+                        <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                        </svg>
+                        <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                        </svg>
+                        <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                        </svg>
+                        <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Statistics -->
+                <div class="grid grid-cols-2 gap-4 mb-6">
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-accent">50,000+</div>
+                        <div class="text-sm text-text-secondary">Happy Customers</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-accent">5,000+</div>
+                        <div class="text-sm text-text-secondary">Verified Agents</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-accent">4.8★</div>
+                        <div class="text-sm text-text-secondary">Average Rating</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-accent">24/7</div>
+                        <div class="text-sm text-text-secondary">Support</div>
+                    </div>
+                </div>
+
+                <!-- Benefits -->
+                <div class="space-y-3">
+                    <div class="flex items-center space-x-3">
+                        <svg class="h-5 w-5 text-success" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                        </svg>
+                        <span class="text-sm text-text-secondary">Background-checked professionals</span>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <svg class="h-5 w-5 text-success" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                        </svg>
+                        <span class="text-sm text-text-secondary">Instant booking & scheduling</span>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <svg class="h-5 w-5 text-success" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                        </svg>
+                        <span class="text-sm text-text-secondary">100% satisfaction guarantee</span>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <svg class="h-5 w-5 text-success" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                        </svg>
+                        <span class="text-sm text-text-secondary">Secure Nigerian payment methods</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+
+    <!-- Forgot Password Modal -->
+    <div id="forgotPasswordModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden">
+        <div class="flex items-center justify-center min-h-screen p-4">
+            <div class="bg-surface rounded-lg max-w-md w-full p-6">
+                <div class="flex justify-between items-center mb-6">
+                    <h2 class="text-xl font-bold">Reset Password</h2>
+                    <button onclick="closeForgotPasswordModal()" class="text-text-secondary hover:text-text-primary">
+                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                        </svg>
+                    </button>
+                </div>
+
+                <form onsubmit="handleForgotPassword(event)" class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium text-text-primary mb-2">
+                            Email or Phone Number
+                        </label>
+                        <input type="text" required class="w-full bg-surface-700 border border-surface-600 rounded-lg px-4 py-3 text-text-primary placeholder-text-tertiary focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent" placeholder="Enter your email or phone number" />
+                        <p class="text-xs text-text-tertiary mt-1">We'll send you a reset link via SMS or email</p>
+                    </div>
+
+                    <button type="submit" class="w-full bg-accent hover:bg-accent-600 text-white font-medium py-3 px-4 rounded-lg transition-colors">
+                        Send Reset Link
+                    </button>
+                </form>
+
+                <div class="mt-4 text-center">
+                    <p class="text-xs text-text-tertiary">
+                        Remember your password? 
+                        <button onclick="closeForgotPasswordModal()" class="text-accent hover:text-accent-600">
+                            Back to login
+                        </button>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Error/Success Toast -->
+    <div id="toast" class="fixed top-4 right-4 bg-surface border border-surface-600 rounded-lg p-4 shadow-lg z-50 hidden">
+        <div class="flex items-center space-x-3">
+            <div id="toastIcon" class="flex-shrink-0"></div>
+            <div>
+                <p id="toastMessage" class="text-sm font-medium text-text-primary"></p>
+                <p id="toastSubMessage" class="text-xs text-text-secondary mt-1"></p>
+            </div>
+            <button onclick="hideToast()" class="ml-4 text-text-secondary hover:text-text-primary">
+                <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-surface-800 border-t border-surface-600">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <svg class="h-8 w-8 text-primary" viewBox="0 0 32 32" fill="currentColor">
+                            <path d="M16 2L3 9v14c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V9L16 2z"/>
+                            <path d="M14 16l-2-2-1.41 1.41L14 18.83l6-6L18.59 11.41 14 16z" fill="white"/>
+                        </svg>
+                        <span class="ml-2 text-xl font-bold text-primary">ForaFix</span>
+                    </div>
+                    <p class="text-text-secondary text-sm">Nigeria's trusted home services platform connecting you with verified professionals.</p>
+                </div>
+                <div>
+                    <h3 class="font-semibold mb-4">Services</h3>
+                    <ul class="space-y-2 text-sm text-text-secondary">
+                        <li><a href="service_category_detail.html" class="hover:text-accent transition-colors">House Cleaning</a></li>
+                        <li><a href="javascript:void(0)" class="hover:text-accent transition-colors">Laundry</a></li>
+                        <li><a href="javascript:void(0)" class="hover:text-accent transition-colors">Plumbing</a></li>
+                        <li><a href="javascript:void(0)" class="hover:text-accent transition-colors">Electrical</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-semibold mb-4">Company</h3>
+                    <ul class="space-y-2 text-sm text-text-secondary">
+                        <li><a href="javascript:void(0)" class="hover:text-accent transition-colors">About Us</a></li>
+                        <li><a href="agent_registration.html" class="hover:text-accent transition-colors">Become Agent</a></li>
+                        <li><a href="javascript:void(0)" class="hover:text-accent transition-colors">Contact</a></li>
+                        <li><a href="javascript:void(0)" class="hover:text-accent transition-colors">Support</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-semibold mb-4">Contact</h3>
+                    <ul class="space-y-2 text-sm text-text-secondary">
+                        <li>+234 800 FORAFIX</li>
+                        <li>support@forafix.ng</li>
+                        <li>Abuja, Nigeria</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-surface-600 mt-8 pt-8 text-center text-sm text-text-secondary">
+                <p>&copy; 2025 ForaFix. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        let currentRole = 'customer';
+
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Role switching
+        function switchRole(role) {
+            currentRole = role;
+            const customerTab = document.getElementById('customerTab');
+            const agentTab = document.getElementById('agentTab');
+            
+            if (role === 'customer') {
+                customerTab.classList.add('bg-accent', 'text-white');
+                customerTab.classList.remove('text-text-secondary');
+                agentTab.classList.remove('bg-accent', 'text-white');
+                agentTab.classList.add('text-text-secondary');
+            } else {
+                agentTab.classList.add('bg-accent', 'text-white');
+                agentTab.classList.remove('text-text-secondary');
+                customerTab.classList.remove('bg-accent', 'text-white');
+                customerTab.classList.add('text-text-secondary');
+            }
+        }
+
+        // Password visibility toggle
+        function togglePassword() {
+            const passwordInput = document.getElementById('password');
+            const eyeIcon = document.getElementById('eyeIcon');
+            
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                eyeIcon.innerHTML = `
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.878 9.878L3 3m6.878 6.878L21 21"></path>
+                `;
+            } else {
+                passwordInput.type = 'password';
+                eyeIcon.innerHTML = `
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                `;
+            }
+        }
+
+        // Handle login form submission
+        function handleLogin(event) {
+            event.preventDefault();
+            
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            
+            // Mock validation
+            if (email && password) {
+                if (currentRole === 'customer') {
+                    showToast('success', 'Login Successful!', 'Welcome back to ForaFix');
+                    // Redirect to customer dashboard
+                    setTimeout(() => {
+                        window.location.href = 'service_category_detail.html';
+                    }, 1500);
+                } else {
+                    showToast('success', 'Agent Login Successful!', 'Welcome to your agent dashboard');
+                    // Redirect to agent dashboard
+                    setTimeout(() => {
+                        window.location.href = 'agent_registration.html';
+                    }, 1500);
+                }
+            } else {
+                showToast('error', 'Login Failed', 'Please check your credentials and try again');
+            }
+        }
+
+        // Social login
+        function socialLogin(provider) {
+            showToast('info', `${provider.charAt(0).toUpperCase() + provider.slice(1)} Login`, 'Redirecting to authentication...');
+            // In real app, this would redirect to OAuth provider
+        }
+
+        // Forgot password modal
+        function openForgotPasswordModal() {
+            document.getElementById('forgotPasswordModal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeForgotPasswordModal() {
+            document.getElementById('forgotPasswordModal').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        function handleForgotPassword(event) {
+            event.preventDefault();
+            showToast('success', 'Reset Link Sent!', 'Check your phone/email for reset instructions');
+            closeForgotPasswordModal();
+        }
+
+        // Toast notifications
+        function showToast(type, message, subMessage = '') {
+            const toast = document.getElementById('toast');
+            const icon = document.getElementById('toastIcon');
+            const messageEl = document.getElementById('toastMessage');
+            const subMessageEl = document.getElementById('toastSubMessage');
+            
+            // Set icon based on type
+            if (type === 'success') {
+                icon.innerHTML = `
+                    <svg class="h-5 w-5 text-success" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                    </svg>
+                `;
+            } else if (type === 'error') {
+                icon.innerHTML = `
+                    <svg class="h-5 w-5 text-error" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd"></path>
+                    </svg>
+                `;
+            } else {
+                icon.innerHTML = `
+                    <svg class="h-5 w-5 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path>
+                    </svg>
+                `;
+            }
+            
+            messageEl.textContent = message;
+            subMessageEl.textContent = subMessage;
+            
+            toast.classList.remove('hidden');
+            
+            // Auto hide after 5 seconds
+            setTimeout(() => {
+                hideToast();
+            }, 5000);
+        }
+
+        function hideToast() {
+            document.getElementById('toast').classList.add('hidden');
+        }
+
+        // Close modals when clicking outside
+        document.addEventListener('click', function(event) {
+            const forgotModal = document.getElementById('forgotPasswordModal');
+            
+            if (event.target === forgotModal) {
+                closeForgotPasswordModal();
+            }
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeForgotPasswordModal();
+                hideToast();
+            }
+        });
+
+        // Form validation feedback
+        document.addEventListener('DOMContentLoaded', function() {
+            const inputs = document.querySelectorAll('input[required]');
+            
+            inputs.forEach(input => {
+                input.addEventListener('blur', function() {
+                    if (this.value.trim() === '') {
+                        this.classList.add('border-error');
+                        this.classList.remove('border-surface-600');
+                    } else {
+                        this.classList.remove('border-error');
+                        this.classList.add('border-surface-600');
+                    }
+                });
+                
+                input.addEventListener('input', function() {
+                    if (this.classList.contains('border-error') && this.value.trim() !== '') {
+                        this.classList.remove('border-error');
+                        this.classList.add('border-surface-600');
+                    }
+                });
+            });
+        });
+    </script>
+<script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
+</body>
+</html>

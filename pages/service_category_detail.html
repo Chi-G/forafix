@@ -1,0 +1,1242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>House Cleaning Services - ForaFix Nigeria</title>
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fforafixse2770back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.8"></script>
+</head>
+<body class="bg-background text-text-primary">
+    <!-- Global Header Navigation -->
+    <header class="bg-surface border-b border-surface-600 sticky top-0 z-50 backdrop-blur-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <svg class="h-8 w-8 text-primary" viewBox="0 0 32 32" fill="currentColor">
+                        <path d="M16 2L3 9v14c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V9L16 2z"/>
+                        <path d="M14 16l-2-2-1.41 1.41L14 18.83l6-6L18.59 11.41 14 16z" fill="white"/>
+                    </svg>
+                    <span class="ml-2 text-xl font-bold text-primary">ForaFix</span>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="service_category_detail.html" class="text-text-primary hover:text-accent transition-colors">Services</a>
+                    <a href="agent_registration.html" class="text-text-secondary hover:text-accent transition-colors">Become Agent</a>
+                    <a href="login.html" class="text-text-secondary hover:text-accent transition-colors">Login</a>
+                    <a href="registration.html" class="bg-accent hover:bg-accent-600 text-white px-4 py-2 rounded-lg transition-colors">Sign Up</a>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden p-2" onclick="toggleMobileMenu()">
+                    <svg class="h-6 w-6 text-text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div id="mobileMenu" class="md:hidden hidden pb-4">
+                <div class="flex flex-col space-y-2">
+                    <a href="service_category_detail.html" class="text-text-primary hover:text-accent py-2 transition-colors">Services</a>
+                    <a href="agent_registration.html" class="text-text-secondary hover:text-accent py-2 transition-colors">Become Agent</a>
+                    <a href="login.html" class="text-text-secondary hover:text-accent py-2 transition-colors">Login</a>
+                    <a href="registration.html" class="bg-accent hover:bg-accent-600 text-white px-4 py-2 rounded-lg transition-colors text-center">Sign Up</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumbs -->
+    <section class="bg-surface-800 py-4">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <nav class="flex items-center space-x-2 text-sm">
+                <a href="javascript:void(0)" class="text-text-secondary hover:text-accent transition-colors">Home</a>
+                <svg class="h-4 w-4 text-text-tertiary" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
+                </svg>
+                <a href="javascript:void(0)" class="text-text-secondary hover:text-accent transition-colors">Services</a>
+                <svg class="h-4 w-4 text-text-tertiary" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
+                </svg>
+                <span class="text-text-primary">House Cleaning</span>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Hero Section -->
+    <section class="relative h-64 md:h-80 lg:h-96 overflow-hidden">
+        <div class="absolute inset-0">
+            <img src="https://images.pexels.com/photos/4239146/pexels-photo-4239146.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Professional house cleaning service" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+        </div>
+        <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center">
+            <div class="text-white">
+                <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">Professional House Cleaning</h1>
+                <p class="text-lg md:text-xl mb-4 text-gray-200">Reliable, thorough, and affordable cleaning services for Nigerian homes</p>
+                <div class="flex items-center space-x-4">
+                    <span class="text-2xl md:text-3xl font-bold text-accent">Starting from ₦15,000</span>
+                    <div class="flex items-center space-x-1">
+                        <div class="flex text-yellow-400">
+                            <svg class="h-5 w-5 fill-current" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            <svg class="h-5 w-5 fill-current" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            <svg class="h-5 w-5 fill-current" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            <svg class="h-5 w-5 fill-current" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            <svg class="h-5 w-5 fill-current" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                        </div>
+                        <span class="text-gray-200 ml-2">4.8 (2,847 reviews)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div class="lg:grid lg:grid-cols-3 lg:gap-8">
+            <!-- Main Content Area -->
+            <div class="lg:col-span-2">
+                <!-- Tab Navigation -->
+                <div class="border-b border-surface-600 mb-8">
+                    <nav class="flex space-x-8 overflow-x-auto">
+                        <button onclick="showTab('overview')" class="tab-btn active py-4 px-1 border-b-2 border-accent text-accent font-medium whitespace-nowrap">Overview</button>
+                        <button onclick="showTab('pricing')" class="tab-btn py-4 px-1 border-b-2 border-transparent text-text-secondary hover:text-text-primary hover:border-surface-400 font-medium whitespace-nowrap">Pricing</button>
+                        <button onclick="showTab('gallery')" class="tab-btn py-4 px-1 border-b-2 border-transparent text-text-secondary hover:text-text-primary hover:border-surface-400 font-medium whitespace-nowrap">Gallery</button>
+                        <button onclick="showTab('reviews')" class="tab-btn py-4 px-1 border-b-2 border-transparent text-text-secondary hover:text-text-primary hover:border-surface-400 font-medium whitespace-nowrap">Reviews</button>
+                    </nav>
+                </div>
+
+                <!-- Overview Tab -->
+                <div id="overview" class="tab-content">
+                    <div class="space-y-8">
+                        <!-- Service Description -->
+                        <div>
+                            <h2 class="text-2xl font-bold mb-4">About Our House Cleaning Service</h2>
+                            <p class="text-text-secondary mb-4">
+                                Our professional house cleaning service provides comprehensive cleaning solutions for Nigerian homes. 
+                                We understand the unique needs of Nigerian households and use high-quality, locally-sourced cleaning 
+                                products that are safe for your family and the environment.
+                            </p>
+                            <p class="text-text-secondary">
+                                Our trained and vetted cleaning professionals arrive with all necessary equipment and supplies, 
+                                ensuring your home is spotless and sanitized. We offer flexible scheduling to fit your busy lifestyle 
+                                and provide consistent, reliable service you can trust.
+                            </p>
+                        </div>
+
+                        <!-- Included Tasks Checklist -->
+                        <div>
+                            <h3 class="text-xl font-semibold mb-4">What's Included</h3>
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <div class="space-y-3">
+                                    <div class="flex items-center space-x-3">
+                                        <svg class="h-5 w-5 text-success" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                        </svg>
+                                        <span>Dusting all surfaces</span>
+                                    </div>
+                                    <div class="flex items-center space-x-3">
+                                        <svg class="h-5 w-5 text-success" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                        </svg>
+                                        <span>Vacuuming carpets & rugs</span>
+                                    </div>
+                                    <div class="flex items-center space-x-3">
+                                        <svg class="h-5 w-5 text-success" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                        </svg>
+                                        <span>Mopping floors</span>
+                                    </div>
+                                    <div class="flex items-center space-x-3">
+                                        <svg class="h-5 w-5 text-success" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                        </svg>
+                                        <span>Kitchen deep cleaning</span>
+                                    </div>
+                                    <div class="flex items-center space-x-3">
+                                        <svg class="h-5 w-5 text-success" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                        </svg>
+                                        <span>Bathroom sanitization</span>
+                                    </div>
+                                </div>
+                                <div class="space-y-3">
+                                    <div class="flex items-center space-x-3">
+                                        <svg class="h-5 w-5 text-success" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                        </svg>
+                                        <span>Window cleaning (interior)</span>
+                                    </div>
+                                    <div class="flex items-center space-x-3">
+                                        <svg class="h-5 w-5 text-success" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                        </svg>
+                                        <span>Trash removal</span>
+                                    </div>
+                                    <div class="flex items-center space-x-3">
+                                        <svg class="h-5 w-5 text-success" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                        </svg>
+                                        <span>Bed making</span>
+                                    </div>
+                                    <div class="flex items-center space-x-3">
+                                        <svg class="h-5 w-5 text-success" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                        </svg>
+                                        <span>Light organizing</span>
+                                    </div>
+                                    <div class="flex items-center space-x-3">
+                                        <svg class="h-5 w-5 text-success" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                        </svg>
+                                        <span>Disinfection service</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Service Area Coverage -->
+                        <div>
+                            <h3 class="text-xl font-semibold mb-4">Service Areas in Abuja</h3>
+                            <div class="bg-surface rounded-lg p-6">
+                                <div class="grid md:grid-cols-3 gap-4 mb-4">
+                                    <div>
+                                        <h4 class="font-medium text-primary mb-2">Central Areas</h4>
+                                        <ul class="text-sm text-text-secondary space-y-1">
+                                            <li>Maitama</li>
+                                            <li>Asokoro</li>
+                                            <li>Garki</li>
+                                            <li>Wuse</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium text-primary mb-2">Suburban Areas</h4>
+                                        <ul class="text-sm text-text-secondary space-y-1">
+                                            <li>Gwarinpa</li>
+                                            <li>Kubwa</li>
+                                            <li>Karu</li>
+                                            <li>Lugbe</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium text-primary mb-2">Satellite Towns</h4>
+                                        <ul class="text-sm text-text-secondary space-y-1">
+                                            <li>Nyanya</li>
+                                            <li>Maraba</li>
+                                            <li>Suleja</li>
+                                            <li>Gwagwalada</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="bg-surface-700 rounded-lg h-48 flex items-center justify-center">
+                                    <div class="text-center">
+                                        <svg class="h-12 w-12 text-text-tertiary mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                        </svg>
+                                        <p class="text-text-tertiary">Interactive Map</p>
+                                        <p class="text-sm text-text-tertiary">Coverage areas in Abuja</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pricing Tab -->
+                <div id="pricing" class="tab-content hidden">
+                    <div class="space-y-8">
+                        <h2 class="text-2xl font-bold">Service Packages</h2>
+                        
+                        <!-- Pricing Packages -->
+                        <div class="grid md:grid-cols-3 gap-6">
+                            <!-- Basic Package -->
+                            <div class="bg-surface rounded-lg p-6 border border-surface-600">
+                                <div class="text-center mb-6">
+                                    <h3 class="text-lg font-semibold mb-2">Basic Clean</h3>
+                                    <div class="text-3xl font-bold text-accent mb-2">₦15,000</div>
+                                    <p class="text-sm text-text-secondary">1-2 bedroom apartment</p>
+                                </div>
+                                <ul class="space-y-2 mb-6">
+                                    <li class="flex items-center space-x-2">
+                                        <svg class="h-4 w-4 text-success" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                        </svg>
+                                        <span class="text-sm">General cleaning</span>
+                                    </li>
+                                    <li class="flex items-center space-x-2">
+                                        <svg class="h-4 w-4 text-success" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                        </svg>
+                                        <span class="text-sm">1 bathroom</span>
+                                    </li>
+                                    <li class="flex items-center space-x-2">
+                                        <svg class="h-4 w-4 text-success" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                        </svg>
+                                        <span class="text-sm">Kitchen cleaning</span>
+                                    </li>
+                                    <li class="flex items-center space-x-2">
+                                        <svg class="h-4 w-4 text-success" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                        </svg>
+                                        <span class="text-sm">2-3 hours service</span>
+                                    </li>
+                                </ul>
+                                <button class="w-full bg-surface-600 hover:bg-surface-500 text-text-primary py-2 px-4 rounded-lg transition-colors">Select Package</button>
+                            </div>
+
+                            <!-- Standard Package -->
+                            <div class="bg-surface rounded-lg p-6 border-2 border-accent relative">
+                                <div class="absolute -top-3 left-1/2 transform -translate-x-1/2">
+                                    <span class="bg-accent text-white px-3 py-1 rounded-full text-xs font-medium">Most Popular</span>
+                                </div>
+                                <div class="text-center mb-6">
+                                    <h3 class="text-lg font-semibold mb-2">Standard Clean</h3>
+                                    <div class="text-3xl font-bold text-accent mb-2">₦25,000</div>
+                                    <p class="text-sm text-text-secondary">3-4 bedroom house</p>
+                                </div>
+                                <ul class="space-y-2 mb-6">
+                                    <li class="flex items-center space-x-2">
+                                        <svg class="h-4 w-4 text-success" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                        </svg>
+                                        <span class="text-sm">Deep cleaning</span>
+                                    </li>
+                                    <li class="flex items-center space-x-2">
+                                        <svg class="h-4 w-4 text-success" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                        </svg>
+                                        <span class="text-sm">2-3 bathrooms</span>
+                                    </li>
+                                    <li class="flex items-center space-x-2">
+                                        <svg class="h-4 w-4 text-success" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                        </svg>
+                                        <span class="text-sm">Kitchen & appliances</span>
+                                    </li>
+                                    <li class="flex items-center space-x-2">
+                                        <svg class="h-4 w-4 text-success" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                        </svg>
+                                        <span class="text-sm">4-5 hours service</span>
+                                    </li>
+                                </ul>
+                                <button class="w-full bg-accent hover:bg-accent-600 text-white py-2 px-4 rounded-lg transition-colors">Select Package</button>
+                            </div>
+
+                            <!-- Premium Package -->
+                            <div class="bg-surface rounded-lg p-6 border border-surface-600">
+                                <div class="text-center mb-6">
+                                    <h3 class="text-lg font-semibold mb-2">Premium Clean</h3>
+                                    <div class="text-3xl font-bold text-accent mb-2">₦40,000</div>
+                                    <p class="text-sm text-text-secondary">Large house/duplex</p>
+                                </div>
+                                <ul class="space-y-2 mb-6">
+                                    <li class="flex items-center space-x-2">
+                                        <svg class="h-4 w-4 text-success" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                        </svg>
+                                        <span class="text-sm">Complete deep clean</span>
+                                    </li>
+                                    <li class="flex items-center space-x-2">
+                                        <svg class="h-4 w-4 text-success" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                        </svg>
+                                        <span class="text-sm">4+ bathrooms</span>
+                                    </li>
+                                    <li class="flex items-center space-x-2">
+                                        <svg class="h-4 w-4 text-success" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                        </svg>
+                                        <span class="text-sm">All appliances</span>
+                                    </li>
+                                    <li class="flex items-center space-x-2">
+                                        <svg class="h-4 w-4 text-success" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                        </svg>
+                                        <span class="text-sm">6-8 hours service</span>
+                                    </li>
+                                </ul>
+                                <button class="w-full bg-surface-600 hover:bg-surface-500 text-text-primary py-2 px-4 rounded-lg transition-colors">Select Package</button>
+                            </div>
+                        </div>
+
+                        <!-- Dynamic Pricing Calculator -->
+                        <div class="bg-surface rounded-lg p-6">
+                            <h3 class="text-xl font-semibold mb-4">Custom Quote Calculator</h3>
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-sm font-medium mb-2">Property Type</label>
+                                    <select class="w-full bg-surface-700 border border-surface-600 rounded-lg px-3 py-2 text-text-primary" onchange="updatePrice()">
+                                        <option value="apartment">Apartment</option>
+                                        <option value="house">House</option>
+                                        <option value="duplex">Duplex</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium mb-2">Number of Bedrooms</label>
+                                    <select class="w-full bg-surface-700 border border-surface-600 rounded-lg px-3 py-2 text-text-primary" onchange="updatePrice()">
+                                        <option value="1">1 Bedroom</option>
+                                        <option value="2">2 Bedrooms</option>
+                                        <option value="3">3 Bedrooms</option>
+                                        <option value="4">4+ Bedrooms</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium mb-2">Number of Bathrooms</label>
+                                    <select class="w-full bg-surface-700 border border-surface-600 rounded-lg px-3 py-2 text-text-primary" onchange="updatePrice()">
+                                        <option value="1">1 Bathroom</option>
+                                        <option value="2">2 Bathrooms</option>
+                                        <option value="3">3 Bathrooms</option>
+                                        <option value="4">4+ Bathrooms</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium mb-2">Frequency</label>
+                                    <select class="w-full bg-surface-700 border border-surface-600 rounded-lg px-3 py-2 text-text-primary" onchange="updatePrice()">
+                                        <option value="one-time">One-time</option>
+                                        <option value="weekly">Weekly</option>
+                                        <option value="bi-weekly">Bi-weekly</option>
+                                        <option value="monthly">Monthly</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="mt-6 p-4 bg-surface-700 rounded-lg">
+                                <div class="flex justify-between items-center">
+                                    <span class="text-lg font-medium">Estimated Total:</span>
+                                    <span id="calculatedPrice" class="text-2xl font-bold text-accent">₦15,000</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery Tab -->
+                <div id="gallery" class="tab-content hidden">
+                    <div class="space-y-8">
+                        <h2 class="text-2xl font-bold">Before & After Gallery</h2>
+                        
+                        <!-- Before/After Gallery -->
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <!-- Gallery Item 1 -->
+                            <div class="bg-surface rounded-lg overflow-hidden">
+                                <div class="relative">
+                                    <img src="https://images.pixabay.com/photos/2020/04/18/08/33/kitchen-5058732_1280.jpg" alt="Kitchen before cleaning" class="w-full h-48 object-cover cursor-pointer" onclick="openLightbox(this.src, 'Kitchen Before Cleaning')" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                                    <div class="absolute top-2 left-2 bg-error text-white px-2 py-1 rounded text-xs font-medium">Before</div>
+                                </div>
+                                <div class="p-4">
+                                    <h4 class="font-medium mb-1">Kitchen Deep Clean</h4>
+                                    <p class="text-sm text-text-secondary">Maitama Residence</p>
+                                </div>
+                            </div>
+
+                            <!-- Gallery Item 2 -->
+                            <div class="bg-surface rounded-lg overflow-hidden">
+                                <div class="relative">
+                                    <img src="https://images.pexels.com/photos/2724749/pexels-photo-2724749.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Kitchen after cleaning" class="w-full h-48 object-cover cursor-pointer" onclick="openLightbox(this.src, 'Kitchen After Cleaning')" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                                    <div class="absolute top-2 left-2 bg-success text-white px-2 py-1 rounded text-xs font-medium">After</div>
+                                </div>
+                                <div class="p-4">
+                                    <h4 class="font-medium mb-1">Kitchen Deep Clean</h4>
+                                    <p class="text-sm text-text-secondary">Maitama Residence</p>
+                                </div>
+                            </div>
+
+                            <!-- Gallery Item 3 -->
+                            <div class="bg-surface rounded-lg overflow-hidden">
+                                <div class="relative">
+                                    <img src="https://images.unsplash.com/photo-1563298723-dcfebaa392e3?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Bathroom before cleaning" class="w-full h-48 object-cover cursor-pointer" onclick="openLightbox(this.src, 'Bathroom Before Cleaning')" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                                    <div class="absolute top-2 left-2 bg-error text-white px-2 py-1 rounded text-xs font-medium">Before</div>
+                                </div>
+                                <div class="p-4">
+                                    <h4 class="font-medium mb-1">Bathroom Sanitization</h4>
+                                    <p class="text-sm text-text-secondary">Asokoro Apartment</p>
+                                </div>
+                            </div>
+
+                            <!-- Gallery Item 4 -->
+                            <div class="bg-surface rounded-lg overflow-hidden">
+                                <div class="relative">
+                                    <img src="https://images.pixabay.com/photos/2017/03/28/12/11/chairs-2181947_1280.jpg" alt="Bathroom after cleaning" class="w-full h-48 object-cover cursor-pointer" onclick="openLightbox(this.src, 'Bathroom After Cleaning')" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                                    <div class="absolute top-2 left-2 bg-success text-white px-2 py-1 rounded text-xs font-medium">After</div>
+                                </div>
+                                <div class="p-4">
+                                    <h4 class="font-medium mb-1">Bathroom Sanitization</h4>
+                                    <p class="text-sm text-text-secondary">Asokoro Apartment</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reviews Tab -->
+                <div id="reviews" class="tab-content hidden">
+                    <div class="space-y-8">
+                        <div class="flex justify-between items-center">
+                            <h2 class="text-2xl font-bold">Customer Reviews</h2>
+                            <div class="flex items-center space-x-2">
+                                <div class="flex text-yellow-400">
+                                    <svg class="h-5 w-5 fill-current" viewBox="0 0 20 20">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                    </svg>
+                                    <svg class="h-5 w-5 fill-current" viewBox="0 0 20 20">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                    </svg>
+                                    <svg class="h-5 w-5 fill-current" viewBox="0 0 20 20">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                    </svg>
+                                    <svg class="h-5 w-5 fill-current" viewBox="0 0 20 20">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                    </svg>
+                                    <svg class="h-5 w-5 fill-current" viewBox="0 0 20 20">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                    </svg>
+                                </div>
+                                <span class="text-text-primary font-medium">4.8 out of 5</span>
+                                <span class="text-text-secondary">(2,847 reviews)</span>
+                            </div>
+                        </div>
+
+                        <!-- Review Cards -->
+                        <div class="space-y-6">
+                            <!-- Review 1 -->
+                            <div class="bg-surface rounded-lg p-6">
+                                <div class="flex items-start space-x-4">
+                                    <img src="https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Customer photo" class="w-12 h-12 rounded-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                                    <div class="flex-1">
+                                        <div class="flex items-center justify-between mb-2">
+                                            <div>
+                                                <h4 class="font-medium">Adaora Okafor</h4>
+                                                <p class="text-sm text-text-secondary">Maitama, Abuja</p>
+                                            </div>
+                                            <div class="flex text-yellow-400">
+                                                <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+                                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                                </svg>
+                                                <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+                                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                                </svg>
+                                                <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+                                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                                </svg>
+                                                <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+                                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                                </svg>
+                                                <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+                                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                        <p class="text-text-secondary mb-2">
+                                            "Excellent service! The cleaning team was professional, punctual, and thorough. 
+                                            My house has never been cleaner. I especially appreciate how they pay attention 
+                                            to details and use quality cleaning products. Highly recommended!"
+                                        </p>
+                                        <p class="text-xs text-text-tertiary">2 weeks ago</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Review 2 -->
+                            <div class="bg-surface rounded-lg p-6">
+                                <div class="flex items-start space-x-4">
+                                    <img src="https://images.pixabay.com/photos/2016/11/21/12/42/beard-1845166_1280.jpg" alt="Customer photo" class="w-12 h-12 rounded-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                                    <div class="flex-1">
+                                        <div class="flex items-center justify-between mb-2">
+                                            <div>
+                                                <h4 class="font-medium">Chukwudi Eze</h4>
+                                                <p class="text-sm text-text-secondary">Gwarinpa, Abuja</p>
+                                            </div>
+                                            <div class="flex text-yellow-400">
+                                                <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+                                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                                </svg>
+                                                <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+                                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                                </svg>
+                                                <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+                                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                                </svg>
+                                                <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+                                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                                </svg>
+                                                <svg class="h-4 w-4 text-surface-400" viewBox="0 0 20 20">
+                                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                        <p class="text-text-secondary mb-2">
+                                            "Very reliable service. I've been using ForaFix for monthly cleaning for 6 months now. 
+                                            The team is consistent and trustworthy. They always arrive on time and do a fantastic job. 
+                                            Great value for money!"
+                                        </p>
+                                        <p class="text-xs text-text-tertiary">1 month ago</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Review 3 -->
+                            <div class="bg-surface rounded-lg p-6">
+                                <div class="flex items-start space-x-4">
+                                    <img src="https://images.unsplash.com/photo-1494790108755-2616c0763c5c?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Customer photo" class="w-12 h-12 rounded-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                                    <div class="flex-1">
+                                        <div class="flex items-center justify-between mb-2">
+                                            <div>
+                                                <h4 class="font-medium">Fatima Abdullahi</h4>
+                                                <p class="text-sm text-text-secondary">Wuse 2, Abuja</p>
+                                            </div>
+                                            <div class="flex text-yellow-400">
+                                                <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+                                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                                </svg>
+                                                <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+                                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                                </svg>
+                                                <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+                                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                                </svg>
+                                                <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+                                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                                </svg>
+                                                <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+                                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                        <p class="text-text-secondary mb-2">
+                                            "Outstanding service! As a working mother, I really appreciate the convenience and quality. 
+                                            The cleaning team is respectful, efficient, and they always leave my home spotless. 
+                                            The booking process is also very easy."
+                                        </p>
+                                        <p class="text-xs text-text-tertiary">3 weeks ago</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Agent Profiles Section -->
+                <div class="mt-12">
+                    <h2 class="text-2xl font-bold mb-6">Our Cleaning Professionals</h2>
+                    <div class="flex space-x-6 overflow-x-auto pb-4">
+                        <!-- Agent Card 1 -->
+                        <div class="bg-surface rounded-lg p-6 min-w-80 flex-shrink-0">
+                            <div class="flex items-center space-x-4 mb-4">
+                                <img src="https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Agent photo" class="w-16 h-16 rounded-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                                <div>
+                                    <h3 class="font-semibold">Grace Okonkwo</h3>
+                                    <p class="text-sm text-text-secondary">Senior Cleaning Specialist</p>
+                                    <div class="flex items-center space-x-1 mt-1">
+                                        <div class="flex text-yellow-400">
+                                            <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+                                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                            </svg>
+                                            <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+                                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                            </svg>
+                                            <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+                                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                            </svg>
+                                            <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+                                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                            </svg>
+                                            <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+                                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                            </svg>
+                                        </div>
+                                        <span class="text-sm text-text-secondary">4.9 (127 reviews)</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="text-sm text-text-secondary mb-4">5+ years experience in residential cleaning. Specializes in deep cleaning and eco-friendly products.</p>
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm text-success">Available Today</span>
+                                <button class="bg-accent hover:bg-accent-600 text-white px-4 py-2 rounded-lg text-sm transition-colors">Book Grace</button>
+                            </div>
+                        </div>
+
+                        <!-- Agent Card 2 -->
+                        <div class="bg-surface rounded-lg p-6 min-w-80 flex-shrink-0">
+                            <div class="flex items-center space-x-4 mb-4">
+                                <img src="https://images.pixabay.com/photos/2016/11/29/13/14/attractive-1869761_1280.jpg" alt="Agent photo" class="w-16 h-16 rounded-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                                <div>
+                                    <h3 class="font-semibold">Amina Hassan</h3>
+                                    <p class="text-sm text-text-secondary">Cleaning Professional</p>
+                                    <div class="flex items-center space-x-1 mt-1">
+                                        <div class="flex text-yellow-400">
+                                            <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+                                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                            </svg>
+                                            <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+                                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                            </svg>
+                                            <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+                                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                            </svg>
+                                            <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+                                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                            </svg>
+                                            <svg class="h-4 w-4 text-surface-400" viewBox="0 0 20 20">
+                                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                            </svg>
+                                        </div>
+                                        <span class="text-sm text-text-secondary">4.7 (89 reviews)</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="text-sm text-text-secondary mb-4">3+ years experience. Known for attention to detail and excellent customer service.</p>
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm text-warning">Available Tomorrow</span>
+                                <button class="bg-accent hover:bg-accent-600 text-white px-4 py-2 rounded-lg text-sm transition-colors">Book Amina</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ Section -->
+                <div class="mt-12">
+                    <h2 class="text-2xl font-bold mb-6">Frequently Asked Questions</h2>
+                    <div class="space-y-4">
+                        <!-- FAQ Item 1 -->
+                        <div class="bg-surface rounded-lg">
+                            <button class="w-full text-left p-6 focus:outline-none" onclick="toggleFAQ(1)">
+                                <div class="flex justify-between items-center">
+                                    <h3 class="font-medium">What cleaning products do you use?</h3>
+                                    <svg id="faq-icon-1" class="h-5 w-5 text-text-secondary transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                                    </svg>
+                                </div>
+                            </button>
+                            <div id="faq-content-1" class="hidden px-6 pb-6">
+                                <p class="text-text-secondary">We use high-quality, eco-friendly cleaning products that are safe for your family and pets. All our products are locally sourced and approved for use in Nigerian homes. We can also accommodate specific product preferences upon request.</p>
+                            </div>
+                        </div>
+
+                        <!-- FAQ Item 2 -->
+                        <div class="bg-surface rounded-lg">
+                            <button class="w-full text-left p-6 focus:outline-none" onclick="toggleFAQ(2)">
+                                <div class="flex justify-between items-center">
+                                    <h3 class="font-medium">Do I need to be home during the cleaning?</h3>
+                                    <svg id="faq-icon-2" class="h-5 w-5 text-text-secondary transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                                    </svg>
+                                </div>
+                            </button>
+                            <div id="faq-content-2" class="hidden px-6 pb-6">
+                                <p class="text-text-secondary">No, you don't need to be home during the cleaning. Our trusted professionals can work while you're away. We just need access to your home and any specific instructions. All our cleaners are background-checked and insured.</p>
+                            </div>
+                        </div>
+
+                        <!-- FAQ Item 3 -->
+                        <div class="bg-surface rounded-lg">
+                            <button class="w-full text-left p-6 focus:outline-none" onclick="toggleFAQ(3)">
+                                <div class="flex justify-between items-center">
+                                    <h3 class="font-medium">What payment methods do you accept?</h3>
+                                    <svg id="faq-icon-3" class="h-5 w-5 text-text-secondary transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                                    </svg>
+                                </div>
+                            </button>
+                            <div id="faq-content-3" class="hidden px-6 pb-6">
+                                <p class="text-text-secondary">We accept bank transfers, USSD payments, debit cards, and cash payments. You can pay online through our secure platform or pay the cleaner directly upon completion of the service.</p>
+                            </div>
+                        </div>
+
+                        <!-- FAQ Item 4 -->
+                        <div class="bg-surface rounded-lg">
+                            <button class="w-full text-left p-6 focus:outline-none" onclick="toggleFAQ(4)">
+                                <div class="flex justify-between items-center">
+                                    <h3 class="font-medium">What if I'm not satisfied with the cleaning?</h3>
+                                    <svg id="faq-icon-4" class="h-5 w-5 text-text-secondary transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                                    </svg>
+                                </div>
+                            </button>
+                            <div id="faq-content-4" class="hidden px-6 pb-6">
+                                <p class="text-text-secondary">We offer a 100% satisfaction guarantee. If you're not completely satisfied with our service, we'll return within 24 hours to re-clean the areas of concern at no additional cost. Your satisfaction is our priority.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Related Services -->
+                <div class="mt-12">
+                    <h2 class="text-2xl font-bold mb-6">Related Services</h2>
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <!-- Related Service 1 -->
+                        <div class="bg-surface rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
+                            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Laundry service" class="w-full h-32 object-cover" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                            <div class="p-4">
+                                <h3 class="font-medium mb-2">Laundry & Ironing</h3>
+                                <p class="text-sm text-text-secondary mb-3">Professional laundry and ironing services for your clothes and linens.</p>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-accent font-medium">From ₦8,000</span>
+                                    <a href="javascript:void(0)" class="text-accent hover:text-accent-600 text-sm font-medium">Learn More</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Related Service 2 -->
+                        <div class="bg-surface rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
+                            <img src="https://images.pexels.com/photos/4239013/pexels-photo-4239013.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Deep cleaning service" class="w-full h-32 object-cover" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                            <div class="p-4">
+                                <h3 class="font-medium mb-2">Deep Cleaning</h3>
+                                <p class="text-sm text-text-secondary mb-3">Comprehensive deep cleaning for move-ins, move-outs, or seasonal cleaning.</p>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-accent font-medium">From ₦35,000</span>
+                                    <a href="javascript:void(0)" class="text-accent hover:text-accent-600 text-sm font-medium">Learn More</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Related Service 3 -->
+                        <div class="bg-surface rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
+                            <img src="https://images.pixabay.com/photos/2020/04/18/08/33/kitchen-5058732_1280.jpg" alt="Kitchen cleaning service" class="w-full h-32 object-cover" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                            <div class="p-4">
+                                <h3 class="font-medium mb-2">Kitchen Deep Clean</h3>
+                                <p class="text-sm text-text-secondary mb-3">Specialized kitchen cleaning including appliances and deep sanitization.</p>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-accent font-medium">From ₦12,000</span>
+                                    <a href="javascript:void(0)" class="text-accent hover:text-accent-600 text-sm font-medium">Learn More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar (Desktop) -->
+            <div class="hidden lg:block">
+                <!-- Sticky Booking Widget -->
+                <div class="sticky top-24">
+                    <div class="bg-surface rounded-lg p-6 shadow-lg">
+                        <h3 class="text-xl font-semibold mb-4">Book This Service</h3>
+                        <div class="space-y-4">
+                            <div>
+                                <label class="block text-sm font-medium mb-2">Select Package</label>
+                                <select class="w-full bg-surface-700 border border-surface-600 rounded-lg px-3 py-2 text-text-primary">
+                                    <option>Basic Clean - ₦15,000</option>
+                                    <option>Standard Clean - ₦25,000</option>
+                                    <option>Premium Clean - ₦40,000</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium mb-2">Preferred Date</label>
+                                <input type="date" class="w-full bg-surface-700 border border-surface-600 rounded-lg px-3 py-2 text-text-primary" />
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium mb-2">Preferred Time</label>
+                                <select class="w-full bg-surface-700 border border-surface-600 rounded-lg px-3 py-2 text-text-primary">
+                                    <option>Morning (8AM - 12PM)</option>
+                                    <option>Afternoon (12PM - 4PM)</option>
+                                    <option>Evening (4PM - 8PM)</option>
+                                </select>
+                            </div>
+                            <div class="border-t border-surface-600 pt-4">
+                                <div class="flex justify-between items-center mb-4">
+                                    <span class="font-medium">Total:</span>
+                                    <span class="text-2xl font-bold text-accent">₦25,000</span>
+                                </div>
+                                <button onclick="openBookingModal()" class="w-full bg-accent hover:bg-accent-600 text-white py-3 px-4 rounded-lg font-medium transition-colors">
+                                    Book Now
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Trust Signals -->
+                        <div class="mt-6 pt-6 border-t border-surface-600">
+                            <div class="space-y-3">
+                                <div class="flex items-center space-x-2">
+                                    <svg class="h-5 w-5 text-success" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                    </svg>
+                                    <span class="text-sm">Background-checked professionals</span>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <svg class="h-5 w-5 text-success" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                    </svg>
+                                    <span class="text-sm">Fully insured service</span>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <svg class="h-5 w-5 text-success" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                    </svg>
+                                    <span class="text-sm">100% satisfaction guarantee</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Action Button (Mobile) -->
+    <button onclick="openBookingModal()" class="lg:hidden fixed bottom-6 right-6 bg-accent hover:bg-accent-600 text-white p-4 rounded-full shadow-lg z-50 transition-colors">
+        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+        </svg>
+    </button>
+
+    <!-- Booking Modal -->
+    <div id="bookingModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden">
+        <div class="flex items-center justify-center min-h-screen p-4">
+            <div class="bg-surface rounded-lg max-w-md w-full max-h-screen overflow-y-auto">
+                <div class="p-6">
+                    <div class="flex justify-between items-center mb-6">
+                        <h2 class="text-xl font-bold">Book House Cleaning</h2>
+                        <button onclick="closeBookingModal()" class="text-text-secondary hover:text-text-primary">
+                            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <!-- Multi-step Form -->
+                    <div class="space-y-6">
+                        <!-- Step 1: Service Details -->
+                        <div id="step1" class="step-content">
+                            <h3 class="font-medium mb-4">Step 1: Service Details</h3>
+                            <div class="space-y-4">
+                                <div>
+                                    <label class="block text-sm font-medium mb-2">Package</label>
+                                    <select class="w-full bg-surface-700 border border-surface-600 rounded-lg px-3 py-2 text-text-primary">
+                                        <option>Basic Clean - ₦15,000</option>
+                                        <option>Standard Clean - ₦25,000</option>
+                                        <option>Premium Clean - ₦40,000</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium mb-2">Property Type</label>
+                                    <select class="w-full bg-surface-700 border border-surface-600 rounded-lg px-3 py-2 text-text-primary">
+                                        <option>Apartment</option>
+                                        <option>House</option>
+                                        <option>Duplex</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium mb-2">Number of Rooms</label>
+                                    <select class="w-full bg-surface-700 border border-surface-600 rounded-lg px-3 py-2 text-text-primary">
+                                        <option>1-2 Bedrooms</option>
+                                        <option>3-4 Bedrooms</option>
+                                        <option>5+ Bedrooms</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 2: Date & Time -->
+                        <div id="step2" class="step-content hidden">
+                            <h3 class="font-medium mb-4">Step 2: Date & Time</h3>
+                            <div class="space-y-4">
+                                <div>
+                                    <label class="block text-sm font-medium mb-2">Preferred Date</label>
+                                    <input type="date" class="w-full bg-surface-700 border border-surface-600 rounded-lg px-3 py-2 text-text-primary" />
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium mb-2">Preferred Time</label>
+                                    <div class="grid grid-cols-3 gap-2">
+                                        <button class="p-2 border border-surface-600 rounded-lg text-sm hover:border-accent hover:text-accent transition-colors">8AM-12PM</button>
+                                        <button class="p-2 border border-surface-600 rounded-lg text-sm hover:border-accent hover:text-accent transition-colors">12PM-4PM</button>
+                                        <button class="p-2 border border-surface-600 rounded-lg text-sm hover:border-accent hover:text-accent transition-colors">4PM-8PM</button>
+                                    </div>
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium mb-2">Frequency</label>
+                                    <select class="w-full bg-surface-700 border border-surface-600 rounded-lg px-3 py-2 text-text-primary">
+                                        <option>One-time</option>
+                                        <option>Weekly</option>
+                                        <option>Bi-weekly</option>
+                                        <option>Monthly</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 3: Contact Info -->
+                        <div id="step3" class="step-content hidden">
+                            <h3 class="font-medium mb-4">Step 3: Contact Information</h3>
+                            <div class="space-y-4">
+                                <div>
+                                    <label class="block text-sm font-medium mb-2">Full Name</label>
+                                    <input type="text" class="w-full bg-surface-700 border border-surface-600 rounded-lg px-3 py-2 text-text-primary" placeholder="Enter your full name" />
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium mb-2">Phone Number</label>
+                                    <input type="tel" class="w-full bg-surface-700 border border-surface-600 rounded-lg px-3 py-2 text-text-primary" placeholder="+234 xxx xxx xxxx" />
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium mb-2">Address</label>
+                                    <textarea class="w-full bg-surface-700 border border-surface-600 rounded-lg px-3 py-2 text-text-primary" rows="3" placeholder="Enter your full address"></textarea>
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium mb-2">Special Instructions (Optional)</label>
+                                    <textarea class="w-full bg-surface-700 border border-surface-600 rounded-lg px-3 py-2 text-text-primary" rows="2" placeholder="Any special instructions or requests"></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Progress Indicator -->
+                        <div class="flex items-center justify-center space-x-2 py-4">
+                            <div id="progress1" class="w-3 h-3 rounded-full bg-accent"></div>
+                            <div id="progress2" class="w-3 h-3 rounded-full bg-surface-600"></div>
+                            <div id="progress3" class="w-3 h-3 rounded-full bg-surface-600"></div>
+                        </div>
+
+                        <!-- Navigation Buttons -->
+                        <div class="flex justify-between pt-4">
+                            <button id="prevBtn" onclick="previousStep()" class="px-4 py-2 text-text-secondary hover:text-text-primary transition-colors hidden">Previous</button>
+                            <button id="nextBtn" onclick="nextStep()" class="ml-auto bg-accent hover:bg-accent-600 text-white px-6 py-2 rounded-lg transition-colors">Next</button>
+                            <button id="submitBtn" onclick="submitBooking()" class="ml-auto bg-accent hover:bg-accent-600 text-white px-6 py-2 rounded-lg transition-colors hidden">Book Service</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Lightbox Modal -->
+    <div id="lightboxModal" class="fixed inset-0 bg-black bg-opacity-90 z-50 hidden">
+        <div class="flex items-center justify-center min-h-screen p-4">
+            <div class="relative max-w-4xl w-full">
+                <button onclick="closeLightbox()" class="absolute top-4 right-4 text-white hover:text-gray-300 z-10">
+                    <svg class="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                    </svg>
+                </button>
+                <img id="lightboxImage" src alt class="w-full h-auto max-h-screen object-contain" />
+                <div id="lightboxCaption" class="text-white text-center mt-4 text-lg"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-surface-800 border-t border-surface-600 mt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <svg class="h-8 w-8 text-primary" viewBox="0 0 32 32" fill="currentColor">
+                            <path d="M16 2L3 9v14c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V9L16 2z"/>
+                            <path d="M14 16l-2-2-1.41 1.41L14 18.83l6-6L18.59 11.41 14 16z" fill="white"/>
+                        </svg>
+                        <span class="ml-2 text-xl font-bold text-primary">ForaFix</span>
+                    </div>
+                    <p class="text-text-secondary text-sm">Nigeria's trusted home services platform connecting you with verified professionals.</p>
+                </div>
+                <div>
+                    <h3 class="font-semibold mb-4">Services</h3>
+                    <ul class="space-y-2 text-sm text-text-secondary">
+                        <li><a href="javascript:void(0)" class="hover:text-accent transition-colors">House Cleaning</a></li>
+                        <li><a href="javascript:void(0)" class="hover:text-accent transition-colors">Laundry</a></li>
+                        <li><a href="javascript:void(0)" class="hover:text-accent transition-colors">Plumbing</a></li>
+                        <li><a href="javascript:void(0)" class="hover:text-accent transition-colors">Electrical</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-semibold mb-4">Company</h3>
+                    <ul class="space-y-2 text-sm text-text-secondary">
+                        <li><a href="javascript:void(0)" class="hover:text-accent transition-colors">About Us</a></li>
+                        <li><a href="agent_registration.html" class="hover:text-accent transition-colors">Become Agent</a></li>
+                        <li><a href="javascript:void(0)" class="hover:text-accent transition-colors">Contact</a></li>
+                        <li><a href="javascript:void(0)" class="hover:text-accent transition-colors">Support</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-semibold mb-4">Contact</h3>
+                    <ul class="space-y-2 text-sm text-text-secondary">
+                        <li>+234 800 FORAFIX</li>
+                        <li>support@forafix.ng</li>
+                        <li>Abuja, Nigeria</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-surface-600 mt-8 pt-8 text-center text-sm text-text-secondary">
+                <p>&copy; 2025 ForaFix. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Tab functionality
+        function showTab(tabName) {
+            // Hide all tab contents
+            const tabContents = document.querySelectorAll('.tab-content');
+            tabContents.forEach(content => content.classList.add('hidden'));
+            
+            // Remove active class from all tab buttons
+            const tabBtns = document.querySelectorAll('.tab-btn');
+            tabBtns.forEach(btn => {
+                btn.classList.remove('active', 'border-accent', 'text-accent');
+                btn.classList.add('border-transparent', 'text-text-secondary');
+            });
+            
+            // Show selected tab content
+            document.getElementById(tabName).classList.remove('hidden');
+            
+            // Add active class to clicked tab button
+            event.target.classList.add('active', 'border-accent', 'text-accent');
+            event.target.classList.remove('border-transparent', 'text-text-secondary');
+        }
+
+        // FAQ toggle
+        function toggleFAQ(faqNumber) {
+            const content = document.getElementById(`faq-content-${faqNumber}`);
+            const icon = document.getElementById(`faq-icon-${faqNumber}`);
+            
+            content.classList.toggle('hidden');
+            icon.classList.toggle('rotate-180');
+        }
+
+        // Pricing calculator
+        function updatePrice() {
+            // Simple pricing logic - in real app this would be more sophisticated
+            const basePrice = 15000;
+            const calculatedPrice = document.getElementById('calculatedPrice');
+            calculatedPrice.textContent = `₦${basePrice.toLocaleString()}`;
+        }
+
+        // Lightbox functionality
+        function openLightbox(src, caption) {
+            const modal = document.getElementById('lightboxModal');
+            const image = document.getElementById('lightboxImage');
+            const captionEl = document.getElementById('lightboxCaption');
+            
+            image.src = src;
+            captionEl.textContent = caption;
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            const modal = document.getElementById('lightboxModal');
+            modal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Booking modal functionality
+        let currentStep = 1;
+
+        function openBookingModal() {
+            const modal = document.getElementById('bookingModal');
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+            currentStep = 1;
+            showStep(1);
+        }
+
+        function closeBookingModal() {
+            const modal = document.getElementById('bookingModal');
+            modal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        function showStep(step) {
+            // Hide all steps
+            const steps = document.querySelectorAll('.step-content');
+            steps.forEach(s => s.classList.add('hidden'));
+            
+            // Show current step
+            document.getElementById(`step${step}`).classList.remove('hidden');
+            
+            // Update progress indicators
+            for (let i = 1; i <= 3; i++) {
+                const progress = document.getElementById(`progress${i}`);
+                if (i <= step) {
+                    progress.classList.remove('bg-surface-600');
+                    progress.classList.add('bg-accent');
+                } else {
+                    progress.classList.remove('bg-accent');
+                    progress.classList.add('bg-surface-600');
+                }
+            }
+            
+            // Update navigation buttons
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            const submitBtn = document.getElementById('submitBtn');
+            
+            if (step === 1) {
+                prevBtn.classList.add('hidden');
+            } else {
+                prevBtn.classList.remove('hidden');
+            }
+            
+            if (step === 3) {
+                nextBtn.classList.add('hidden');
+                submitBtn.classList.remove('hidden');
+            } else {
+                nextBtn.classList.remove('hidden');
+                submitBtn.classList.add('hidden');
+            }
+        }
+
+        function nextStep() {
+            if (currentStep < 3) {
+                currentStep++;
+                showStep(currentStep);
+            }
+        }
+
+        function previousStep() {
+            if (currentStep > 1) {
+                currentStep--;
+                showStep(currentStep);
+            }
+        }
+
+        function submitBooking() {
+            // In a real app, this would submit the form data
+            alert('Booking submitted successfully! We will contact you shortly to confirm your appointment.');
+            closeBookingModal();
+        }
+
+        // Close modals when clicking outside
+        document.addEventListener('click', function(event) {
+            const bookingModal = document.getElementById('bookingModal');
+            const lightboxModal = document.getElementById('lightboxModal');
+            
+            if (event.target === bookingModal) {
+                closeBookingModal();
+            }
+            
+            if (event.target === lightboxModal) {
+                closeLightbox();
+            }
+        });
+
+        // Keyboard navigation for modals
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeBookingModal();
+                closeLightbox();
+            }
+        });
+    </script>
+<script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
+</body>
+</html>

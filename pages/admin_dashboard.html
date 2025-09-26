@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Dashboard - ForaFix | Platform Management & Analytics</title>
+    <meta name="description" content="Comprehensive admin dashboard for ForaFix platform management, user oversight, and business analytics." />
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="icon" type="image/x-icon" href="../public/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fforafix2891back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.8"></script>
+</head>
+<body class="bg-background text-text-primary">
+    <!-- Admin Header -->
+    <header class="sticky top-0 z-50 bg-surface/95 backdrop-blur-sm border-b border-slate-700/20">
+        <nav class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <div class="flex items-center space-x-2">
+                    <img src="../public/logo.png" alt="ForaFix Logo" class="w-30 h-10 object-contain rounded-lg" />
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden lg:flex items-center space-x-6">
+                    <a href="public_landing_page.html" class="text-text-secondary hover:text-accent transition-colors">
+                        <svg class="w-5 h-5 inline mr-2" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+                        </svg>
+                        Public Site
+                    </a>
+                    <a href="user_dashboard.html" class="text-text-secondary hover:text-accent transition-colors">
+                        <svg class="w-5 h-5 inline mr-2" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                        </svg>
+                        User View
+                    </a>
+                    <a href="agent_dashboard.html" class="text-text-secondary hover:text-accent transition-colors">
+                        <svg class="w-5 h-5 inline mr-2" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2l3.09 6.26L22 9l-5 4.87 1.18 6.88L12 17.77l-6.18 2.98L7 14.87 2 10l6.91-.74L12 2z"/>
+                        </svg>
+                        Agent View
+                    </a>
+                </div>
+
+                <!-- Admin Profile & Actions -->
+                <div class="flex items-center space-x-4">
+                    <!-- Notifications -->
+                    <button class="relative p-2 text-text-secondary hover:text-accent transition-colors">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.89 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"/>
+                        </svg>
+                        <span class="absolute -top-1 -right-1 w-5 h-5 bg-error text-white text-xs rounded-full flex items-center justify-center">3</span>
+                    </button>
+
+                    <!-- Admin Profile -->
+                    <div class="flex items-center space-x-3">
+                        <img src="https://images.pixabay.com/photos/2016/11/18/19/07/happy-1836445_1280.jpg" alt="Admin Profile" class="w-8 h-8 rounded-full object-cover" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                        <div class="hidden md:block">
+                            <div class="text-sm font-medium">Adebayo Admin</div>
+                            <div class="text-xs text-text-secondary">Super Admin</div>
+                        </div>
+                    </div>
+
+                    <!-- Mobile Menu Button -->
+                    <button id="mobile-menu-btn" class="lg:hidden p-2 text-text-primary hover:text-accent transition-colors">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="lg:hidden hidden mt-4 pb-4 border-t border-slate-700/20">
+                <div class="flex flex-col space-y-4 pt-4">
+                    <a href="public_landing_page.html" class="text-text-secondary hover:text-accent transition-colors">Public Site</a>
+                    <a href="user_dashboard.html" class="text-text-secondary hover:text-accent transition-colors">User View</a>
+                    <a href="agent_dashboard.html" class="text-text-secondary hover:text-accent transition-colors">Agent View</a>
+                    <a href="real_time_service_tracking.html" class="text-text-secondary hover:text-accent transition-colors">Service Tracking</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Dashboard Content -->
+    <main class="container mx-auto px-4 py-8">
+        <!-- Dashboard Header -->
+        <div class="mb-8">
+            <h1 class="text-3xl font-bold mb-2">Admin Dashboard</h1>
+            <p class="text-text-secondary">Platform overview and management tools</p>
+            <div class="text-sm text-text-secondary mt-2">
+                Last updated: September 1, 2025 at 4:38 PM
+            </div>
+        </div>
+
+        <!-- Key Performance Indicators -->
+        <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+            <!-- Daily Bookings -->
+            <div class="card">
+                <div class="flex items-center justify-between mb-4">
+                    <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
+                        <svg class="w-6 h-6 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/>
+                        </svg>
+                    </div>
+                    <span class="text-xs text-success bg-success/10 px-2 py-1 rounded-full">+12%</span>
+                </div>
+                <div class="text-2xl font-bold mb-1">247</div>
+                <div class="text-sm text-text-secondary">Daily Bookings</div>
+                <div class="text-xs text-text-secondary mt-2">vs. yesterday: 221</div>
+            </div>
+
+            <!-- Revenue -->
+            <div class="card">
+                <div class="flex items-center justify-between mb-4">
+                    <div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center">
+                        <svg class="w-6 h-6 text-accent" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/>
+                        </svg>
+                    </div>
+                    <span class="text-xs text-success bg-success/10 px-2 py-1 rounded-full">+8%</span>
+                </div>
+                <div class="text-2xl font-bold mb-1">₦2.4M</div>
+                <div class="text-sm text-text-secondary">Daily Revenue</div>
+                <div class="text-xs text-text-secondary mt-2">vs. yesterday: ₦2.2M</div>
+            </div>
+
+            <!-- Active Agents -->
+            <div class="card">
+                <div class="flex items-center justify-between mb-4">
+                    <div class="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center">
+                        <svg class="w-6 h-6 text-secondary" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M16 4c0-1.11.89-2 2-2s2 .89 2 2-.89 2-2 2-2-.89-2-2zM4 18v-4h3v-3c0-1.1.9-2 2-2h2c1.1 0 2 .9 2 2v3h3v4H4z"/>
+                        </svg>
+                    </div>
+                    <span class="text-xs text-warning bg-warning/10 px-2 py-1 rounded-full">-2%</span>
+                </div>
+                <div class="text-2xl font-bold mb-1">156</div>
+                <div class="text-sm text-text-secondary">Active Agents</div>
+                <div class="text-xs text-text-secondary mt-2">Online now</div>
+            </div>
+
+            <!-- Customer Satisfaction -->
+            <div class="card">
+                <div class="flex items-center justify-between mb-4">
+                    <div class="w-12 h-12 bg-success/10 rounded-lg flex items-center justify-center">
+                        <svg class="w-6 h-6 text-success" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+                        </svg>
+                    </div>
+                    <span class="text-xs text-success bg-success/10 px-2 py-1 rounded-full">+0.1</span>
+                </div>
+                <div class="text-2xl font-bold mb-1">4.8</div>
+                <div class="text-sm text-text-secondary">Avg. Rating</div>
+                <div class="text-xs text-text-secondary mt-2">From 1,247 reviews</div>
+            </div>
+        </section>
+
+        <!-- Main Dashboard Grid -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <!-- Left Column - User Management & Analytics -->
+            <div class="lg:col-span-2 space-y-8">
+                <!-- Recent User Registrations -->
+                <section class="card">
+                    <div class="flex items-center justify-between mb-6">
+                        <h2 class="text-xl font-semibold">Recent User Registrations</h2>
+                        <div class="flex items-center space-x-2">
+                            <button class="btn-outline text-sm px-3 py-2">Export</button>
+                            <button class="btn-primary text-sm px-3 py-2">View All</button>
+                        </div>
+                    </div>
+                    
+                    <div class="overflow-x-auto">
+                        <table class="w-full">
+                            <thead>
+                                <tr class="border-b border-slate-700/20">
+                                    <th class="text-left py-3 text-sm font-medium text-text-secondary">User</th>
+                                    <th class="text-left py-3 text-sm font-medium text-text-secondary">Type</th>
+                                    <th class="text-left py-3 text-sm font-medium text-text-secondary">Status</th>
+                                    <th class="text-left py-3 text-sm font-medium text-text-secondary">Registered</th>
+                                    <th class="text-left py-3 text-sm font-medium text-text-secondary">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-slate-700/20">
+                                <tr>
+                                    <td class="py-4">
+                                        <div class="flex items-center space-x-3">
+                                            <img src="https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop" alt="Fatima Abubakar" class="w-8 h-8 rounded-full object-cover" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                                            <div>
+                                                <div class="font-medium">Fatima Abubakar</div>
+                                                <div class="text-sm text-text-secondary">fatima@email.com</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="py-4">
+                                        <span class="text-sm bg-primary/10 text-primary px-2 py-1 rounded-full">Customer</span>
+                                    </td>
+                                    <td class="py-4">
+                                        <span class="text-sm bg-success/10 text-success px-2 py-1 rounded-full">Verified</span>
+                                    </td>
+                                    <td class="py-4 text-sm text-text-secondary">2 hours ago</td>
+                                    <td class="py-4">
+                                        <button class="text-accent hover:text-accent-700 text-sm">View</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="py-4">
+                                        <div class="flex items-center space-x-3">
+                                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face" alt="Chinedu Okwu" class="w-8 h-8 rounded-full object-cover" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                                            <div>
+                                                <div class="font-medium">Chinedu Okwu</div>
+                                                <div class="text-sm text-text-secondary">chinedu@email.com</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="py-4">
+                                        <span class="text-sm bg-accent/10 text-accent px-2 py-1 rounded-full">Agent</span>
+                                    </td>
+                                    <td class="py-4">
+                                        <span class="text-sm bg-warning/10 text-warning px-2 py-1 rounded-full">Pending</span>
+                                    </td>
+                                    <td class="py-4 text-sm text-text-secondary">4 hours ago</td>
+                                    <td class="py-4">
+                                        <button class="text-accent hover:text-accent-700 text-sm">Review</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="py-4">
+                                        <div class="flex items-center space-x-3">
+                                            <img src="https://images.pixabay.com/photos/2016/11/21/12/42/beard-1845166_1280.jpg" alt="Kemi Adebayo" class="w-8 h-8 rounded-full object-cover" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                                            <div>
+                                                <div class="font-medium">Kemi Adebayo</div>
+                                                <div class="text-sm text-text-secondary">kemi@email.com</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="py-4">
+                                        <span class="text-sm bg-primary/10 text-primary px-2 py-1 rounded-full">Customer</span>
+                                    </td>
+                                    <td class="py-4">
+                                        <span class="text-sm bg-success/10 text-success px-2 py-1 rounded-full">Verified</span>
+                                    </td>
+                                    <td class="py-4 text-sm text-text-secondary">6 hours ago</td>
+                                    <td class="py-4">
+                                        <button class="text-accent hover:text-accent-700 text-sm">View</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- Booking Analytics Chart -->
+                <section class="card">
+                    <div class="flex items-center justify-between mb-6">
+                        <h2 class="text-xl font-semibold">Booking Trends</h2>
+                        <div class="flex items-center space-x-2">
+                            <select class="form-input text-sm py-2">
+                                <option>Last 7 days</option>
+                                <option>Last 30 days</option>
+                                <option>Last 3 months</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <!-- Chart Placeholder -->
+                    <div class="h-64 bg-slate-800/50 rounded-lg flex items-center justify-center mb-4" aria-label="Booking trends chart">
+                        <svg class="w-full h-full" viewBox="0 0 400 200">
+                            <!-- Chart Grid -->
+                            <defs>
+                                <pattern id="grid" width="40" height="20" patternUnits="userSpaceOnUse">
+                                    <path d="M 40 0 L 0 0 0 20" fill="none" stroke="#334155" stroke-width="0.5"/>
+                                </pattern>
+                            </defs>
+                            <rect width="100%" height="100%" fill="url(#grid)"/>
+                            
+                            <!-- Chart Line -->
+                            <polyline fill="none" stroke="#ff6b35" stroke-width="3" points="20,160 60,140 100,120 140,100 180,80 220,90 260,70 300,60 340,50 380,40"/>
+                            
+                            <!-- Data Points -->
+                            <circle cx="20" cy="160" r="4" fill="#ff6b35"/>
+                            <circle cx="60" cy="140" r="4" fill="#ff6b35"/>
+                            <circle cx="100" cy="120" r="4" fill="#ff6b35"/>
+                            <circle cx="140" cy="100" r="4" fill="#ff6b35"/>
+                            <circle cx="180" cy="80" r="4" fill="#ff6b35"/>
+                            <circle cx="220" cy="90" r="4" fill="#ff6b35"/>
+                            <circle cx="260" cy="70" r="4" fill="#ff6b35"/>
+                            <circle cx="300" cy="60" r="4" fill="#ff6b35"/>
+                            <circle cx="340" cy="50" r="4" fill="#ff6b35"/>
+                            <circle cx="380" cy="40" r="4" fill="#ff6b35"/>
+                        </svg>
+                    </div>
+                    
+                    <div class="grid grid-cols-3 gap-4 text-center">
+                        <div>
+                            <div class="text-lg font-semibold text-success">+24%</div>
+                            <div class="text-sm text-text-secondary">Week Growth</div>
+                        </div>
+                        <div>
+                            <div class="text-lg font-semibold">1,847</div>
+                            <div class="text-sm text-text-secondary">Total Bookings</div>
+                        </div>
+                        <div>
+                            <div class="text-lg font-semibold text-accent">₦18.4M</div>
+                            <div class="text-sm text-text-secondary">Revenue</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Service Category Performance -->
+                <section class="card">
+                    <div class="flex items-center justify-between mb-6">
+                        <h2 class="text-xl font-semibold">Service Category Performance</h2>
+                        <button class="btn-outline text-sm px-3 py-2">View Details</button>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center">
+                                    <svg class="w-4 h-4 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M19.36 2.72L20.78 4.14L15.06 9.85C16.13 11.39 16.28 13.24 15.38 14.44L9.06 8.12C10.26 7.22 12.11 7.37 13.65 8.44L19.36 2.72M5.93 17.57C3.92 15.56 2.69 13.16 2.35 10.92L7.23 8.83L14.67 16.27L12.58 21.15C10.34 20.81 7.94 19.58 5.93 17.57Z"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <div class="font-medium">House Cleaning</div>
+                                    <div class="text-sm text-text-secondary">847 bookings</div>
+                                </div>
+                            </div>
+                            <div class="text-right">
+                                <div class="font-semibold">₦4.2M</div>
+                                <div class="text-sm text-success">+18%</div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-8 h-8 bg-accent/10 rounded-lg flex items-center justify-center">
+                                    <svg class="w-4 h-4 text-accent" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M22.7 19L13.6 9.9C14.5 7.6 14 4.9 12.1 3C10.1 1 7.1 0.6 4.7 1.7L9 6L6 9L1.6 4.7C0.4 7.1 0.9 10.1 2.9 12.1C4.8 14 7.5 14.5 9.8 13.6L18.9 22.7C19.3 23.1 19.9 23.1 20.3 22.7L22.6 20.4C23.1 20 23.1 19.3 22.7 19Z"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <div class="font-medium">Home Repairs</div>
+                                    <div class="text-sm text-text-secondary">623 bookings</div>
+                                </div>
+                            </div>
+                            <div class="text-right">
+                                <div class="font-semibold">₦3.1M</div>
+                                <div class="text-sm text-success">+12%</div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-8 h-8 bg-secondary/10 rounded-lg flex items-center justify-center">
+                                    <svg class="w-4 h-4 text-secondary" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M3 4H1V6H3L3.94 10.94L2.59 12.29C2.21 12.67 2.21 13.33 2.59 13.71L3.29 14.41C3.67 14.79 4.33 14.79 4.71 14.41L6.06 13.06L11 18H20C20.55 18 21 17.55 21 17S20.55 16 20 16H12.41L9.41 13H15.55C16.3 13 16.96 12.59 17.3 11.97L20.88 5.48C21.25 4.82 20.77 4 20.01 4H5.21L4.27 2H3V4Z"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <div class="font-medium">Delivery Services</div>
+                                    <div class="text-sm text-text-secondary">377 bookings</div>
+                                </div>
+                            </div>
+                            <div class="text-right">
+                                <div class="font-semibold">₦1.1M</div>
+                                <div class="text-sm text-warning">-3%</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Right Column - Agent Management & Alerts -->
+            <div class="space-y-8">
+                <!-- Agent Verification Queue -->
+                <section class="card">
+                    <div class="flex items-center justify-between mb-6">
+                        <h2 class="text-lg font-semibold">Agent Verification Queue</h2>
+                        <span class="text-xs bg-warning/10 text-warning px-2 py-1 rounded-full">12 Pending</span>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between p-3 bg-slate-800/30 rounded-lg">
+                            <div class="flex items-center space-x-3">
+                                <img src="https://images.pexels.com/photos/1040880/pexels-photo-1040880.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop" alt="Ibrahim Hassan" class="w-10 h-10 rounded-full object-cover" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                                <div>
+                                    <div class="font-medium text-sm">Ibrahim Hassan</div>
+                                    <div class="text-xs text-text-secondary">Plumber - Wuse II</div>
+                                </div>
+                            </div>
+                            <div class="flex space-x-2">
+                                <button class="text-success hover:text-success-600 text-sm">
+                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                    </svg>
+                                </button>
+                                <button class="text-error hover:text-error-600 text-sm">
+                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center justify-between p-3 bg-slate-800/30 rounded-lg">
+                            <div class="flex items-center space-x-3">
+                                <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=150&h=150&fit=crop&crop=face" alt="Amina Yusuf" class="w-10 h-10 rounded-full object-cover" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                                <div>
+                                    <div class="font-medium text-sm">Amina Yusuf</div>
+                                    <div class="text-xs text-text-secondary">Cleaner - Garki</div>
+                                </div>
+                            </div>
+                            <div class="flex space-x-2">
+                                <button class="text-success hover:text-success-600 text-sm">
+                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                    </svg>
+                                </button>
+                                <button class="text-error hover:text-error-600 text-sm">
+                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <button class="w-full text-center text-accent hover:text-accent-700 text-sm py-2">
+                            View All Pending (12)
+                        </button>
+                    </div>
+                </section>
+
+                <!-- System Alerts -->
+                <section class="card">
+                    <div class="flex items-center justify-between mb-6">
+                        <h2 class="text-lg font-semibold">System Alerts</h2>
+                        <button class="text-accent hover:text-accent-700 text-sm">Mark All Read</button>
+                    </div>
+                    
+                    <div class="space-y-3">
+                        <div class="flex items-start space-x-3 p-3 bg-error/5 border border-error/20 rounded-lg">
+                            <div class="w-2 h-2 bg-error rounded-full mt-2 flex-shrink-0"></div>
+                            <div>
+                                <div class="text-sm font-medium">Payment Gateway Issue</div>
+                                <div class="text-xs text-text-secondary">Multiple failed transactions reported</div>
+                                <div class="text-xs text-text-secondary mt-1">2 minutes ago</div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-3 p-3 bg-warning/5 border border-warning/20 rounded-lg">
+                            <div class="w-2 h-2 bg-warning rounded-full mt-2 flex-shrink-0"></div>
+                            <div>
+                                <div class="text-sm font-medium">High Dispute Rate</div>
+                                <div class="text-xs text-text-secondary">Cleaning category above threshold</div>
+                                <div class="text-xs text-text-secondary mt-1">15 minutes ago</div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-3 p-3 bg-primary/5 border border-primary/20 rounded-lg">
+                            <div class="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                            <div>
+                                <div class="text-sm font-medium">New Agent Applications</div>
+                                <div class="text-xs text-text-secondary">5 new applications received</div>
+                                <div class="text-xs text-text-secondary mt-1">1 hour ago</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Financial Overview -->
+                <section class="card">
+                    <div class="flex items-center justify-between mb-6">
+                        <h2 class="text-lg font-semibold">Financial Overview</h2>
+                        <button class="btn-outline text-sm px-3 py-2">Export Report</button>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between">
+                            <div class="text-sm text-text-secondary">Total Revenue (Sept)</div>
+                            <div class="font-semibold">₦72.4M</div>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="text-sm text-text-secondary">Commission Earned</div>
+                            <div class="font-semibold text-success">₦7.2M</div>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="text-sm text-text-secondary">Pending Payouts</div>
+                            <div class="font-semibold text-warning">₦2.1M</div>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="text-sm text-text-secondary">Refunds Processed</div>
+                            <div class="font-semibold text-error">₦340K</div>
+                        </div>
+                        
+                        <div class="pt-4 border-t border-slate-700/20">
+                            <div class="flex items-center justify-between">
+                                <div class="text-sm font-medium">Net Profit</div>
+                                <div class="font-bold text-accent">₦4.7M</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Quick Actions -->
+                <section class="card">
+                    <h2 class="text-lg font-semibold mb-4">Quick Actions</h2>
+                    
+                    <div class="grid grid-cols-1 gap-3">
+                        <button class="btn-primary w-full text-sm py-3">
+                            <svg class="w-4 h-4 inline mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
+                            </svg>
+                            Add New Agent
+                        </button>
+                        <button class="btn-outline w-full text-sm py-3">
+                            <svg class="w-4 h-4 inline mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                            </svg>
+                            Bulk Approve
+                        </button>
+                        <button class="btn-outline w-full text-sm py-3">
+                            <svg class="w-4 h-4 inline mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                            </svg>
+                            Generate Report
+                        </button>
+                        <a href="real_time_service_tracking.html" class="btn-accent w-full text-sm py-3 text-center">
+                            <svg class="w-4 h-4 inline mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                            </svg>
+                            Live Tracking
+                        </a>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-surface py-8 border-t border-slate-700/20 mt-16">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <div class="flex items-center space-x-2 mb-4 md:mb-0">
+                    <div class="w-30 h-10 bg-primary rounded-lg flex items-center justify-center">
+                        <img src="../public/logo.png" alt="ForaFix Logo" class="w-30 h-10 object-contain rounded-lg" />
+                    </div>
+                    <span class="font-semibold">Admin</span>
+                </div>
+                
+                <div class="text-sm text-text-secondary">
+                    © 2025 ForaFix. All Rights Reserved. | Admin Panel v2.1.0
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Real-time updates simulation
+        function updateMetrics() {
+            const metrics = document.querySelectorAll('[data-metric]');
+            metrics.forEach(metric => {
+                // Simulate real-time data updates
+                const currentValue = parseInt(metric.textContent.replace(/[^\d]/g, ''));
+                const change = Math.floor(Math.random() * 10) - 5;
+                const newValue = Math.max(0, currentValue + change);
+                
+                if (metric.textContent.includes('₦')) {
+                    metric.textContent = `₦${newValue.toLocaleString()}`;
+                } else {
+                    metric.textContent = newValue.toString();
+                }
+            });
+        }
+
+        // Update metrics every 30 seconds
+        setInterval(updateMetrics, 30000);
+
+        // Chart interactions
+        document.querySelectorAll('circle').forEach(point => {
+            point.addEventListener('mouseenter', function() {
+                this.setAttribute('r', '6');
+                this.style.cursor = 'pointer';
+            });
+            
+            point.addEventListener('mouseleave', function() {
+                this.setAttribute('r', '4');
+            });
+        });
+
+        // Table row interactions
+        document.querySelectorAll('tbody tr').forEach(row => {
+            row.addEventListener('click', function() {
+                this.style.backgroundColor = 'rgba(26, 93, 26, 0.1)';
+                setTimeout(() => {
+                    this.style.backgroundColor = '';
+                }, 200);
+            });
+        });
+
+        // Alert dismissal
+        document.querySelectorAll('.alert').forEach(alert => {
+            const dismissBtn = alert.querySelector('[data-dismiss]');
+            if (dismissBtn) {
+                dismissBtn.addEventListener('click', () => {
+                    alert.style.opacity = '0';
+                    setTimeout(() => alert.remove(), 300);
+                });
+            }
+        });
+
+        // Auto-refresh data every 5 minutes
+        setInterval(() => {
+            const timestamp = document.querySelector('[data-timestamp]');
+            if (timestamp) {
+                const now = new Date();
+                timestamp.textContent = `Last updated: ${now.toLocaleDateString()} at ${now.toLocaleTimeString()}`;
+            }
+        }, 300000);
+
+        // Notification badge animation
+        const notificationBadge = document.querySelector('.absolute.-top-1.-right-1');
+        if (notificationBadge) {
+            setInterval(() => {
+                notificationBadge.style.transform = 'scale(1.1)';
+                setTimeout(() => {
+                    notificationBadge.style.transform = 'scale(1)';
+                }, 200);
+            }, 10000);
+        }
+    </script>
+<script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
+</body>
+</html>

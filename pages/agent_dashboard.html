@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Agent Dashboard - ForaFix | Manage Your Services & Earnings</title>
+    <meta name="description" content="Professional agent dashboard for managing jobs, tracking earnings, and monitoring performance on ForaFix platform." />
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="icon" type="image/x-icon" href="../public/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fforafix2891back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.8"></script>
+</head>
+<body class="bg-background text-text-primary">
+    <!-- Header -->
+    <header class="sticky top-0 z-50 bg-background/95 backdrop-blur-sm border-b border-slate-700/20">
+        <nav class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <div class="flex items-center space-x-2">
+                    <div class="w-30 h-10 bg-primary rounded-lg flex items-center justify-center">
+                        <img src="../public/logo.png" alt="ForaFix Logo" class="w-30 h-10 object-contain rounded-lg" />
+                    </div>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="public_landing_page.html" class="text-text-secondary hover:text-accent transition-colors">Home</a>
+                    <a href="service_booking_flow.html" class="text-text-secondary hover:text-accent transition-colors">Services</a>
+                    <a href="user_dashboard.html" class="text-text-secondary hover:text-accent transition-colors">User Dashboard</a>
+                    <a href="agent_dashboard.html" class="text-accent font-medium">Agent Dashboard</a>
+                    <a href="real_time_service_tracking.html" class="text-text-secondary hover:text-accent transition-colors">Track Service</a>
+                </div>
+
+                <!-- Agent Profile & Notifications -->
+                <div class="flex items-center space-x-4">
+                    <!-- Notifications -->
+                    <div class="relative">
+                        <button class="p-2 text-text-secondary hover:text-accent transition-colors relative">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-5 5v-5zM4 19h10a2 2 0 002-2V7a2 2 0 00-2-2H4a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                            </svg>
+                            <span class="absolute -top-1 -right-1 w-3 h-3 bg-accent rounded-full text-xs flex items-center justify-center text-white">3</span>
+                        </button>
+                    </div>
+
+                    <!-- Agent Profile -->
+                    <div class="flex items-center space-x-3">
+                        <img src="https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop&crop=face" alt="Agent Profile" class="w-10 h-10 rounded-full object-cover border-2 border-primary" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                        <div class="hidden sm:block">
+                            <p class="text-sm font-medium">Kemi Adebayo</p>
+                            <p class="text-xs text-text-secondary">Cleaning Specialist</p>
+                        </div>
+                    </div>
+
+                    <!-- Mobile Menu Button -->
+                    <button id="mobile-menu-btn" class="md:hidden p-2 text-text-primary hover:text-accent transition-colors">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="md:hidden hidden mt-4 pb-4 border-t border-slate-700/20">
+                <div class="flex flex-col space-y-4 pt-4">
+                    <a href="public_landing_page.html" class="text-text-secondary hover:text-accent transition-colors">Home</a>
+                    <a href="service_booking_flow.html" class="text-text-secondary hover:text-accent transition-colors">Services</a>
+                    <a href="user_dashboard.html" class="text-text-secondary hover:text-accent transition-colors">User Dashboard</a>
+                    <a href="agent_dashboard.html" class="text-accent font-medium">Agent Dashboard</a>
+                    <a href="real_time_service_tracking.html" class="text-text-secondary hover:text-accent transition-colors">Track Service</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Dashboard Content -->
+    <main class="container mx-auto px-4 py-8">
+        <!-- Welcome Section -->
+        <div class="mb-8">
+            <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
+                <div>
+                    <h1 class="text-2xl lg:text-3xl font-bold mb-2">Good afternoon, Kemi! 👋</h1>
+                    <p class="text-text-secondary">You have 3 jobs scheduled for today. Let's make it a productive day!</p>
+                </div>
+                <div class="flex flex-col sm:flex-row gap-3">
+                    <button class="btn-primary flex items-center space-x-2">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
+                        </svg>
+                        <span>Set Availability</span>
+                    </button>
+                    <button class="btn-outline flex items-center space-x-2">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                        </svg>
+                        <span>View Reports</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quick Stats -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+            <div class="card">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-text-secondary text-sm mb-1">Today's Earnings</p>
+                        <p class="text-2xl font-bold text-accent">₦45,500</p>
+                        <p class="text-success text-sm">+12% from yesterday</p>
+                    </div>
+                    <div class="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center">
+                        <svg class="w-6 h-6 text-accent" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM21 9V7L15 7.5V9M15 11.5L21 12V14L15 13.5V15.5L21 16V18L15 17.5V19.5L12 19L10.5 17.5V15.5L9 17L6.5 15.5L9 14V12L6.5 10.5L9 9V7L10.5 8.5L12 7L15 7.5V9.5L21 10V12L15 11.5Z"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-text-secondary text-sm mb-1">Jobs Completed</p>
+                        <p class="text-2xl font-bold">127</p>
+                        <p class="text-success text-sm">This month</p>
+                    </div>
+                    <div class="w-12 h-12 bg-success/10 rounded-full flex items-center justify-center">
+                        <svg class="w-6 h-6 text-success" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2L13.09 8.26L22 9L13.09 9.74L12 16L10.91 9.74L2 9L10.91 8.26L12 2Z"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-text-secondary text-sm mb-1">Customer Rating</p>
+                        <p class="text-2xl font-bold">4.9</p>
+                        <div class="flex items-center space-x-1">
+                            <svg class="w-4 h-4 text-accent" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z"/>
+                            </svg>
+                            <span class="text-text-secondary text-sm">Based on 89 reviews</span>
+                        </div>
+                    </div>
+                    <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
+                        <svg class="w-6 h-6 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-text-secondary text-sm mb-1">Completion Rate</p>
+                        <p class="text-2xl font-bold">98.5%</p>
+                        <p class="text-success text-sm">Excellent performance</p>
+                    </div>
+                    <div class="w-12 h-12 bg-warning/10 rounded-full flex items-center justify-center">
+                        <svg class="w-6 h-6 text-warning" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2C6.48 2 2 6.48 2 12S6.48 22 12 22 22 17.52 22 12 17.52 2 12 2ZM13 17H11V15H13V17ZM13 13H11V7H13V13Z"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Dashboard Grid -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <!-- Today's Schedule -->
+            <div class="lg:col-span-2">
+                <div class="card">
+                    <div class="flex items-center justify-between mb-6">
+                        <h2 class="text-xl font-bold">Today's Schedule</h2>
+                        <span class="text-sm text-text-secondary">September 1, 2025</span>
+                    </div>
+
+                    <div class="space-y-4">
+                        <!-- Current Job -->
+                        <div class="border-l-4 border-accent bg-accent/5 rounded-lg p-4">
+                            <div class="flex items-start justify-between mb-3">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-3 h-3 bg-accent rounded-full animate-pulse"></div>
+                                    <span class="text-sm font-medium text-accent">CURRENT JOB</span>
+                                </div>
+                                <span class="text-sm text-text-secondary">2:00 PM - 4:00 PM</span>
+                            </div>
+                            
+                            <div class="flex items-start space-x-4">
+                                <img src="https://images.pixabay.com/photos/2016/11/21/12/42/beard-1845166_1280.jpg" alt="Customer" class="w-12 h-12 rounded-full object-cover" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                                <div class="flex-1">
+                                    <h3 class="font-semibold">Deep House Cleaning</h3>
+                                    <p class="text-text-secondary text-sm mb-2">Adebayo Ogundimu • Maitama, Abuja</p>
+                                    <p class="text-sm mb-3">3-bedroom apartment, kitchen deep clean, bathroom sanitization</p>
+                                    
+                                    <div class="flex flex-wrap gap-2 mb-4">
+                                        <span class="px-2 py-1 bg-primary/10 text-primary text-xs rounded-full">₦25,000</span>
+                                        <span class="px-2 py-1 bg-success/10 text-success text-xs rounded-full">Confirmed</span>
+                                    </div>
+
+                                    <div class="flex flex-wrap gap-2">
+                                        <button class="btn-accent text-sm px-4 py-2">Update Status</button>
+                                        <button class="btn-outline text-sm px-4 py-2">Contact Customer</button>
+                                        <button class="btn-outline text-sm px-4 py-2 flex items-center space-x-1">
+                                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                            </svg>
+                                            <span>Navigate</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Upcoming Jobs -->
+                        <div class="border border-slate-700/20 rounded-lg p-4">
+                            <div class="flex items-start justify-between mb-3">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-3 h-3 bg-warning rounded-full"></div>
+                                    <span class="text-sm font-medium text-warning">UPCOMING</span>
+                                </div>
+                                <span class="text-sm text-text-secondary">5:30 PM - 6:30 PM</span>
+                            </div>
+                            
+                            <div class="flex items-start space-x-4">
+                                <img src="https://images.pixabay.com/photos/2017/06/26/02/47/man-2442565_1280.jpg" alt="Customer" class="w-12 h-12 rounded-full object-cover" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                                <div class="flex-1">
+                                    <h3 class="font-semibold">Office Cleaning</h3>
+                                    <p class="text-text-secondary text-sm mb-2">Fatima Abdullahi • Wuse II, Abuja</p>
+                                    <p class="text-sm mb-3">Small office space, desk sanitization, floor mopping</p>
+                                    
+                                    <div class="flex flex-wrap gap-2 mb-4">
+                                        <span class="px-2 py-1 bg-primary/10 text-primary text-xs rounded-full">₦8,500</span>
+                                        <span class="px-2 py-1 bg-warning/10 text-warning text-xs rounded-full">Pending</span>
+                                    </div>
+
+                                    <div class="flex flex-wrap gap-2">
+                                        <button class="btn-primary text-sm px-4 py-2">Accept Job</button>
+                                        <button class="btn-outline text-sm px-4 py-2">View Details</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Evening Job -->
+                        <div class="border border-slate-700/20 rounded-lg p-4">
+                            <div class="flex items-start justify-between mb-3">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-3 h-3 bg-text-secondary rounded-full"></div>
+                                    <span class="text-sm font-medium text-text-secondary">SCHEDULED</span>
+                                </div>
+                                <span class="text-sm text-text-secondary">7:00 PM - 9:00 PM</span>
+                            </div>
+                            
+                            <div class="flex items-start space-x-4">
+                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face" alt="Customer" class="w-12 h-12 rounded-full object-cover" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                                <div class="flex-1">
+                                    <h3 class="font-semibold">Post-Event Cleanup</h3>
+                                    <p class="text-text-secondary text-sm mb-2">Chinedu Okwu • Garki, Abuja</p>
+                                    <p class="text-sm mb-3">Party cleanup, kitchen restoration, general tidying</p>
+                                    
+                                    <div class="flex flex-wrap gap-2 mb-4">
+                                        <span class="px-2 py-1 bg-primary/10 text-primary text-xs rounded-full">₦12,000</span>
+                                        <span class="px-2 py-1 bg-success/10 text-success text-xs rounded-full">Confirmed</span>
+                                    </div>
+
+                                    <div class="flex flex-wrap gap-2">
+                                        <button class="btn-outline text-sm px-4 py-2">View Details</button>
+                                        <button class="btn-outline text-sm px-4 py-2">Contact Customer</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Sidebar -->
+            <div class="space-y-6">
+                <!-- Earnings Widget -->
+                <div class="card">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-lg font-semibold">Earnings Overview</h3>
+                        <select class="text-sm bg-surface border border-slate-600 rounded px-2 py-1">
+                            <option>This Week</option>
+                            <option>This Month</option>
+                            <option>This Year</option>
+                        </select>
+                    </div>
+
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-center">
+                            <span class="text-text-secondary">Daily Average</span>
+                            <span class="font-semibold">₦38,250</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-text-secondary">Weekly Total</span>
+                            <span class="font-semibold">₦267,750</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-text-secondary">Commission (15%)</span>
+                            <span class="font-semibold text-accent">₦40,162</span>
+                        </div>
+                        <div class="border-t border-slate-700/20 pt-4">
+                            <div class="flex justify-between items-center">
+                                <span class="font-semibold">Net Earnings</span>
+                                <span class="font-bold text-success">₦227,588</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="btn-primary w-full mt-4">Request Payout</button>
+                </div>
+
+                <!-- Performance Metrics -->
+                <div class="card">
+                    <h3 class="text-lg font-semibold mb-4">Performance Metrics</h3>
+                    
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-text-secondary">Customer Satisfaction</span>
+                                <span class="font-semibold">4.9/5.0</span>
+                            </div>
+                            <div class="w-full bg-slate-700 rounded-full h-2">
+                                <div class="bg-success h-2 rounded-full" style="width: 98%"></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-text-secondary">On-Time Arrival</span>
+                                <span class="font-semibold">96%</span>
+                            </div>
+                            <div class="w-full bg-slate-700 rounded-full h-2">
+                                <div class="bg-primary h-2 rounded-full" style="width: 96%"></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-text-secondary">Job Completion</span>
+                                <span class="font-semibold">98.5%</span>
+                            </div>
+                            <div class="w-full bg-slate-700 rounded-full h-2">
+                                <div class="bg-accent h-2 rounded-full" style="width: 98.5%"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-4 p-3 bg-success/10 rounded-lg">
+                        <p class="text-success text-sm font-medium">🎉 Excellent Performance!</p>
+                        <p class="text-success text-xs mt-1">You're in the top 5% of agents this month.</p>
+                    </div>
+                </div>
+
+                <!-- Quick Actions -->
+                <div class="card">
+                    <h3 class="text-lg font-semibold mb-4">Quick Actions</h3>
+                    
+                    <div class="space-y-3">
+                        <button class="w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-slate-700/20 transition-colors text-left">
+                            <div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center">
+                                <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="font-medium">Update Availability</p>
+                                <p class="text-text-secondary text-sm">Manage your schedule</p>
+                            </div>
+                        </button>
+
+                        <button class="w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-slate-700/20 transition-colors text-left">
+                            <div class="w-10 h-10 bg-accent/10 rounded-full flex items-center justify-center">
+                                <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="font-medium">Training Modules</p>
+                                <p class="text-text-secondary text-sm">Improve your skills</p>
+                            </div>
+                        </button>
+
+                        <button class="w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-slate-700/20 transition-colors text-left">
+                            <div class="w-10 h-10 bg-warning/10 rounded-full flex items-center justify-center">
+                                <svg class="w-5 h-5 text-warning" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="font-medium">Document Center</p>
+                                <p class="text-text-secondary text-sm">Manage certifications</p>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recent Activity -->
+        <div class="mt-8">
+            <div class="card">
+                <div class="flex items-center justify-between mb-6">
+                    <h2 class="text-xl font-bold">Recent Activity</h2>
+                    <a href="javascript:void(0)" class="text-accent hover:text-accent-700 text-sm">View All</a>
+                </div>
+
+                <div class="space-y-4">
+                    <div class="flex items-start space-x-4 p-4 rounded-lg hover:bg-slate-700/10 transition-colors">
+                        <div class="w-10 h-10 bg-success/10 rounded-full flex items-center justify-center">
+                            <svg class="w-5 h-5 text-success" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2L13.09 8.26L22 9L13.09 9.74L12 16L10.91 9.74L2 9L10.91 8.26L12 2Z"/>
+                            </svg>
+                        </div>
+                        <div class="flex-1">
+                            <p class="font-medium">Job Completed Successfully</p>
+                            <p class="text-text-secondary text-sm">Deep cleaning at Maitama residence - ₦25,000 earned</p>
+                            <p class="text-text-secondary text-xs mt-1">2 hours ago</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start space-x-4 p-4 rounded-lg hover:bg-slate-700/10 transition-colors">
+                        <div class="w-10 h-10 bg-accent/10 rounded-full flex items-center justify-center">
+                            <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z"/>
+                            </svg>
+                        </div>
+                        <div class="flex-1">
+                            <p class="font-medium">New 5-Star Review Received</p>
+                            <p class="text-text-secondary text-sm">"Excellent service! Very thorough and professional." - Adebayo O.</p>
+                            <p class="text-text-secondary text-xs mt-1">4 hours ago</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start space-x-4 p-4 rounded-lg hover:bg-slate-700/10 transition-colors">
+                        <div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center">
+                            <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"/>
+                            </svg>
+                        </div>
+                        <div class="flex-1">
+                            <p class="font-medium">Payment Processed</p>
+                            <p class="text-text-secondary text-sm">Weekly payout of ₦227,588 sent to your bank account</p>
+                            <p class="text-text-secondary text-xs mt-1">1 day ago</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Emergency Contact Button -->
+    <div class="fixed bottom-6 left-6 z-50">
+        <button class="w-14 h-14 bg-error text-white rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200 flex items-center justify-center">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+            </svg>
+        </button>
+    </div>
+
+    <!-- Floating Action Button -->
+    <a href="service_booking_flow.html" class="fab">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
+        </svg>
+    </a>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Job status update functionality
+        document.querySelectorAll('button').forEach(button => {
+            if (button.textContent.includes('Update Status')) {
+                button.addEventListener('click', () => {
+                    // Simulate status update
+                    const statusOptions = ['In Progress', 'Completed', 'On Hold'];
+                    const currentStatus = statusOptions[Math.floor(Math.random() * statusOptions.length)];
+                    
+                    // Show notification
+                    showNotification(`Job status updated to: ${currentStatus}`, 'success');
+                });
+            }
+        });
+
+        // Notification system
+        function showNotification(message, type = 'info') {
+            const notification = document.createElement('div');
+            notification.className = `fixed top-4 right-4 z-50 p-4 rounded-lg shadow-lg transition-all duration-300 transform translate-x-full`;
+            
+            const bgColor = type === 'success' ? 'bg-success' : type === 'error' ? 'bg-error' : 'bg-primary';
+            notification.className += ` ${bgColor} text-white`;
+            
+            notification.innerHTML = `
+                <div class="flex items-center space-x-2">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2L13.09 8.26L22 9L13.09 9.74L12 16L10.91 9.74L2 9L10.91 8.26L12 2Z"/>
+                    </svg>
+                    <span>${message}</span>
+                </div>
+            `;
+            
+            document.body.appendChild(notification);
+            
+            // Animate in
+            setTimeout(() => {
+                notification.classList.remove('translate-x-full');
+            }, 100);
+            
+            // Animate out and remove
+            setTimeout(() => {
+                notification.classList.add('translate-x-full');
+                setTimeout(() => {
+                    document.body.removeChild(notification);
+                }, 300);
+            }, 3000);
+        }
+
+        // Real-time updates simulation
+        setInterval(() => {
+            // Simulate earnings update
+            const earningsElement = document.querySelector('.text-2xl.font-bold.text-accent');
+            if (earningsElement) {
+                const currentEarnings = parseInt(earningsElement.textContent.replace('₦', '').replace(',', ''));
+                const newEarnings = currentEarnings + Math.floor(Math.random() * 1000);
+                earningsElement.textContent = `₦${newEarnings.toLocaleString()}`;
+            }
+        }, 30000); // Update every 30 seconds
+
+        // Performance chart animation
+        document.querySelectorAll('.bg-success.h-2.rounded-full, .bg-primary.h-2.rounded-full, .bg-accent.h-2.rounded-full').forEach(bar => {
+            const width = bar.style.width;
+            bar.style.width = '0%';
+            setTimeout(() => {
+                bar.style.width = width;
+                bar.style.transition = 'width 1s ease-in-out';
+            }, 500);
+        });
+
+        // Add click handlers for quick actions
+        document.querySelectorAll('.card button').forEach(button => {
+            button.addEventListener('click', (e) => {
+                if (button.textContent.includes('Training Modules')) {
+                    showNotification('Training modules will be available soon!', 'info');
+                } else if (button.textContent.includes('Document Center')) {
+                    showNotification('Document center opened', 'success');
+                } else if (button.textContent.includes('Update Availability')) {
+                    showNotification('Availability calendar opened', 'success');
+                }
+            });
+        });
+
+        // Smooth scrolling for better UX
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+<script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
+</body>
+</html>

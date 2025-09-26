@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Dashboard - ForaFix | Manage Your Home Services</title>
+    <meta name="description" content="Manage your bookings, track services, and access your ForaFix account dashboard. View service history, upcoming appointments, and manage preferences." />
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="icon" type="image/x-icon" href="../public/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fforafix2891back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.8"></script>
+</head>
+<body class="bg-background text-text-primary">
+    <!-- Sticky Header -->
+    <header class="sticky top-0 z-50 bg-background/95 backdrop-blur-sm border-b border-slate-700/20">
+        <nav class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <div class="flex items-center space-x-2">
+                    <div class="w-30 h-10 bg-primary rounded-lg flex items-center justify-center">
+                        <img src="../public/logo.png" alt="ForaFix Logo" class="w-30 h-10 object-contain rounded-lg" />
+                    </div>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="public_landing_page.html" class="text-text-secondary hover:text-accent transition-colors">Home</a>
+                    <a href="service_booking_flow.html" class="text-text-secondary hover:text-accent transition-colors">Services</a>
+                    <a href="user_dashboard.html" class="text-accent font-medium">Dashboard</a>
+                    <a href="agent_dashboard.html" class="text-text-secondary hover:text-accent transition-colors">Become Agent</a>
+                    <a href="real_time_service_tracking.html" class="text-text-secondary hover:text-accent transition-colors">Track Service</a>
+                </div>
+
+                <!-- User Profile & Notifications -->
+                <div class="flex items-center space-x-4">
+                    <!-- Notification Bell -->
+                    <button class="relative p-2 text-text-secondary hover:text-accent transition-colors">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/>
+                        </svg>
+                        <span class="absolute -top-1 -right-1 w-3 h-3 bg-accent rounded-full"></span>
+                    </button>
+
+                    <!-- User Avatar -->
+                    <div class="flex items-center space-x-3">
+                        <img src="https://images.pexels.com/photos/1040880/pexels-photo-1040880.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop&crop=face" alt="Adebayo Ogundimu" class="w-10 h-10 rounded-full object-cover border-2 border-primary/20" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                        <div class="hidden sm:block">
+                            <p class="text-sm font-medium">Adebayo O.</p>
+                            <p class="text-xs text-text-secondary">Premium Member</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Mobile Menu Button -->
+                    <button id="mobile-menu-btn" class="md:hidden p-2 text-text-primary hover:text-accent transition-colors">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="md:hidden hidden mt-4 pb-4 border-t border-slate-700/20">
+                <div class="flex flex-col space-y-4 pt-4">
+                    <a href="public_landing_page.html" class="text-text-secondary hover:text-accent transition-colors">Home</a>
+                    <a href="service_booking_flow.html" class="text-text-secondary hover:text-accent transition-colors">Services</a>
+                    <a href="user_dashboard.html" class="text-accent font-medium">Dashboard</a>
+                    <a href="agent_dashboard.html" class="text-text-secondary hover:text-accent transition-colors">Become Agent</a>
+                    <a href="real_time_service_tracking.html" class="text-text-secondary hover:text-accent transition-colors">Track Service</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Dashboard Content -->
+    <main class="container mx-auto px-4 py-8">
+        <!-- Welcome Section -->
+        <div class="mb-8">
+            <h1 class="text-3xl md:text-4xl font-bold mb-2">Welcome back, Adebayo!</h1>
+            <p class="text-text-secondary">Manage your services and track your bookings</p>
+        </div>
+
+        <!-- Dashboard Grid -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <!-- Main Content Column -->
+            <div class="lg:col-span-2 space-y-8">
+                <!-- Upcoming Bookings -->
+                <section>
+                    <div class="flex items-center justify-between mb-6">
+                        <h2 class="text-2xl font-bold">Upcoming Bookings</h2>
+                        <a href="service_booking_flow.html" class="btn-accent">Book New Service</a>
+                    </div>
+
+                    <div class="space-y-4">
+                        <!-- Active Booking Card -->
+                        <div class="card border-l-4 border-l-accent">
+                            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                                <div class="flex items-start space-x-4">
+                                    <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
+                                        <svg class="w-6 h-6 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M19.36 2.72L20.78 4.14L15.06 9.85C16.13 11.39 16.28 13.24 15.38 14.44L9.06 8.12C10.26 7.22 12.11 7.37 13.65 8.44L19.36 2.72M5.93 17.57C3.92 15.56 2.69 13.16 2.35 10.92L7.23 8.83L14.67 16.27L12.58 21.15C10.34 20.81 7.94 19.58 5.93 17.57Z"/>
+                                        </svg>
+                                    </div>
+                                    <div class="flex-1">
+                                        <h3 class="font-semibold text-lg">Deep House Cleaning</h3>
+                                        <p class="text-text-secondary mb-2">Tomorrow, Sept 2, 2025 at 10:00 AM</p>
+                                        <div class="flex items-center space-x-4 text-sm">
+                                            <div class="flex items-center space-x-2">
+                                                <img src="https://images.pixabay.com/photos/2016/11/21/12/42/beard-1845166_1280.jpg" alt="Agent Fatima" class="w-6 h-6 rounded-full object-cover" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                                                <span class="text-text-secondary">Fatima A.</span>
+                                            </div>
+                                            <span class="text-accent font-medium">₦8,500</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col sm:flex-row gap-2">
+                                    <a href="real_time_service_tracking.html" class="btn-primary text-sm px-4 py-2">Track Service</a>
+                                    <button class="btn-outline text-sm px-4 py-2">Reschedule</button>
+                                    <button class="text-text-secondary hover:text-accent transition-colors p-2">
+                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Upcoming Booking Card -->
+                        <div class="card">
+                            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                                <div class="flex items-start space-x-4">
+                                    <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
+                                        <svg class="w-6 h-6 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M3 4H1V6H3L3.94 10.94L2.59 12.29C2.21 12.67 2.21 13.33 2.59 13.71L3.29 14.41C3.67 14.79 4.33 14.79 4.71 14.41L6.06 13.06L11 18H20C20.55 18 21 17.55 21 17S20.55 16 20 16H12.41L9.41 13H15.55C16.3 13 16.96 12.59 17.3 11.97L20.88 5.48C21.25 4.82 20.77 4 20.01 4H5.21L4.27 2H3V4Z"/>
+                                        </svg>
+                                    </div>
+                                    <div class="flex-1">
+                                        <h3 class="font-semibold text-lg">Grocery Delivery</h3>
+                                        <p class="text-text-secondary mb-2">Sept 5, 2025 at 2:00 PM</p>
+                                        <div class="flex items-center space-x-4 text-sm">
+                                            <div class="flex items-center space-x-2">
+                                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face" alt="Agent Chinedu" class="w-6 h-6 rounded-full object-cover" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                                                <span class="text-text-secondary">Chinedu O.</span>
+                                            </div>
+                                            <span class="text-accent font-medium">₦2,500</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col sm:flex-row gap-2">
+                                    <button class="btn-outline text-sm px-4 py-2">Reschedule</button>
+                                    <button class="text-text-secondary hover:text-accent transition-colors p-2">
+                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Service History -->
+                <section>
+                    <div class="flex items-center justify-between mb-6">
+                        <h2 class="text-2xl font-bold">Service History</h2>
+                        <button class="text-accent hover:text-accent-700 transition-colors">View All</button>
+                    </div>
+
+                    <div class="space-y-4">
+                        <!-- Completed Service Card -->
+                        <div class="card">
+                            <div class="flex flex-col md:flex-row gap-4">
+                                <div class="flex items-start space-x-4 flex-1">
+                                    <div class="w-12 h-12 bg-success/10 rounded-lg flex items-center justify-center">
+                                        <svg class="w-6 h-6 text-success" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M12 2L13.09 8.26L22 9L13.09 9.74L12 16L10.91 9.74L2 9L10.91 8.26L12 2Z"/>
+                                        </svg>
+                                    </div>
+                                    <div class="flex-1">
+                                        <h3 class="font-semibold">Plumbing Repair</h3>
+                                        <p class="text-text-secondary text-sm mb-2">Completed on Aug 28, 2025</p>
+                                        <div class="flex items-center space-x-4 text-sm mb-3">
+                                            <div class="flex items-center space-x-2">
+                                                <img src="https://images.pixabay.com/photos/2017/06/26/02/47/man-2442565_1280.jpg" alt="Agent Ibrahim" class="w-6 h-6 rounded-full object-cover" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                                                <span class="text-text-secondary">Ibrahim M.</span>
+                                            </div>
+                                            <span class="text-accent font-medium">₦4,500</span>
+                                        </div>
+                                        <div class="flex items-center space-x-2 mb-3">
+                                            <div class="flex">
+                                                <svg class="w-4 h-4 text-accent" fill="currentColor" viewBox="0 0 24 24">
+                                                    <path d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z"/>
+                                                </svg>
+                                                <svg class="w-4 h-4 text-accent" fill="currentColor" viewBox="0 0 24 24">
+                                                    <path d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z"/>
+                                                </svg>
+                                                <svg class="w-4 h-4 text-accent" fill="currentColor" viewBox="0 0 24 24">
+                                                    <path d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z"/>
+                                                </svg>
+                                                <svg class="w-4 h-4 text-accent" fill="currentColor" viewBox="0 0 24 24">
+                                                    <path d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z"/>
+                                                </svg>
+                                                <svg class="w-4 h-4 text-accent" fill="currentColor" viewBox="0 0 24 24">
+                                                    <path d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z"/>
+                                                </svg>
+                                            </div>
+                                            <span class="text-sm text-text-secondary">5.0</span>
+                                        </div>
+                                        <p class="text-sm text-text-secondary">"Excellent work! Fixed the leak quickly and professionally."</p>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col sm:flex-row gap-2">
+                                    <button class="btn-primary text-sm px-4 py-2">Book Again</button>
+                                    <button class="btn-outline text-sm px-4 py-2">View Photos</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Another Completed Service -->
+                        <div class="card">
+                            <div class="flex flex-col md:flex-row gap-4">
+                                <div class="flex items-start space-x-4 flex-1">
+                                    <div class="w-12 h-12 bg-success/10 rounded-lg flex items-center justify-center">
+                                        <svg class="w-6 h-6 text-success" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M19.36 2.72L20.78 4.14L15.06 9.85C16.13 11.39 16.28 13.24 15.38 14.44L9.06 8.12C10.26 7.22 12.11 7.37 13.65 8.44L19.36 2.72M5.93 17.57C3.92 15.56 2.69 13.16 2.35 10.92L7.23 8.83L14.67 16.27L12.58 21.15C10.34 20.81 7.94 19.58 5.93 17.57Z"/>
+                                        </svg>
+                                    </div>
+                                    <div class="flex-1">
+                                        <h3 class="font-semibold">Weekly Cleaning</h3>
+                                        <p class="text-text-secondary text-sm mb-2">Completed on Aug 25, 2025</p>
+                                        <div class="flex items-center space-x-4 text-sm mb-3">
+                                            <div class="flex items-center space-x-2">
+                                                <img src="https://images.pixabay.com/photos/2016/11/21/12/42/beard-1845166_1280.jpg" alt="Agent Fatima" class="w-6 h-6 rounded-full object-cover" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                                                <span class="text-text-secondary">Fatima A.</span>
+                                            </div>
+                                            <span class="text-accent font-medium">₦6,000</span>
+                                        </div>
+                                        <div class="flex items-center space-x-2 mb-3">
+                                            <div class="flex">
+                                                <svg class="w-4 h-4 text-accent" fill="currentColor" viewBox="0 0 24 24">
+                                                    <path d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z"/>
+                                                </svg>
+                                                <svg class="w-4 h-4 text-accent" fill="currentColor" viewBox="0 0 24 24">
+                                                    <path d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z"/>
+                                                </svg>
+                                                <svg class="w-4 h-4 text-accent" fill="currentColor" viewBox="0 0 24 24">
+                                                    <path d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z"/>
+                                                </svg>
+                                                <svg class="w-4 h-4 text-accent" fill="currentColor" viewBox="0 0 24 24">
+                                                    <path d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z"/>
+                                                </svg>
+                                                <svg class="w-4 h-4 text-slate-400" fill="currentColor" viewBox="0 0 24 24">
+                                                    <path d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z"/>
+                                                </svg>
+                                            </div>
+                                            <span class="text-sm text-text-secondary">4.8</span>
+                                        </div>
+                                        <p class="text-sm text-text-secondary">"Great service as always. Very thorough cleaning."</p>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col sm:flex-row gap-2">
+                                    <button class="btn-primary text-sm px-4 py-2">Book Again</button>
+                                    <button class="btn-outline text-sm px-4 py-2">View Photos</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Sidebar Column -->
+            <div class="space-y-8">
+                <!-- Quick Booking Shortcuts -->
+                <section class="card">
+                    <h3 class="font-semibold text-lg mb-4">Quick Book</h3>
+                    <div class="space-y-3">
+                        <a href="service_booking_flow.html" class="flex items-center space-x-3 p-3 rounded-lg hover:bg-slate-700/20 transition-colors">
+                            <div class="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center">
+                                <svg class="w-4 h-4 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M19.36 2.72L20.78 4.14L15.06 9.85C16.13 11.39 16.28 13.24 15.38 14.44L9.06 8.12C10.26 7.22 12.11 7.37 13.65 8.44L19.36 2.72M5.93 17.57C3.92 15.56 2.69 13.16 2.35 10.92L7.23 8.83L14.67 16.27L12.58 21.15C10.34 20.81 7.94 19.58 5.93 17.57Z"/>
+                                </svg>
+                            </div>
+                            <span class="text-sm">House Cleaning</span>
+                        </a>
+                        <a href="service_booking_flow.html" class="flex items-center space-x-3 p-3 rounded-lg hover:bg-slate-700/20 transition-colors">
+                            <div class="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center">
+                                <svg class="w-4 h-4 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M3 4H1V6H3L3.94 10.94L2.59 12.29C2.21 12.67 2.21 13.33 2.59 13.71L3.29 14.41C3.67 14.79 4.33 14.79 4.71 14.41L6.06 13.06L11 18H20C20.55 18 21 17.55 21 17S20.55 16 20 16H12.41L9.41 13H15.55C16.3 13 16.96 12.59 17.3 11.97L20.88 5.48C21.25 4.82 20.77 4 20.01 4H5.21L4.27 2H3V4Z"/>
+                                </svg>
+                            </div>
+                            <span class="text-sm">Grocery Delivery</span>
+                        </a>
+                        <a href="service_booking_flow.html" class="flex items-center space-x-3 p-3 rounded-lg hover:bg-slate-700/20 transition-colors">
+                            <div class="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center">
+                                <svg class="w-4 h-4 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M22.7 19L13.6 9.9C14.5 7.6 14 4.9 12.1 3C10.1 1 7.1 0.6 4.7 1.7L9 6L6 9L1.6 4.7C0.4 7.1 0.9 10.1 2.9 12.1C4.8 14 7.5 14.5 9.8 13.6L18.9 22.7C19.3 23.1 19.9 23.1 20.3 22.7L22.6 20.4C23.1 20 23.1 19.3 22.7 19Z"/>
+                                </svg>
+                            </div>
+                            <span class="text-sm">Home Repairs</span>
+                        </a>
+                    </div>
+                </section>
+
+                <!-- Address Management -->
+                <section class="card">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="font-semibold text-lg">Saved Addresses</h3>
+                        <button class="text-accent hover:text-accent-700 transition-colors">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="flex items-start space-x-3 p-3 rounded-lg bg-primary/5 border border-primary/20">
+                            <div class="w-6 h-6 bg-primary rounded-full flex items-center justify-center mt-0.5">
+                                <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                </svg>
+                            </div>
+                            <div class="flex-1">
+                                <p class="font-medium text-sm">Home</p>
+                                <p class="text-xs text-text-secondary">15 Gimbiya Street, Garki Area 11, Abuja</p>
+                                <span class="text-xs text-primary">Default</span>
+                            </div>
+                            <button class="text-text-secondary hover:text-accent transition-colors">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="flex items-start space-x-3 p-3 rounded-lg hover:bg-slate-700/10 transition-colors">
+                            <div class="w-6 h-6 bg-slate-600 rounded-full flex items-center justify-center mt-0.5">
+                                <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                                </svg>
+                            </div>
+                            <div class="flex-1">
+                                <p class="font-medium text-sm">Office</p>
+                                <p class="text-xs text-text-secondary">Plot 123 Central Business District, Abuja</p>
+                            </div>
+                            <button class="text-text-secondary hover:text-accent transition-colors">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Payment Methods -->
+                <section class="card">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="font-semibold text-lg">Payment Methods</h3>
+                        <button class="text-accent hover:text-accent-700 transition-colors">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="flex items-center space-x-3 p-3 rounded-lg bg-primary/5 border border-primary/20">
+                            <div class="w-8 h-8 bg-gradient-to-r from-blue-600 to-purple-600 rounded flex items-center justify-center">
+                                <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M2 4v16h20V4H2zm18 14H4V8h16v10zm0-12H4V4h16v2z"/>
+                                </svg>
+                            </div>
+                            <div class="flex-1">
+                                <p class="font-medium text-sm">GTBank •••• 4567</p>
+                                <p class="text-xs text-text-secondary">Expires 12/26</p>
+                            </div>
+                            <span class="text-xs text-primary">Default</span>
+                        </div>
+                        <div class="flex items-center space-x-3 p-3 rounded-lg hover:bg-slate-700/10 transition-colors">
+                            <div class="w-8 h-8 bg-gradient-to-r from-green-600 to-blue-600 rounded flex items-center justify-center">
+                                <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                                </svg>
+                            </div>
+                            <div class="flex-1">
+                                <p class="font-medium text-sm">Paystack Wallet</p>
+                                <p class="text-xs text-text-secondary">₦2,450 available</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Referral Program -->
+                <section class="card bg-gradient-to-r from-accent/10 to-primary/10 border-accent/20">
+                    <div class="text-center">
+                        <div class="w-12 h-12 bg-accent/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-6 h-6 text-accent" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92-1.31-2.92-2.92-2.92z"/>
+                            </svg>
+                        </div>
+                        <h3 class="font-semibold mb-2">Refer & Earn</h3>
+                        <p class="text-sm text-text-secondary mb-4">You've earned ₦1,500 in referral credits!</p>
+                        <div class="flex space-x-2">
+                            <button class="btn-accent text-sm px-4 py-2 flex-1">Share Code</button>
+                            <button class="btn-outline text-sm px-4 py-2">View Credits</button>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-surface py-16 border-t border-slate-700/20 mt-16">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-2">
+                        <div class="w-30 h-10 bg-primary rounded-lg flex items-center justify-center">
+                            <img src="../public/logo.png" alt="ForaFix Logo" class="w-30 h-10 object-contain rounded-lg" />
+                        </div>
+                        <span class="text-lg font-bold">ForaFix</span>
+                    </div>
+                    <p class="text-text-secondary">
+                        Premium home services marketplace connecting Nigerian customers with verified service providers across Abuja.
+                    </p>
+                </div>
+
+                <!-- Services -->
+                <div>
+                    <h3 class="font-semibold mb-4">Services</h3>
+                    <ul class="space-y-2 text-text-secondary">
+                        <li><a href="service_booking_flow.html" class="hover:text-accent transition-colors">House Cleaning</a></li>
+                        <li><a href="service_booking_flow.html" class="hover:text-accent transition-colors">Home Repairs</a></li>
+                        <li><a href="service_booking_flow.html" class="hover:text-accent transition-colors">Delivery Services</a></li>
+                        <li><a href="service_booking_flow.html" class="hover:text-accent transition-colors">Wellness Services</a></li>
+                    </ul>
+                </div>
+
+                <!-- Company -->
+                <div>
+                    <h3 class="font-semibold mb-4">Company</h3>
+                    <ul class="space-y-2 text-text-secondary">
+                        <li><a href="javascript:void(0)" class="hover:text-accent transition-colors">About Us</a></li>
+                        <li><a href="agent_dashboard.html" class="hover:text-accent transition-colors">Become an Agent</a></li>
+                        <li><a href="javascript:void(0)" class="hover:text-accent transition-colors">Help Center</a></li>
+                        <li><a href="javascript:void(0)" class="hover:text-accent transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <h3 class="font-semibold mb-4">Contact</h3>
+                    <ul class="space-y-2 text-text-secondary">
+                        <li class="flex items-center space-x-2">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                            </svg>
+                            <span>Abuja, Nigeria</span>
+                        </li>
+                        <li class="flex items-center space-x-2">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                            </svg>
+                            <span>+234 (0) 800 FORAFIX</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-slate-700/20 mt-12 pt-8 text-center text-text-secondary">
+                <p>&copy; 2025 ForaFix. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Action Button -->
+    <a href="service_booking_flow.html" class="fab">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
+        </svg>
+    </a>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Toast notification system
+        function showToast(message, type = 'info') {
+            const toast = document.createElement('div');
+            toast.className = `fixed top-4 right-4 z-50 p-4 rounded-lg shadow-lg transition-all duration-300 transform translate-x-full`;
+            
+            switch(type) {
+                case 'success':
+                    toast.className += ' bg-success text-white';
+                    break;
+                case 'error':
+                    toast.className += ' bg-error text-white';
+                    break;
+                default:
+                    toast.className += ' bg-surface border border-slate-700/20 text-text-primary';
+            }
+            
+            toast.innerHTML = `
+                <div class="flex items-center space-x-3">
+                    <span>${message}</span>
+                    <button onclick="this.parentElement.parentElement.remove()" class="text-current opacity-70 hover:opacity-100">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                        </svg>
+                    </button>
+                </div>
+            `;
+            
+            document.body.appendChild(toast);
+            
+            // Animate in
+            setTimeout(() => {
+                toast.classList.remove('translate-x-full');
+            }, 100);
+            
+            // Auto remove after 5 seconds
+            setTimeout(() => {
+                toast.classList.add('translate-x-full');
+                setTimeout(() => toast.remove(), 300);
+            }, 5000);
+        }
+
+        // Simulate booking status updates
+        setTimeout(() => {
+            showToast('Your cleaning service is confirmed for tomorrow at 10:00 AM', 'success');
+        }, 2000);
+
+        // Card hover animations
+        document.querySelectorAll('.card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-2px)';
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0)';
+            });
+        });
+
+        // Swipe gesture support for mobile (simplified)
+        let startX = 0;
+        let startY = 0;
+
+        document.addEventListener('touchstart', (e) => {
+            startX = e.touches[0].clientX;
+            startY = e.touches[0].clientY;
+        });
+
+        document.addEventListener('touchend', (e) => {
+            if (!startX || !startY) return;
+
+            const endX = e.changedTouches[0].clientX;
+            const endY = e.changedTouches[0].clientY;
+
+            const diffX = startX - endX;
+            const diffY = startY - endY;
+
+            // Reset values
+            startX = 0;
+            startY = 0;
+
+            // Check if it's a horizontal swipe
+            if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 50) {
+                if (diffX > 0) {
+                    // Swipe left - could trigger quick actions
+                    console.log('Swipe left detected');
+                } else {
+                    // Swipe right - could go back
+                    console.log('Swipe right detected');
+                }
+            }
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe cards for animation
+        document.querySelectorAll('.card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+
+        // Pull-to-refresh functionality (simplified)
+        let pullStart = 0;
+        let pullDistance = 0;
+        const pullThreshold = 100;
+
+        document.addEventListener('touchstart', (e) => {
+            if (window.scrollY === 0) {
+                pullStart = e.touches[0].clientY;
+            }
+        });
+
+        document.addEventListener('touchmove', (e) => {
+            if (pullStart && window.scrollY === 0) {
+                pullDistance = e.touches[0].clientY - pullStart;
+                if (pullDistance > 0 && pullDistance < pullThreshold) {
+                    // Visual feedback for pull-to-refresh
+                    document.body.style.transform = `translateY(${pullDistance * 0.5}px)`;
+                }
+            }
+        });
+
+        document.addEventListener('touchend', () => {
+            if (pullDistance > pullThreshold) {
+                // Trigger refresh
+                showToast('Refreshing dashboard...', 'info');
+                setTimeout(() => {
+                    location.reload();
+                }, 1000);
+            }
+            
+            // Reset
+            document.body.style.transform = '';
+            pullStart = 0;
+            pullDistance = 0;
+        });
+    </script>
+<script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
+</body>
+</html>

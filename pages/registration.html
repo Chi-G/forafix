@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create Account - ForaFix Nigeria</title>
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fforafixse2770back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.8"></script>
+</head>
+<body class="bg-background text-text-primary">
+    <!-- Global Header Navigation -->
+    <header class="bg-surface border-b border-surface-600 sticky top-0 z-50 backdrop-blur-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <svg class="h-8 w-8 text-primary" viewBox="0 0 32 32" fill="currentColor">
+                        <path d="M16 2L3 9v14c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V9L16 2z"/>
+                        <path d="M14 16l-2-2-1.41 1.41L14 18.83l6-6L18.59 11.41 14 16z" fill="white"/>
+                    </svg>
+                    <span class="ml-2 text-xl font-bold text-primary">ForaFix</span>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="service_category_detail.html" class="text-text-secondary hover:text-accent transition-colors">Services</a>
+                    <a href="agent_registration.html" class="text-text-secondary hover:text-accent transition-colors">Become Agent</a>
+                    <a href="login.html" class="text-text-secondary hover:text-accent transition-colors">Login</a>
+                    <a href="registration.html" class="bg-accent hover:bg-accent-600 text-white px-4 py-2 rounded-lg transition-colors">Sign Up</a>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden p-2" onclick="toggleMobileMenu()">
+                    <svg class="h-6 w-6 text-text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div id="mobileMenu" class="md:hidden hidden pb-4">
+                <div class="flex flex-col space-y-2">
+                    <a href="service_category_detail.html" class="text-text-secondary hover:text-accent py-2 transition-colors">Services</a>
+                    <a href="agent_registration.html" class="text-text-secondary hover:text-accent py-2 transition-colors">Become Agent</a>
+                    <a href="login.html" class="text-text-secondary hover:text-accent py-2 transition-colors">Login</a>
+                    <a href="registration.html" class="bg-accent hover:bg-accent-600 text-white px-4 py-2 rounded-lg transition-colors text-center">Sign Up</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="min-h-screen bg-background">
+        <!-- Hero Section -->
+        <section class="relative py-12 lg:py-20 overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-br from-primary/10 to-accent/5"></div>
+            <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="lg:grid lg:grid-cols-2 lg:gap-12 items-center">
+                    <!-- Registration Form -->
+                    <div class="bg-surface rounded-lg shadow-xl p-6 lg:p-8">
+                        <!-- Progress Indicator -->
+                        <div class="mb-8">
+                            <div class="flex items-center justify-between mb-4">
+                                <h1 class="text-2xl lg:text-3xl font-bold">Create Your Account</h1>
+                                <div class="flex items-center space-x-2">
+                                    <div id="step-indicator-1" class="w-3 h-3 rounded-full bg-accent"></div>
+                                    <div id="step-indicator-2" class="w-3 h-3 rounded-full bg-surface-600"></div>
+                                    <div id="step-indicator-3" class="w-3 h-3 rounded-full bg-surface-600"></div>
+                                </div>
+                            </div>
+                            <p class="text-text-secondary">Join Nigeria's most trusted home services platform</p>
+                        </div>
+
+                        <!-- Multi-Step Registration Form -->
+                        <form id="registrationForm" class="space-y-6">
+                            <!-- Step 1: Account Type & Basic Info -->
+                            <div id="step1" class="step-content">
+                                <!-- Account Type Selection -->
+                                <div class="mb-6">
+                                    <label class="block text-sm font-medium mb-3">I want to:</label>
+                                    <div class="grid grid-cols-2 gap-4">
+                                        <label class="relative">
+                                            <input type="radio" name="accountType" value="customer" class="sr-only peer" checked />
+                                            <div class="p-4 border-2 border-surface-600 rounded-lg cursor-pointer peer-checked:border-accent peer-checked:bg-accent/10 transition-all">
+                                                <div class="flex items-center space-x-3">
+                                                    <svg class="h-6 w-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2H5a2 2 0 00-2 2v0"/>
+                                                    </svg>
+                                                    <div>
+                                                        <h3 class="font-medium">Book Services</h3>
+                                                        <p class="text-sm text-text-secondary">Find trusted professionals</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </label>
+                                        <label class="relative">
+                                            <input type="radio" name="accountType" value="agent" class="sr-only peer" />
+                                            <div class="p-4 border-2 border-surface-600 rounded-lg cursor-pointer peer-checked:border-accent peer-checked:bg-accent/10 transition-all">
+                                                <div class="flex items-center space-x-3">
+                                                    <svg class="h-6 w-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m8 6V8a2 2 0 00-2-2H6a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2z"/>
+                                                    </svg>
+                                                    <div>
+                                                        <h3 class="font-medium">Provide Services</h3>
+                                                        <p class="text-sm text-text-secondary">Earn money helping others</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <!-- Basic Information -->
+                                <div class="space-y-4">
+                                    <div>
+                                        <label class="block text-sm font-medium mb-2">Full Name *</label>
+                                        <input type="text" id="fullName" name="fullName" required class="w-full bg-surface-700 border border-surface-600 rounded-lg px-3 py-2 text-text-primary focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all" placeholder="Enter your full name" />
+                                        <div id="fullNameError" class="text-error text-sm mt-1 hidden"></div>
+                                    </div>
+
+                                    <div>
+                                        <label class="block text-sm font-medium mb-2">Email Address *</label>
+                                        <input type="email" id="email" name="email" required class="w-full bg-surface-700 border border-surface-600 rounded-lg px-3 py-2 text-text-primary focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all" placeholder="your.email@example.com" />
+                                        <div id="emailError" class="text-error text-sm mt-1 hidden"></div>
+                                    </div>
+
+                                    <div>
+                                        <label class="block text-sm font-medium mb-2">Phone Number *</label>
+                                        <div class="flex">
+                                            <span class="inline-flex items-center px-3 rounded-l-lg border border-r-0 border-surface-600 bg-surface-600 text-text-secondary text-sm">+234</span>
+                                            <input type="tel" id="phone" name="phone" required class="flex-1 bg-surface-700 border border-surface-600 rounded-r-lg px-3 py-2 text-text-primary focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all" placeholder="8012345678" />
+                                        </div>
+                                        <div id="phoneError" class="text-error text-sm mt-1 hidden"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Step 2: Password & Security -->
+                            <div id="step2" class="step-content hidden">
+                                <div class="space-y-4">
+                                    <div>
+                                        <label class="block text-sm font-medium mb-2">Create Password *</label>
+                                        <div class="relative">
+                                            <input type="password" id="password" name="password" required class="w-full bg-surface-700 border border-surface-600 rounded-lg px-3 py-2 pr-10 text-text-primary focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all" placeholder="Create a strong password" />
+                                            <button type="button" onclick="togglePassword('password')" class="absolute inset-y-0 right-0 pr-3 flex items-center">
+                                                <svg id="password-eye" class="h-5 w-5 text-text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                        <!-- Password Strength Indicator -->
+                                        <div class="mt-2">
+                                            <div class="flex space-x-1">
+                                                <div id="strength-1" class="h-1 w-1/4 bg-surface-600 rounded"></div>
+                                                <div id="strength-2" class="h-1 w-1/4 bg-surface-600 rounded"></div>
+                                                <div id="strength-3" class="h-1 w-1/4 bg-surface-600 rounded"></div>
+                                                <div id="strength-4" class="h-1 w-1/4 bg-surface-600 rounded"></div>
+                                            </div>
+                                            <p id="strengthText" class="text-xs text-text-secondary mt-1">Password strength: Weak</p>
+                                        </div>
+                                        <div id="passwordError" class="text-error text-sm mt-1 hidden"></div>
+                                    </div>
+
+                                    <div>
+                                        <label class="block text-sm font-medium mb-2">Confirm Password *</label>
+                                        <div class="relative">
+                                            <input type="password" id="confirmPassword" name="confirmPassword" required class="w-full bg-surface-700 border border-surface-600 rounded-lg px-3 py-2 pr-10 text-text-primary focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all" placeholder="Confirm your password" />
+                                            <button type="button" onclick="togglePassword('confirmPassword')" class="absolute inset-y-0 right-0 pr-3 flex items-center">
+                                                <svg id="confirmPassword-eye" class="h-5 w-5 text-text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                        <div id="confirmPasswordError" class="text-error text-sm mt-1 hidden"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Step 3: Address & Verification -->
+                            <div id="step3" class="step-content hidden">
+                                <div class="space-y-4">
+                                    <div class="grid md:grid-cols-2 gap-4">
+                                        <div>
+                                            <label class="block text-sm font-medium mb-2">State *</label>
+                                            <select id="state" name="state" required class="w-full bg-surface-700 border border-surface-600 rounded-lg px-3 py-2 text-text-primary focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all">
+                                                <option value>Select State</option>
+                                                <option value="FCT">Federal Capital Territory</option>
+                                                <option value="Lagos">Lagos</option>
+                                                <option value="Kano">Kano</option>
+                                                <option value="Rivers">Rivers</option>
+                                                <option value="Oyo">Oyo</option>
+                                            </select>
+                                        </div>
+                                        <div>
+                                            <label class="block text-sm font-medium mb-2">Local Government Area *</label>
+                                            <select id="lga" name="lga" required class="w-full bg-surface-700 border border-surface-600 rounded-lg px-3 py-2 text-text-primary focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all">
+                                                <option value>Select LGA</option>
+                                                <option value="AMAC">Abuja Municipal Area Council</option>
+                                                <option value="Gwagwalada">Gwagwalada</option>
+                                                <option value="Kuje">Kuje</option>
+                                                <option value="Bwari">Bwari</option>
+                                                <option value="Abaji">Abaji</option>
+                                                <option value="Kwali">Kwali</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <label class="block text-sm font-medium mb-2">Address *</label>
+                                        <textarea id="address" name="address" required rows="3" class="w-full bg-surface-700 border border-surface-600 rounded-lg px-3 py-2 text-text-primary focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all" placeholder="Enter your full address with landmarks"></textarea>
+                                    </div>
+
+                                    <div>
+                                        <label class="block text-sm font-medium mb-2">Postal Code</label>
+                                        <input type="text" id="postalCode" name="postalCode" class="w-full bg-surface-700 border border-surface-600 rounded-lg px-3 py-2 text-text-primary focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all" placeholder="Enter postal code (optional)" />
+                                    </div>
+
+                                    <!-- Terms and Conditions -->
+                                    <div class="space-y-4">
+                                        <label class="flex items-start space-x-3">
+                                            <input type="checkbox" id="terms" name="terms" required class="mt-1 h-4 w-4 text-accent focus:ring-accent border-surface-600 rounded bg-surface-700" />
+                                            <span class="text-sm text-text-secondary">
+                                                I agree to the <a href="javascript:void(0)" class="text-accent hover:text-accent-600 underline">Terms of Service</a> 
+                                                and <a href="javascript:void(0)" class="text-accent hover:text-accent-600 underline">Privacy Policy</a>
+                                            </span>
+                                        </label>
+
+                                        <label class="flex items-start space-x-3">
+                                            <input type="checkbox" id="marketing" name="marketing" class="mt-1 h-4 w-4 text-accent focus:ring-accent border-surface-600 rounded bg-surface-700" />
+                                            <span class="text-sm text-text-secondary">
+                                                I want to receive updates about services and promotions via email and SMS
+                                            </span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Navigation Buttons -->
+                            <div class="flex justify-between pt-6">
+                                <button type="button" id="prevBtn" onclick="previousStep()" class="px-6 py-2 text-text-secondary hover:text-text-primary transition-colors hidden">
+                                    Previous
+                                </button>
+                                <button type="button" id="nextBtn" onclick="nextStep()" class="ml-auto bg-accent hover:bg-accent-600 text-white px-6 py-2 rounded-lg transition-colors">
+                                    Next
+                                </button>
+                                <button type="submit" id="submitBtn" class="ml-auto bg-accent hover:bg-accent-600 text-white px-6 py-2 rounded-lg transition-colors hidden">
+                                    Create Account
+                                </button>
+                            </div>
+                        </form>
+
+                        <!-- Social Registration -->
+                        <div class="mt-8">
+                            <div class="relative">
+                                <div class="absolute inset-0 flex items-center">
+                                    <div class="w-full border-t border-surface-600"></div>
+                                </div>
+                                <div class="relative flex justify-center text-sm">
+                                    <span class="px-2 bg-surface text-text-secondary">Or continue with</span>
+                                </div>
+                            </div>
+
+                            <div class="mt-6 grid grid-cols-2 gap-3">
+                                <button type="button" onclick="socialLogin('google')" class="w-full inline-flex justify-center py-2 px-4 border border-surface-600 rounded-lg shadow-sm bg-surface-700 text-sm font-medium text-text-primary hover:bg-surface-600 transition-colors">
+                                    <svg class="h-5 w-5" viewBox="0 0 24 24">
+                                        <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                                        <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                                        <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+                                        <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+                                    </svg>
+                                    <span class="ml-2">Google</span>
+                                </button>
+
+                                <button type="button" onclick="socialLogin('facebook')" class="w-full inline-flex justify-center py-2 px-4 border border-surface-600 rounded-lg shadow-sm bg-surface-700 text-sm font-medium text-text-primary hover:bg-surface-600 transition-colors">
+                                    <svg class="h-5 w-5 text-blue-500" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                                    </svg>
+                                    <span class="ml-2">Facebook</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Login Link -->
+                        <div class="mt-6 text-center">
+                            <p class="text-text-secondary">
+                                Already have an account? 
+                                <a href="login.html" class="text-accent hover:text-accent-600 font-medium">Sign in</a>
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Benefits Section (Desktop) -->
+                    <div class="hidden lg:block">
+                        <div class="space-y-8">
+                            <!-- Trust Signals -->
+                            <div class="bg-surface rounded-lg p-6">
+                                <h3 class="text-xl font-semibold mb-4">Why Choose ForaFix?</h3>
+                                <div class="space-y-4">
+                                    <div class="flex items-start space-x-3">
+                                        <svg class="h-6 w-6 text-success mt-1" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                        </svg>
+                                        <div>
+                                            <h4 class="font-medium">Verified Professionals</h4>
+                                            <p class="text-sm text-text-secondary">All service providers are background-checked and verified</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start space-x-3">
+                                        <svg class="h-6 w-6 text-success mt-1" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                        </svg>
+                                        <div>
+                                            <h4 class="font-medium">Secure Payments</h4>
+                                            <p class="text-sm text-text-secondary">Safe and secure payment processing with Nigerian banks</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start space-x-3">
+                                        <svg class="h-6 w-6 text-success mt-1" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                        </svg>
+                                        <div>
+                                            <h4 class="font-medium">24/7 Support</h4>
+                                            <p class="text-sm text-text-secondary">Round-the-clock customer support in English and local languages</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start space-x-3">
+                                        <svg class="h-6 w-6 text-success mt-1" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                        </svg>
+                                        <div>
+                                            <h4 class="font-medium">Money-Back Guarantee</h4>
+                                            <p class="text-sm text-text-secondary">100% satisfaction guarantee or your money back</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Success Stories -->
+                            <div class="bg-surface rounded-lg p-6">
+                                <h3 class="text-xl font-semibold mb-4">Success Stories</h3>
+                                <div class="space-y-4">
+                                    <div class="border-l-4 border-accent pl-4">
+                                        <p class="text-sm text-text-secondary italic mb-2">
+                                            "ForaFix helped me find reliable house cleaning services in Abuja. The booking process was so easy!"
+                                        </p>
+                                        <p class="text-sm font-medium">- Adaora O., Maitama</p>
+                                    </div>
+                                    <div class="border-l-4 border-accent pl-4">
+                                        <p class="text-sm text-text-secondary italic mb-2">
+                                            "As a service provider, ForaFix has helped me grow my business and reach more customers."
+                                        </p>
+                                        <p class="text-sm font-medium">- Ibrahim K., Gwarinpa</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Security Badges -->
+                            <div class="bg-surface rounded-lg p-6">
+                                <h3 class="text-lg font-semibold mb-4">Your Data is Safe</h3>
+                                <div class="flex items-center space-x-4">
+                                    <div class="flex items-center space-x-2">
+                                        <svg class="h-6 w-6 text-success" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd"/>
+                                        </svg>
+                                        <span class="text-sm font-medium">SSL Encrypted</span>
+                                    </div>
+                                    <div class="flex items-center space-x-2">
+                                        <svg class="h-6 w-6 text-success" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                        </svg>
+                                        <span class="text-sm font-medium">Verified Business</span>
+                                    </div>
+                                </div>
+                                <p class="text-xs text-text-secondary mt-2">
+                                    Registered with Corporate Affairs Commission (CAC) - RC: 1234567
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Verification Modal -->
+    <div id="verificationModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden">
+        <div class="flex items-center justify-center min-h-screen p-4">
+            <div class="bg-surface rounded-lg max-w-md w-full p-6">
+                <div class="text-center">
+                    <svg class="h-16 w-16 text-success mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                    <h2 class="text-xl font-bold mb-2">Account Created Successfully!</h2>
+                    <p class="text-text-secondary mb-6">
+                        We've sent a verification link to your email address. Please check your inbox and click the link to verify your account.
+                    </p>
+                    <div class="space-y-3">
+                        <button onclick="closeVerificationModal()" class="w-full bg-accent hover:bg-accent-600 text-white py-2 px-4 rounded-lg transition-colors">
+                            Continue
+                        </button>
+                        <button onclick="resendVerification()" class="w-full text-accent hover:text-accent-600 py-2 px-4 rounded-lg border border-accent transition-colors">
+                            Resend Verification Email
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-surface-800 border-t border-surface-600">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <svg class="h-8 w-8 text-primary" viewBox="0 0 32 32" fill="currentColor">
+                            <path d="M16 2L3 9v14c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V9L16 2z"/>
+                            <path d="M14 16l-2-2-1.41 1.41L14 18.83l6-6L18.59 11.41 14 16z" fill="white"/>
+                        </svg>
+                        <span class="ml-2 text-xl font-bold text-primary">ForaFix</span>
+                    </div>
+                    <p class="text-text-secondary text-sm">Nigeria's trusted home services platform connecting you with verified professionals.</p>
+                </div>
+                <div>
+                    <h3 class="font-semibold mb-4">Services</h3>
+                    <ul class="space-y-2 text-sm text-text-secondary">
+                        <li><a href="service_category_detail.html" class="hover:text-accent transition-colors">House Cleaning</a></li>
+                        <li><a href="javascript:void(0)" class="hover:text-accent transition-colors">Laundry</a></li>
+                        <li><a href="javascript:void(0)" class="hover:text-accent transition-colors">Plumbing</a></li>
+                        <li><a href="javascript:void(0)" class="hover:text-accent transition-colors">Electrical</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-semibold mb-4">Company</h3>
+                    <ul class="space-y-2 text-sm text-text-secondary">
+                        <li><a href="javascript:void(0)" class="hover:text-accent transition-colors">About Us</a></li>
+                        <li><a href="agent_registration.html" class="hover:text-accent transition-colors">Become Agent</a></li>
+                        <li><a href="javascript:void(0)" class="hover:text-accent transition-colors">Contact</a></li>
+                        <li><a href="javascript:void(0)" class="hover:text-accent transition-colors">Support</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-semibold mb-4">Contact</h3>
+                    <ul class="space-y-2 text-sm text-text-secondary">
+                        <li>+234 800 FORAFIX</li>
+                        <li>support@forafix.ng</li>
+                        <li>Abuja, Nigeria</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-surface-600 mt-8 pt-8 text-center text-sm text-text-secondary">
+                <p>&copy; 2025 ForaFix. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        let currentStep = 1;
+        const totalSteps = 3;
+
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Multi-step form navigation
+        function showStep(step) {
+            // Hide all steps
+            for (let i = 1; i <= totalSteps; i++) {
+                document.getElementById(`step${i}`).classList.add('hidden');
+                document.getElementById(`step-indicator-${i}`).classList.remove('bg-accent');
+                document.getElementById(`step-indicator-${i}`).classList.add('bg-surface-600');
+            }
+
+            // Show current step
+            document.getElementById(`step${step}`).classList.remove('hidden');
+            
+            // Update progress indicators
+            for (let i = 1; i <= step; i++) {
+                document.getElementById(`step-indicator-${i}`).classList.remove('bg-surface-600');
+                document.getElementById(`step-indicator-${i}`).classList.add('bg-accent');
+            }
+
+            // Update navigation buttons
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            const submitBtn = document.getElementById('submitBtn');
+
+            if (step === 1) {
+                prevBtn.classList.add('hidden');
+            } else {
+                prevBtn.classList.remove('hidden');
+            }
+
+            if (step === totalSteps) {
+                nextBtn.classList.add('hidden');
+                submitBtn.classList.remove('hidden');
+            } else {
+                nextBtn.classList.remove('hidden');
+                submitBtn.classList.add('hidden');
+            }
+        }
+
+        function nextStep() {
+            if (validateCurrentStep() && currentStep < totalSteps) {
+                currentStep++;
+                showStep(currentStep);
+            }
+        }
+
+        function previousStep() {
+            if (currentStep > 1) {
+                currentStep--;
+                showStep(currentStep);
+            }
+        }
+
+        // Form validation
+        function validateCurrentStep() {
+            let isValid = true;
+            
+            if (currentStep === 1) {
+                // Validate basic information
+                const fullName = document.getElementById('fullName').value.trim();
+                const email = document.getElementById('email').value.trim();
+                const phone = document.getElementById('phone').value.trim();
+
+                if (!fullName) {
+                    showError('fullNameError', 'Full name is required');
+                    isValid = false;
+                } else {
+                    hideError('fullNameError');
+                }
+
+                if (!email || !isValidEmail(email)) {
+                    showError('emailError', 'Please enter a valid email address');
+                    isValid = false;
+                } else {
+                    hideError('emailError');
+                }
+
+                if (!phone || !isValidNigerianPhone(phone)) {
+                    showError('phoneError', 'Please enter a valid Nigerian phone number');
+                    isValid = false;
+                } else {
+                    hideError('phoneError');
+                }
+            }
+
+            if (currentStep === 2) {
+                // Validate password
+                const password = document.getElementById('password').value;
+                const confirmPassword = document.getElementById('confirmPassword').value;
+
+                if (!password || password.length < 8) {
+                    showError('passwordError', 'Password must be at least 8 characters long');
+                    isValid = false;
+                } else {
+                    hideError('passwordError');
+                }
+
+                if (password !== confirmPassword) {
+                    showError('confirmPasswordError', 'Passwords do not match');
+                    isValid = false;
+                } else {
+                    hideError('confirmPasswordError');
+                }
+            }
+
+            if (currentStep === 3) {
+                // Validate address and terms
+                const state = document.getElementById('state').value;
+                const lga = document.getElementById('lga').value;
+                const address = document.getElementById('address').value.trim();
+                const terms = document.getElementById('terms').checked;
+
+                if (!state || !lga || !address) {
+                    alert('Please fill in all required address fields');
+                    isValid = false;
+                }
+
+                if (!terms) {
+                    alert('Please accept the Terms of Service and Privacy Policy');
+                    isValid = false;
+                }
+            }
+
+            return isValid;
+        }
+
+        function showError(elementId, message) {
+            const errorElement = document.getElementById(elementId);
+            errorElement.textContent = message;
+            errorElement.classList.remove('hidden');
+        }
+
+        function hideError(elementId) {
+            const errorElement = document.getElementById(elementId);
+            errorElement.classList.add('hidden');
+        }
+
+        function isValidEmail(email) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
+
+        function isValidNigerianPhone(phone) {
+            // Nigerian phone numbers: 8012345678 (without +234)
+            const phoneRegex = /^[789][01]\d{8}$/;
+            return phoneRegex.test(phone);
+        }
+
+        // Password strength checker
+        document.getElementById('password').addEventListener('input', function() {
+            const password = this.value;
+            const strength = calculatePasswordStrength(password);
+            updatePasswordStrength(strength);
+        });
+
+        function calculatePasswordStrength(password) {
+            let strength = 0;
+            
+            if (password.length >= 8) strength++;
+            if (/[a-z]/.test(password)) strength++;
+            if (/[A-Z]/.test(password)) strength++;
+            if (/[0-9]/.test(password)) strength++;
+            if (/[^A-Za-z0-9]/.test(password)) strength++;
+
+            return Math.min(strength, 4);
+        }
+
+        function updatePasswordStrength(strength) {
+            const strengthBars = ['strength-1', 'strength-2', 'strength-3', 'strength-4'];
+            const strengthText = document.getElementById('strengthText');
+            const strengthLabels = ['Very Weak', 'Weak', 'Fair', 'Good', 'Strong'];
+            const strengthColors = ['bg-error', 'bg-warning', 'bg-warning', 'bg-success', 'bg-success'];
+
+            // Reset all bars
+            strengthBars.forEach(bar => {
+                const element = document.getElementById(bar);
+                element.className = 'h-1 w-1/4 bg-surface-600 rounded';
+            });
+
+            // Fill bars based on strength
+            for (let i = 0; i < strength; i++) {
+                const element = document.getElementById(strengthBars[i]);
+                element.classList.remove('bg-surface-600');
+                element.classList.add(strengthColors[strength - 1]);
+            }
+
+            strengthText.textContent = `Password strength: ${strengthLabels[strength]}`;
+        }
+
+        // Password visibility toggle
+        function togglePassword(fieldId) {
+            const field = document.getElementById(fieldId);
+            const eye = document.getElementById(`${fieldId}-eye`);
+            
+            if (field.type === 'password') {
+                field.type = 'text';
+                eye.innerHTML = `
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.878 9.878L3 3m6.878 6.878L21 21"></path>
+                `;
+            } else {
+                field.type = 'password';
+                eye.innerHTML = `
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                `;
+            }
+        }
+
+        // Form submission
+        document.getElementById('registrationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            if (validateCurrentStep()) {
+                // Simulate account creation
+                setTimeout(() => {
+                    document.getElementById('verificationModal').classList.remove('hidden');
+                    document.body.style.overflow = 'hidden';
+                }, 1000);
+            }
+        });
+
+        // Social login
+        function socialLogin(provider) {
+            alert(`${provider} login integration would be implemented here`);
+        }
+
+        // Verification modal functions
+        function closeVerificationModal() {
+            document.getElementById('verificationModal').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+            // Redirect to login or dashboard
+            window.location.href = 'login.html';
+        }
+
+        function resendVerification() {
+            alert('Verification email resent successfully!');
+        }
+
+        // State/LGA dependency
+        document.getElementById('state').addEventListener('change', function() {
+            const lgaSelect = document.getElementById('lga');
+            const selectedState = this.value;
+            
+            // Clear current options
+            lgaSelect.innerHTML = '<option value="">Select LGA</option>';
+            
+            // Add LGAs based on selected state
+            if (selectedState === 'FCT') {
+                const fctLGAs = [
+                    'Abuja Municipal Area Council',
+                    'Gwagwalada',
+                    'Kuje',
+                    'Bwari',
+                    'Abaji',
+                    'Kwali'
+                ];
+                
+                fctLGAs.forEach(lga => {
+                    const option = document.createElement('option');
+                    option.value = lga.toLowerCase().replace(/\s+/g, '-');
+                    option.textContent = lga;
+                    lgaSelect.appendChild(option);
+                });
+            }
+            // Add more states and their LGAs as needed
+        });
+
+        // Initialize form
+        showStep(1);
+
+        // Save form data to localStorage for offline capability
+        function saveFormData() {
+            const formData = new FormData(document.getElementById('registrationForm'));
+            const data = {};
+            
+            for (let [key, value] of formData.entries()) {
+                data[key] = value;
+            }
+            
+            localStorage.setItem('registrationData', JSON.stringify(data));
+        }
+
+        // Auto-save form data on input
+        document.getElementById('registrationForm').addEventListener('input', saveFormData);
+
+        // Load saved form data on page load
+        window.addEventListener('load', function() {
+            const savedData = localStorage.getItem('registrationData');
+            if (savedData) {
+                const data = JSON.parse(savedData);
+                
+                Object.keys(data).forEach(key => {
+                    const element = document.getElementById(key);
+                    if (element) {
+                        if (element.type === 'checkbox' || element.type === 'radio') {
+                            element.checked = data[key] === 'on';
+                        } else {
+                            element.value = data[key];
+                        }
+                    }
+                });
+            }
+        });
+
+        // Clear saved data on successful submission
+        function clearSavedData() {
+            localStorage.removeItem('registrationData');
+        }
+    </script>
+<script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
+</body>
+</html>
